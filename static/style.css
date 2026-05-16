@@ -625,6 +625,23 @@ kbd {
   image-rendering: pixelated;
 }
 
+.icon-cell img.asset-thumb {
+  width: 82px;
+  height: 72px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.icon-cell .asset-source {
+  max-width: 100%;
+  margin: -0.18rem 0 0.32rem;
+  color: var(--accent-strong);
+  font-size: 0.58rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .icon-cell .id {
   color: var(--text-muted);
   font-size: 0.72rem;

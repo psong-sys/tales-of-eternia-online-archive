@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 import shutil
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -31,6 +32,7 @@ ICONS_SRC = ASSETS / "extracted" / "icons"
 ICONS_DST = ROOT / "static" / "icons"
 EXTRACTED_SRC = ASSETS / "extracted"          # contains per-bundle PNG dirs
 SPRITES_DST = ROOT / "static" / "sprites"     # NPC + monster sprite atlases
+EQUIP_DST = ROOT / "static" / "equipment"     # equipment atlas thumbnails
 
 CID0_PATH = ASSETS / "runs" / "2026-05-01_cid0.json"
 CID1_PATH = ASSETS / "runs" / "2026-05-01_cid1.json"
@@ -213,6 +215,10 @@ def load_data():
     nntb = json.load(open(NNTB_PATH)) if NNTB_PATH.exists() else None
     zones = json.load(open(ZONES_PATH)) if ZONES_PATH.exists() else None
     return cid0, cid1, tdab, crsd, nntb, zones
+
+
+def write_html(path: Path, content: str) -> None:
+    path.write_text(content, encoding="utf-8")
 
 
 def category_for_cid1_id(name: str) -> str:
@@ -414,12 +420,12 @@ def build_equipment(cid1: dict[int, str]):
     for cat in by_cat:
         by_cat[cat].sort()
 
-    # ICND categories (for icon source) — bucket by ICND folder name based on cid1 category.
+    # ICND categories (for icon fallback) — bucket by ICND folder name based on cid1 category.
     cat_to_icnd = {
         "Sword": "Weapon", "Hat": "Head", "Shield": "Shield",
-        "Body A-set": "Body", "Body B-set": "Body", "Body C-set": "Body",
-        "Body D-set": "Body", "Body E-set": "Body", "Body F-set": "Body",
-        "Body G-set": "Body", "Body undergarment": "Body",
+        "Body A-set": "BODY_A", "Body B-set": "BODY_B", "Body C-set": "BODY_C",
+        "Body D-set": "BODY_D", "Body E-set": "BODY_E", "Body F-set": "BODY_F",
+        "Body G-set": "BODY_G", "Body undergarment": "Body",
         "Gloves": "Body", "Boots": "Body",     # ICND does not separate; use Accessory fallback
         "Leather (early game)": "Body", "Clothes": "Body", "Robe": "Body",
         "Face": "Body", "Hair": "Body", "Eye": "Body", "Skin": "Body",
@@ -457,7 +463,7 @@ def build_equipment(cid1: dict[int, str]):
 """
     out = ROOT / "equipment" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page("Equipment", overview_body, "/equipment/index.html", depth=1))
+    write_html(out, page("Equipment", overview_body, "/equipment/index.html", depth=1))
 
     # ---- Per-category pages ----
     for cat, items in by_cat.items():
@@ -465,31 +471,26 @@ def build_equipment(cid1: dict[int, str]):
         icnd_cat = cat_to_icnd.get(cat, "Body")
         icon_dir = f"../static/icons/{icnd_cat}"
 
-        # For Sword/Head/Shield where the IDs/icons line up positionally, attempt to map.
-        # For others, just list IDs without icons.
         cells = []
-        positional = cat in ("Sword", "Hat", "Shield")
-        if positional:
-            slots = sample_icons.get(icnd_cat, [])
-            for i, (rid, name) in enumerate(items):
-                if i < len(slots):
-                    img_html = f'<img src="{icon_dir}/{slots[i]:05}.png" alt="" loading="lazy">'
-                else:
-                    img_html = '<img alt="" style="opacity:.2">'
-                cells.append(f"""
-                <div class="icon-cell">
-                  {img_html}
-                  <span class="id mono">{rid}</span>
-                  <span class="name">{html.escape(name)}</span>
-                </div>""")
-        else:
-            for rid, name in items:
-                cells.append(f"""
-                <div class="icon-cell">
-                  <img alt="" style="opacity:.15">
-                  <span class="id mono">{rid}</span>
-                  <span class="name">{html.escape(name)}</span>
-                </div>""")
+        slots = sample_icons.get(icnd_cat, [])
+        for i, (rid, name) in enumerate(items):
+            visual = equipment_visual_for(name)
+            if visual:
+                img_html = (
+                    f'<img class="asset-thumb" src="../{visual["url"]}" '
+                    f'alt="{html.escape(name)} recovered asset" loading="lazy">'
+                    f'<span class="asset-source mono">{html.escape(visual["source"])}</span>'
+                )
+            elif i < len(slots):
+                img_html = f'<img src="{icon_dir}/{slots[i]:05}.png" alt="" loading="lazy">'
+            else:
+                img_html = '<img alt="" style="opacity:.15">'
+            cells.append(f"""
+            <div class="icon-cell">
+              {img_html}
+              <span class="id mono">{rid}</span>
+              <span class="name">{html.escape(name)}</span>
+            </div>""")
 
         body = f"""
 <p class="muted"><a href="index.html">← all categories</a></p>
@@ -515,7 +516,7 @@ function filterGrid(input) {{
 </script>
 """
         outpath = ROOT / "equipment" / f"{slug}.html"
-        outpath.write_text(page(cat, body, "/equipment/index.html", depth=1))
+        write_html(outpath, page(cat, body, "/equipment/index.html", depth=1))
 
 
 def cat_slug(cat: str) -> str:
@@ -532,6 +533,86 @@ def sorted_icons_by_category() -> dict[str, list[int]]:
             slots = sorted(int(p.stem) for p in cat_dir.glob("*.png"))
             result[cat_dir.name] = slots
     return result
+
+
+def equipment_visual_for(name: str) -> dict[str, str] | None:
+    """Return a copied wiki URL for the closest recovered equipment atlas.
+
+    `cid1.idt` has finer-grained symbolic variants than the authored BNKD
+    folders. For example, `ID_BODY_A000..A000L` share the battle-body atlas
+    `B_body_a_m_00` / `B_body_a_l_00`; the suffix variants are palette or
+    runtime composition choices. The wiki surfaces the recovered source atlas
+    and keeps the exact symbolic ID beside it.
+    """
+    candidates = equipment_visual_candidates(name)
+    for folder in candidates:
+        src_dir = EXTRACTED_SRC / folder
+        if not src_dir.is_dir():
+            continue
+        pngs = sorted(src_dir.glob("*.png"))
+        if not pngs:
+            continue
+        src = pngs[0]
+        dest = EQUIP_DST / folder / src.name
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        if not dest.exists() or src.stat().st_mtime > dest.stat().st_mtime:
+            shutil.copy2(src, dest)
+        return {"url": f"static/equipment/{folder}/{src.name}", "source": folder}
+    return None
+
+
+def equipment_visual_candidates(name: str) -> list[str]:
+    body = re.match(r"ID_BODY_([A-G])(\d{3})", name)
+    if body:
+        group = body.group(1).lower()
+        idx = int(body.group(2))
+        return [f"B_body_{group}_m_{idx:02d}", f"B_body_{group}_l_{idx:02d}"]
+
+    under = re.match(r"ID_BODY_([ML])_U(\d{3})", name)
+    if under:
+        # Undergarment IDs are runtime-composited; the closest recovered
+        # standalone body atlas is the matching early body slot.
+        sex = "m" if under.group(1) == "M" else "l"
+        idx = int(under.group(2))
+        return [f"B_body_a_{sex}_{idx:02d}"]
+
+    head = re.match(r"ID_HAT_(\d{3})", name)
+    if head:
+        idx = int(head.group(1))
+        return [f"B_hat_{idx:03d}"]
+
+    hair = re.match(r"ID_HAIR(\d+)", name)
+    if hair:
+        idx = int(hair.group(1)) - 1
+        return [
+            f"ml00_hair_{idx:02d}", f"ms00_hair_{idx:02d}",
+            f"fl00_hair_{idx:02d}", f"fs00_hair_{idx:02d}",
+        ]
+
+    face = re.match(r"ID_FACE(\d)_(\d+)", name)
+    if face:
+        family = int(face.group(1))
+        return [f"ml{family:02d}_face_00", f"ms{family:02d}_face_00", f"fl{family:02d}_face_00", f"fs{family:02d}_face_00"]
+
+    eye = re.match(r"ID_EYE(\d+)", name)
+    if eye:
+        idx = int(eye.group(1)) - 1
+        eye_names = ["nor", "tar", "tur"]
+        if idx < len(eye_names):
+            suffix = eye_names[idx]
+            return [f"ml00_eye_{suffix}", f"ms00_eye_{suffix}", f"fl00_eye_{suffix}", f"fs00_eye_{suffix}"]
+
+    bodychg = re.match(r"ID_BODYCHG(\d+)", name)
+    if bodychg:
+        idx = int(bodychg.group(1)) - 1
+        return [f"B_body_a_m_{idx:02d}", f"B_body_a_l_{idx:02d}"]
+
+    if name in ("ID_BODY", "ID_BASE"):
+        return ["B_body_a_m_00", "B_body_a_l_00"]
+    if name == "ID_BASE_WEAPON":
+        return ["B_sword_000"]
+
+    return []
 
 
 # ---------- Beasts -----------------------------------------------------------
@@ -740,8 +821,8 @@ function beastFilter(input) {{
 """
     out = ROOT / "beasts" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page("Beasts", body, "/beasts/index.html", depth=1))
-    print(f"  enemy sprites: {enemy_sprite_count}/{len(enemies):,} · NE bosses: {ne_with_sprite}/{len(ne_class)}")
+    write_html(out, page("Beasts", body, "/beasts/index.html", depth=1))
+    print(f"  enemy sprites: {enemy_sprite_count}/{len(enemies):,} - NE bosses: {ne_with_sprite}/{len(ne_class)}")
 
 
 # ---------- NPCs -------------------------------------------------------------
@@ -861,8 +942,8 @@ function npcFilter(input) {{
 """
     out = ROOT / "npcs" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page("NPCs", body, "/npcs/index.html", depth=1))
-    print(f"  NN: {nn_with}/{len(nn)} sprites · NM: {nm_with}/{len(nm)} sprites")
+    write_html(out, page("NPCs", body, "/npcs/index.html", depth=1))
+    print(f"  NN: {nn_with}/{len(nn)} sprites - NM: {nm_with}/{len(nm)} sprites")
 
 
 # ---------- Actions ----------------------------------------------------------
@@ -1080,7 +1161,7 @@ function actFilter(input) {{
 """
     out = ROOT / "actions" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page("Battle Actions", body, "/actions/index.html", depth=1))
+    write_html(out, page("Battle Actions", body, "/actions/index.html", depth=1))
 
 
 # ---------- About ------------------------------------------------------------
@@ -1148,7 +1229,7 @@ A static reference for the assets that shipped in <em>Tales of Eternia Online</e
 <p class="muted">Run <code>python3 build_wiki.py</code> against your own copy of the client to populate the visual assets. Tales of Eternia Online © Namco Bandai 2003–2007 / ISAO Corporation.</p>
 """
     out = ROOT / "about.html"
-    out.write_text(page("About", body, "/about.html", depth=0))
+    write_html(out, page("About", body, "/about.html", depth=0))
 
 
 # ---------- Bundles (CRSD + NNTB) -------------------------------------------
@@ -1277,8 +1358,8 @@ def build_bundles(crsd, nntb):
 """
     out = ROOT / "bundles" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page("Asset Bundles", body, "/bundles/index.html", depth=1))
-    print(f"  CRSD: {len(rows)} rows across {len([f for f in family_order if by_family.get(f)])} families · NNTB aliases: {len(nntb['non_identity_aliases']) if nntb else 0}")
+    write_html(out, page("Asset Bundles", body, "/bundles/index.html", depth=1))
+    print(f"  CRSD: {len(rows)} rows across {len([f for f in family_order if by_family.get(f)])} families - NNTB aliases: {len(nntb['non_identity_aliases']) if nntb else 0}")
 
 
 # ---------- Zones (NEW) ------------------------------------------------------
@@ -1373,7 +1454,7 @@ def build_zones(zones):
 """
     out = ROOT / "zones" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page("Zones", body, "/zones/index.html", depth=1))
+    write_html(out, page("Zones", body, "/zones/index.html", depth=1))
     print(f"  zones: {len(minimaps)} minimap cells + {len(main_zones)} .mpi maps across {len(groups)} groups")
 
 
@@ -1571,8 +1652,8 @@ function stopAll() {{
 """
     out = ROOT / "audio" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page("Audio", body, "/audio/index.html", depth=1))
-    print(f"  audio: {len(buckets['Music (MSC_)'])} music · {len(buckets['Sound effects (SE_)'])} SE · {len(buckets['Environmental (ENV_)'])} env · {len(buckets['Jingles'])} jingles  ({play_count} playable)")
+    write_html(out, page("Audio", body, "/audio/index.html", depth=1))
+    print(f"  audio: {len(buckets['Music (MSC_)'])} music - {len(buckets['Sound effects (SE_)'])} SE - {len(buckets['Environmental (ENV_)'])} env - {len(buckets['Jingles'])} jingles  ({play_count} playable)")
 
 
 # ---------- Icon copy --------------------------------------------------------
@@ -1590,7 +1671,7 @@ def copy_icons():
         shutil.rmtree(ICONS_DST)
     shutil.copytree(ICONS_SRC, ICONS_DST)
     n = sum(1 for _ in ICONS_DST.rglob("*.png"))
-    print(f"  copied {n} icons → {ICONS_DST.relative_to(ROOT)}")
+    print(f"  copied {n} icons -> {ICONS_DST.relative_to(ROOT)}")
     return n
 
 
@@ -1603,13 +1684,13 @@ def main():
     cid0, cid1, tdab, crsd, nntb, zones = load_data()
     crsd_n = len(crsd['rows']) if crsd else 0
     zones_n = len(zones['mpi_zones']) if zones else 0
-    print(f"  cid0={len(cid0)} ids · cid1={len(cid1)} ids · tdab={tdab['action_count']} actions · crsd={crsd_n} rows · zones={zones_n}")
+    print(f"  cid0={len(cid0)} ids - cid1={len(cid1)} ids - tdab={tdab['action_count']} actions - crsd={crsd_n} rows - zones={zones_n}")
 
     print("\n[1/9] copying icons…")
     copy_icons()
 
     print("[2/9] index.html")
-    (ROOT / "index.html").write_text(build_index(cid0, cid1, tdab))
+    write_html(ROOT / "index.html", build_index(cid0, cid1, tdab))
 
     print("[3/9] equipment/")
     build_equipment(cid1)
