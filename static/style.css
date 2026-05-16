@@ -162,46 +162,38 @@ strong { color: var(--parchment); font-weight: 700; }
 }
 
 .brand {
-  display: grid;
-  grid-template-columns: 42px auto;
-  grid-template-rows: auto auto;
-  column-gap: 0.72rem;
+  display: flex;
   align-items: center;
-  min-width: 250px;
+  min-width: 216px;
   color: var(--text);
 }
 
 .brand:hover { color: var(--text); }
 
-.brand-mark {
-  grid-row: 1 / 3;
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  background:
-    linear-gradient(145deg, rgba(255, 199, 83, 0.46), rgba(94, 170, 157, 0.18)),
-    rgba(255, 248, 232, 0.96);
-  color: var(--gold-bright);
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  line-height: 1;
+.brand-logo {
+  width: 178px;
+  height: 50px;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  filter: drop-shadow(0 3px 10px rgba(111, 65, 16, 0.18));
 }
 
 .brand-text {
-  font-weight: 800;
-  line-height: 1.1;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
   white-space: nowrap;
 }
 
 .tagline {
-  color: var(--text-muted);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
   white-space: nowrap;
 }
 
@@ -789,9 +781,6 @@ table.data td {
 }
 
 table.data th {
-  position: sticky;
-  top: var(--nav-h);
-  z-index: 3;
   background: rgba(235, 220, 190, 0.98);
   color: var(--gold);
   font-size: 0.72rem;
@@ -1241,19 +1230,14 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
   }
 
   .brand {
-    min-width: 128px;
-    grid-template-columns: 34px auto;
-    column-gap: 0.5rem;
+    min-width: 132px;
   }
 
-  .brand-mark {
-    width: 34px;
-    height: 34px;
-    font-size: 0.7rem;
+  .brand-logo {
+    width: 128px;
+    height: 40px;
   }
 
-  .brand-text { display: none; }
-  .tagline { font-size: 0.6rem; }
   .nav-links { display: none; }
   .search-wrap { margin-left: auto; }
   button.search-top { width: auto; gap: 0.7rem; }
@@ -1277,6 +1261,4 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
     overflow-x: auto;
     white-space: nowrap;
   }
-
-  table.data th { top: 0; }
 }

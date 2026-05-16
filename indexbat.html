@@ -7,14 +7,13 @@
 <link rel="stylesheet" href="static/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <header class="top-nav">
   <a class="brand" href="index.html">
-    <img class="brand-logo" src="static/toeo-logo.webp" alt="Tales of Eternia Online">
-    <span class="brand-text">Tales of Eternia Online</span>
-    <span class="tagline">Recovered MMO Archive</span>
+    Tales of Eternia Online
+    <span class="tagline">Asset Database</span>
   </a>
   <nav class="nav-links">
       <a class="active" href="./index.html">Home</a>
@@ -28,55 +27,15 @@
       <a class="" href="./about.html">About</a>
   </nav>
   <div class="search-wrap">
-    <button class="search-top" type="button" onclick="openPalette()" aria-label="Open search">
-      <span>Search archive</span><kbd>Ctrl K</kbd>
-    </button>
+    <input type="search" class="search-top" placeholder="Search…" oninput="globalSearch(this.value)">
   </div>
 </header>
-<div class="site-shell">
-  <aside class="sidebar">
-    <div class="sidebar-card">
-      <div class="sidebar-kicker">Recovered client index</div>
-      <details class="side-group" open>
-        <summary>Archive</summary>
-        <div class="side-links">
-          <a class="active" href="./index.html" data-palette-item="Home" data-search="Home archive section">Home</a>
-        </div>
-      </details>
-      <details class="side-group" open>
-        <summary>Catalogs</summary>
-        <div class="side-links">
-          <a class="" href="./equipment/index.html" data-palette-item="Equipment" data-search="Equipment archive section">Equipment</a><a class="" href="./beasts/index.html" data-palette-item="Beasts" data-search="Beasts archive section">Beasts</a><a class="" href="./npcs/index.html" data-palette-item="NPCs" data-search="NPCs archive section">NPCs</a><a class="" href="./actions/index.html" data-palette-item="Battle Actions" data-search="Battle Actions archive section">Battle Actions</a>
-        </div>
-      </details>
-      <details class="side-group" open>
-        <summary>Preservation</summary>
-        <div class="side-links">
-          <a class="" href="./zones/index.html" data-palette-item="Zones" data-search="Zones archive section">Zones</a><a class="" href="./audio/index.html" data-palette-item="Audio" data-search="Audio archive section">Audio</a><a class="" href="./bundles/index.html" data-palette-item="Bundles" data-search="Bundles archive section">Bundles</a>
-        </div>
-      </details>
-      <details class="side-group" open>
-        <summary>Project</summary>
-        <div class="side-links">
-          <a class="" href="./about.html" data-palette-item="About" data-search="About archive section">About</a>
-        </div>
-      </details>
-    </div>
-  </aside>
-  <main class="main">
-    <div class="breadcrumb"><a href="index.html">Archive</a><span>/</span><span>Home</span></div>
+<main class="main">
 
-<section class="hero archive-hero">
-  <div class="hero-copy">
-    <div class="subtitle">Reverse-engineered MMO preservation archive</div>
-    <h1>Tales of Eternia Online</h1>
-    <p class="lede">An offline-extracted reference for Namco's discontinued MMO: equipment, enemy classes, NPC atlases, battle-action scripts, maps, audio, and container-format research preserved from the original client.</p>
-  </div>
-  <div class="hero-ledger" aria-label="Archive status">
-    <span class="ledger-label">Recovered corpus</span>
-    <strong>7 decoded container families</strong>
-    <span>BNKD / IDTB / ICND / TDAB / CRSD / NNTB / ATDT</span>
-  </div>
+<section class="hero">
+  <h1>Tales of Eternia Online</h1>
+  <div class="subtitle">Asset Archive · A reverse-engineered reference wiki</div>
+  <p class="lede">An offline-extracted reference for Namco's discontinued MMO. Every wieldable item, every enemy class, every battle-action script, surfaced from the original client binary so the world isn't lost when the servers stay dark.</p>
 </section>
 
 
@@ -168,31 +127,31 @@
 <h2>Browse the archive</h2>
 
 <div class="cat-grid">
-  <a class="cat-card" href="equipment/index.html" data-search="equipment sword hat shield body gloves boots accessory symbolic ids icons">
+  <a class="cat-card" href="equipment/index.html">
     <span class="name">Equipment</span>
     <div class="meta">2,722 symbolic IDs · 24 categories<br>Sword, Hat, Shield, Body, Gloves, Boots, Accessory…</div>
   </a>
-  <a class="cat-card" href="beasts/index.html" data-search="beasts enemies monsters behavior taxonomy slime dragon mimic elemental">
+  <a class="cat-card" href="beasts/index.html">
     <span class="name">Beasts</span>
     <div class="meta">4,805 enemy classes · 26-class behavior taxonomy<br>SLIME, DRAGON, MIMIC, ELEMENTAL, …</div>
   </a>
-  <a class="cat-card" href="npcs/index.html" data-search="npcs nn family townfolk vendors quest-givers sprites">
+  <a class="cat-card" href="npcs/index.html">
     <span class="name">NPCs</span>
     <div class="meta">180 NPC entries · NN family<br>Townfolk, vendors, quest-givers</div>
   </a>
-  <a class="cat-card" href="actions/index.html" data-search="battle actions tdab animation sound effects movement scripts timelines">
+  <a class="cat-card" href="actions/index.html">
     <span class="name">Battle Actions</span>
     <div class="meta">1,668 actions · 6,779 parts<br>Animation tracks, sound triggers, effect refs</div>
   </a>
-  <a class="cat-card" href="zones/index.html" data-search="zones maps minimaps rasheans mints barole inferia dungeons">
+  <a class="cat-card" href="zones/index.html">
     <span class="name">Zones</span>
     <div class="meta">50 main maps · 93 minimap cells<br>Rasheans, Mints, Barole, Inferia field, dungeons…</div>
   </a>
-  <a class="cat-card" href="audio/index.html" data-search="audio music sound effects environmentals tracks">
+  <a class="cat-card" href="audio/index.html">
     <span class="name">Audio</span>
     <div class="meta">Music · sound effects · environmentals<br>Track names that double as zone-name index</div>
   </a>
-  <a class="cat-card" href="bundles/index.html" data-search="asset bundles crsd nntb registrations resource aliases atd cpd">
+  <a class="cat-card" href="bundles/index.html">
     <span class="name">Asset Bundles</span>
     <div class="meta">460 entity registrations · CRSD<br>id → name → .atd / .cpd resource files</div>
   </a>
@@ -220,76 +179,21 @@
   </tbody>
 </table>
 
-    <footer class="site">
-      <p>Reverse-engineered asset archive of <em>Tales of Eternia Online</em> (Namco / Sigma, 2003-2007). Static structural data extracted from the original client; no copyrighted asset binaries are redistributed here. Numeric gameplay values (HP, levels, drops, XP) were server-authoritative and lost when Namco's servers shut down; they are not part of this archive.</p>
-      <p class="small muted">Generated by <code>build_wiki.py</code> · 7 container formats decoded: BNKD · IDTB · ICND · TDAB · CRSD · NNTB · ATDT/PKDF/CPDT</p>
-    </footer>
-  </main>
-</div>
-<div class="palette-backdrop" id="paletteBackdrop" hidden onclick="closePalette()"></div>
-<section class="command-palette" id="commandPalette" hidden aria-label="Archive search">
-  <div class="palette-panel">
-    <div class="palette-field">
-      <span class="palette-icon">⌕</span>
-      <input id="paletteInput" type="search" placeholder="Search current page and archive sections..." autocomplete="off" oninput="paletteSearch(this.value)">
-      <button type="button" onclick="closePalette()" aria-label="Close search">Esc</button>
-    </div>
-    <div class="palette-results" id="paletteResults"></div>
-  </div>
-</section>
+  <footer class="site">
+    <p>Reverse-engineered asset archive of <em>Tales of Eternia Online</em> (Namco / Sigma, 2003–2007). Static structural data extracted from the original client; no copyrighted asset binaries are redistributed here. Numeric gameplay values (HP, levels, drops, XP) were server-authoritative and lost when Namco's servers shut down — they are not part of this archive.</p>
+    <p class="small muted">Generated by <code>build_wiki.py</code> · 7 container formats decoded: BNKD · IDTB · ICND · TDAB · CRSD · NNTB · ATDT/PKDF/CPDT</p>
+  </footer>
+</main>
 <script>
-const archiveLinks = [{"href": "./index.html", "label": "Home"}, {"href": "./equipment/index.html", "label": "Equipment"}, {"href": "./beasts/index.html", "label": "Beasts"}, {"href": "./npcs/index.html", "label": "NPCs"}, {"href": "./actions/index.html", "label": "Battle Actions"}, {"href": "./zones/index.html", "label": "Zones"}, {"href": "./audio/index.html", "label": "Audio"}, {"href": "./bundles/index.html", "label": "Bundles"}, {"href": "./about.html", "label": "About"}];
-
 function globalSearch(q) {
   q = q.trim().toLowerCase();
-  const targets = document.querySelectorAll('[data-search], [data-name], [data-id]');
+  // simple in-page text-content filter: hide cards whose data attributes / text don't match
+  const targets = document.querySelectorAll('[data-search]');
   for (const t of targets) {
-    const haystack = (t.dataset.search || t.dataset.name || '' + (t.dataset.id || '') || t.textContent || '').toLowerCase();
+    const haystack = (t.dataset.search || t.textContent || '').toLowerCase();
     t.style.display = (!q || haystack.includes(q)) ? '' : 'none';
   }
 }
-
-function openPalette() {
-  document.getElementById('paletteBackdrop').hidden = false;
-  document.getElementById('commandPalette').hidden = false;
-  const input = document.getElementById('paletteInput');
-  input.value = '';
-  paletteSearch('');
-  input.focus();
-}
-
-function closePalette() {
-  document.getElementById('paletteBackdrop').hidden = true;
-  document.getElementById('commandPalette').hidden = true;
-}
-
-function paletteSearch(q) {
-  q = q.trim().toLowerCase();
-  globalSearch(q);
-  const pageItems = Array.from(document.querySelectorAll('.cat-card, .npc-card, .icon-cell, .action-card, .zone-card, .audio-cell'))
-    .map((el) => {
-      const title = (el.querySelector('.name, .npc-name, .id, .zone-id, .a-name') || el).textContent.trim();
-      const meta = (el.querySelector('.meta, .npc-id, .zone-group, .a-sub') || { textContent: '' }).textContent.trim();
-      const text = (el.dataset.search || el.dataset.name || el.textContent || '').trim();
-      return { title, meta, text };
-    })
-    .filter((item) => !q || item.text.toLowerCase().includes(q))
-    .slice(0, 6);
-  const linkItems = archiveLinks
-    .filter((item) => !q || item.label.toLowerCase().includes(q))
-    .map((item) => `<a class="palette-result" href="${item.href}"><span>${item.label}</span><small>Archive section</small></a>`);
-  const localItems = pageItems
-    .map((item) => `<button class="palette-result" type="button" onclick="closePalette()"><span>${item.title}</span><small>${item.meta || 'Current page match'}</small></button>`);
-  document.getElementById('paletteResults').innerHTML = [...linkItems, ...localItems].join('') || '<div class="palette-empty">No matches in this page.</div>';
-}
-
-document.addEventListener('keydown', (ev) => {
-  if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'k') {
-    ev.preventDefault();
-    openPalette();
-  }
-  if (ev.key === 'Escape') closePalette();
-});
 </script>
 </body>
 </html>
