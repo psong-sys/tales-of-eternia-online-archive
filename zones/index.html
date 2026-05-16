@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zones · TOEO Asset Wiki</title>
+<link rel="stylesheet" href="../static/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="top-nav">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark">TOEO</span>
+    <span class="brand-text">Tales of Eternia Online</span>
+    <span class="tagline">Recovered MMO Archive</span>
+  </a>
+  <nav class="nav-links">
+      <a class="" href="../index.html">Home</a>
+      <a class="" href="../equipment/index.html">Equipment</a>
+      <a class="" href="../beasts/index.html">Beasts</a>
+      <a class="" href="../npcs/index.html">NPCs</a>
+      <a class="" href="../actions/index.html">Battle Actions</a>
+      <a class="active" href="../zones/index.html">Zones</a>
+      <a class="" href="../audio/index.html">Audio</a>
+      <a class="" href="../bundles/index.html">Bundles</a>
+      <a class="" href="../about.html">About</a>
+  </nav>
+  <div class="search-wrap">
+    <button class="search-top" type="button" onclick="openPalette()" aria-label="Open search">
+      <span>Search archive</span><kbd>Ctrl K</kbd>
+    </button>
+  </div>
+</header>
+<div class="site-shell">
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-kicker">Recovered client index</div>
+      <details class="side-group" open>
+        <summary>Archive</summary>
+        <div class="side-links">
+          <a class="" href="../index.html" data-palette-item="Home" data-search="Home archive section">Home</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Catalogs</summary>
+        <div class="side-links">
+          <a class="" href="../equipment/index.html" data-palette-item="Equipment" data-search="Equipment archive section">Equipment</a><a class="" href="../beasts/index.html" data-palette-item="Beasts" data-search="Beasts archive section">Beasts</a><a class="" href="../npcs/index.html" data-palette-item="NPCs" data-search="NPCs archive section">NPCs</a><a class="" href="../actions/index.html" data-palette-item="Battle Actions" data-search="Battle Actions archive section">Battle Actions</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Preservation</summary>
+        <div class="side-links">
+          <a class="active" href="../zones/index.html" data-palette-item="Zones" data-search="Zones archive section">Zones</a><a class="" href="../audio/index.html" data-palette-item="Audio" data-search="Audio archive section">Audio</a><a class="" href="../bundles/index.html" data-palette-item="Bundles" data-search="Bundles archive section">Bundles</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Project</summary>
+        <div class="side-links">
+          <a class="" href="../about.html" data-palette-item="About" data-search="About archive section">About</a>
+        </div>
+      </details>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="breadcrumb"><a href="../index.html">Archive</a><span>/</span><span>Zones</span></div>
+
+<h1>Zones</h1>
+<p class="dim">Every world location TOEO shipped with: <strong>93 minimap cells</strong> (256×256 BNKD-extracted PNGs from <code>map/minimap/*.bnd</code>) plus <strong>50 main map files</strong> (<code>.mpi</code> zone-level geometry). Minimap cells are the visual atlas; the <code>.mpi</code> files contain the playable geometry.</p>
+
+<div class="stat-grid">
+  <div class="stat"><span class="num">93</span><span class="label">Minimap cells</span></div>
+  <div class="stat"><span class="num">50</span><span class="label">Main map files</span></div>
+  <div class="stat"><span class="num">17</span><span class="label">Region groups</span></div>
+  <div class="stat"><span class="num">17</span><span class="label">Named places</span></div>
+</div>
+
+<div class="note">
+  <strong>About zone identity.</strong> Numeric IDs (e.g. <code>1120101</code>) follow Sigma's internal region-encoding scheme. The disc shipped no name table linking IDs to playable place names — that mapping requires play-testing the live regions. Below, zones are grouped by their 3-digit prefix as a best-guess continent / region cluster.
+</div>
+
+
+<h2>Recovered place names</h2>
+<div class="note">
+  Each music file in <code>resource/MSC_*.dat</code> is named for the zone or scene where it plays. Cross-referenced against <em>Tales of Eternia</em> lore (the parallel worlds <strong>Inferia</strong> and <strong>Celestia</strong>), these names map onto the Tales franchise's familiar geography. The disc shipped no table linking these names to numeric zone IDs — that mapping requires play-testing.
+</div>
+<ul style="columns:2; column-gap:2rem; max-width:52em; margin-top:.5rem;">
+<li>Rasheans (starting town)</li><li>Mints (town)</li><li>Mt. Mints (mountain area)</li><li>Barole (town)</li><li>Morul</li><li>Inferia overworld field</li><li>Inferia Castle</li><li>Farrow&#x27;s Ruins</li><li>Dragon Rock Mountain</li><li>Temptation Forest</li><li>Watie Stream</li><li>Regulus Temple</li><li>Seyfert Church</li><li>Lem character theme zone</li><li>Bar interior</li><li>Port</li><li>Aboard Ship</li>
+</ul>
+
+<h2>Region atlas <span class="muted" style="font-size:.7em">all minimap cells · grouped by region prefix</span></h2>
+
+<h3>Battle scene 705 <span class="muted small">3 minimap cells</span></h3>
+
+<div class="zone-grid">
+        <div class="zone-card" data-search="7050101 Battle scene 705">
+          <div class="map-frame"><img src="../static/minimaps/7050101.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">7050101</div>
+            <div class="zone-group">Battle scene 705</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="7050102 Battle scene 705">
+          <div class="map-frame"><img src="../static/minimaps/7050102.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">7050102</div>
+            <div class="zone-group">Battle scene 705</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="7050201 Battle scene 705">
+          <div class="map-frame"><img src="../static/minimaps/7050201.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">7050201</div>
+            <div class="zone-group">Battle scene 705</div>
+          </div>
+        </div></div>
+<h3>Celestia A <span class="muted small">4 minimap cells · 8 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1210101</code> <code>1210102</code> <code>1210201</code> <code>1210204</code> <code>1210301</code> <code>1210501</code> <code>1210601</code> <code>1210603</code></p>
+<div class="zone-grid">
+        <div class="zone-card" data-search="1210501 Celestia A">
+          <div class="map-frame"><img src="../static/minimaps/1210501.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1210501</div>
+            <div class="zone-group">Celestia A</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1210502 Celestia A">
+          <div class="map-frame"><img src="../static/minimaps/1210502.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1210502</div>
+            <div class="zone-group">Celestia A</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1210503 Celestia A">
+          <div class="map-frame"><img src="../static/minimaps/1210503.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1210503</div>
+            <div class="zone-group">Celestia A</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1210601 Celestia A">
+          <div class="map-frame"><img src="../static/minimaps/1210601.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1210601</div>
+            <div class="zone-group">Celestia A</div>
+          </div>
+        </div></div>
+<h3>Celestia B <span class="muted small">19 minimap cells · 2 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1220101</code> <code>1220106</code></p>
+<div class="zone-grid">
+        <div class="zone-card" data-search="1220101 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220101.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220101</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220102 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220102.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220102</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220103 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220103.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220103</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220104 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220104.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220104</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220105 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220105.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220105</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220106 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220106.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220106</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220107 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220107.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220107</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220108 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220108.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220108</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220109 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220109.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220109</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220110 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220110.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220110</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220111 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220111.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220111</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220112 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220112.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220112</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220113 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220113.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220113</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220114 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220114.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220114</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220115 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220115.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220115</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220116 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220116.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220116</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220117 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220117.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220117</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220118 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220118.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220118</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1220119 Celestia B">
+          <div class="map-frame"><img src="../static/minimaps/1220119.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1220119</div>
+            <div class="zone-group">Celestia B</div>
+          </div>
+        </div></div>
+<h3>Celestia C <span class="muted small">0 minimap cells · 1 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1230101</code></p>
+<div class="zone-grid"></div>
+<h3>Celestia D <span class="muted small">2 minimap cells · 2 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1240101</code> <code>1240102</code></p>
+<div class="zone-grid">
+        <div class="zone-card" data-search="1240101 Celestia D">
+          <div class="map-frame"><img src="../static/minimaps/1240101.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1240101</div>
+            <div class="zone-group">Celestia D</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1240102 Celestia D">
+          <div class="map-frame"><img src="../static/minimaps/1240102.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1240102</div>
+            <div class="zone-group">Celestia D</div>
+          </div>
+        </div></div>
+<h3>Dungeon A <span class="muted small">3 minimap cells · 4 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1410101</code> <code>1410102</code> <code>1410103</code> <code>1410201</code></p>
+<div class="zone-grid">
+        <div class="zone-card" data-search="1410201 Dungeon A">
+          <div class="map-frame"><img src="../static/minimaps/1410201.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1410201</div>
+            <div class="zone-group">Dungeon A</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1410202 Dungeon A">
+          <div class="map-frame"><img src="../static/minimaps/1410202.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1410202</div>
+            <div class="zone-group">Dungeon A</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1410203 Dungeon A">
+          <div class="map-frame"><img src="../static/minimaps/1410203.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1410203</div>
+            <div class="zone-group">Dungeon A</div>
+          </div>
+        </div></div>
+<h3>Dungeon B <span class="muted small">25 minimap cells · 1 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1420001</code></p>
+<div class="zone-grid">
+        <div class="zone-card" data-search="1420101 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420101.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420101</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420102 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420102.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420102</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420103 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420103.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420103</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420104 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420104.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420104</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420105 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420105.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420105</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420201 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420201.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420201</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420202 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420202.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420202</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420203 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420203.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420203</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420204 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420204.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420204</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420205 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420205.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420205</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420206 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420206.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420206</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420301 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420301.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420301</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420302 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420302.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420302</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420303 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420303.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420303</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420304 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420304.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420304</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420305 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420305.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420305</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420306 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420306.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420306</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420401 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420401.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420401</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420402 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420402.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420402</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420403 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420403.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420403</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420404 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420404.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420404</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420405 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420405.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420405</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420406 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420406.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420406</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420407 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420407.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420407</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1420408 Dungeon B">
+          <div class="map-frame"><img src="../static/minimaps/1420408.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1420408</div>
+            <div class="zone-group">Dungeon B</div>
+          </div>
+        </div></div>
+<h3>Dungeon C <span class="muted small">0 minimap cells · 2 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1430100</code> <code>1430123</code></p>
+<div class="zone-grid"></div>
+<h3>Dungeon D <span class="muted small">4 minimap cells · 1 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1440100</code></p>
+<div class="zone-grid">
+        <div class="zone-card" data-search="1440101 Dungeon D">
+          <div class="map-frame"><img src="../static/minimaps/1440101.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1440101</div>
+            <div class="zone-group">Dungeon D</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1440102 Dungeon D">
+          <div class="map-frame"><img src="../static/minimaps/1440102.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1440102</div>
+            <div class="zone-group">Dungeon D</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1440103 Dungeon D">
+          <div class="map-frame"><img src="../static/minimaps/1440103.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1440103</div>
+            <div class="zone-group">Dungeon D</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1440201 Dungeon D">
+          <div class="map-frame"><img src="../static/minimaps/1440201.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1440201</div>
+            <div class="zone-group">Dungeon D</div>
+          </div>
+        </div></div>
+<h3>Inferia A <span class="muted small">0 minimap cells · 6 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1110101</code> <code>1110201</code> <code>1110301</code> <code>1110311</code> <code>1110321</code> <code>1110400</code></p>
+<div class="zone-grid"></div>
+<h3>Inferia B <span class="muted small">17 minimap cells · 4 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1120107</code> <code>1120108</code> <code>1120110</code> <code>1120114</code></p>
+<div class="zone-grid">
+        <div class="zone-card" data-search="1120101 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120101.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120101</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120102 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120102.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120102</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120103 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120103.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120103</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120104 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120104.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120104</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120105 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120105.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120105</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120106 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120106.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120106</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120107 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120107.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120107</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120108 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120108.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120108</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120109 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120109.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120109</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120110 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120110.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120110</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120111 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120111.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120111</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120112 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120112.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120112</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120113 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120113.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120113</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120114 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120114.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120114</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120115 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120115.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120115</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120116 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120116.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120116</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1120117 Inferia B">
+          <div class="map-frame"><img src="../static/minimaps/1120117.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1120117</div>
+            <div class="zone-group">Inferia B</div>
+          </div>
+        </div></div>
+<h3>Inferia C <span class="muted small">0 minimap cells · 11 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1130100</code> <code>1130201</code> <code>1130202</code> <code>1130203</code> <code>1130204</code> <code>1130205</code> <code>1130206</code> <code>1130207</code> <code>1130301</code> <code>1130401</code> <code>1130601</code></p>
+<div class="zone-grid"></div>
+<h3>Inferia D <span class="muted small">9 minimap cells · 3 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1140100</code> <code>1140200</code> <code>1140301</code></p>
+<div class="zone-grid">
+        <div class="zone-card" data-search="1140101 Inferia D">
+          <div class="map-frame"><img src="../static/minimaps/1140101.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1140101</div>
+            <div class="zone-group">Inferia D</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1140102 Inferia D">
+          <div class="map-frame"><img src="../static/minimaps/1140102.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1140102</div>
+            <div class="zone-group">Inferia D</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1140103 Inferia D">
+          <div class="map-frame"><img src="../static/minimaps/1140103.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1140103</div>
+            <div class="zone-group">Inferia D</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1140201 Inferia D">
+          <div class="map-frame"><img src="../static/minimaps/1140201.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1140201</div>
+            <div class="zone-group">Inferia D</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1140202 Inferia D">
+          <div class="map-frame"><img src="../static/minimaps/1140202.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1140202</div>
+            <div class="zone-group">Inferia D</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1140301 Inferia D">
+          <div class="map-frame"><img src="../static/minimaps/1140301.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1140301</div>
+            <div class="zone-group">Inferia D</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1140302 Inferia D">
+          <div class="map-frame"><img src="../static/minimaps/1140302.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1140302</div>
+            <div class="zone-group">Inferia D</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1140303 Inferia D">
+          <div class="map-frame"><img src="../static/minimaps/1140303.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1140303</div>
+            <div class="zone-group">Inferia D</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1140304 Inferia D">
+          <div class="map-frame"><img src="../static/minimaps/1140304.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1140304</div>
+            <div class="zone-group">Inferia D</div>
+          </div>
+        </div></div>
+<h3>Special 800 <span class="muted small">0 minimap cells · 1 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>8000001</code></p>
+<div class="zone-grid"></div>
+<h3>Special 900 <span class="muted small">0 minimap cells · 1 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>9000000</code></p>
+<div class="zone-grid"></div>
+<h3>Special area E <span class="muted small">0 minimap cells · 1 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1620101</code></p>
+<div class="zone-grid"></div>
+<h3>Special area F <span class="muted small">0 minimap cells · 1 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1730100</code></p>
+<div class="zone-grid"></div>
+<h3>Special area G <span class="muted small">7 minimap cells · 1 main maps</span></h3>
+<p class="dim small">Associated <code>.mpi</code> main maps in this region: <code>1740101</code></p>
+<div class="zone-grid">
+        <div class="zone-card" data-search="1740200 Special area G">
+          <div class="map-frame"><img src="../static/minimaps/1740200.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1740200</div>
+            <div class="zone-group">Special area G</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1740211 Special area G">
+          <div class="map-frame"><img src="../static/minimaps/1740211.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1740211</div>
+            <div class="zone-group">Special area G</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1740212 Special area G">
+          <div class="map-frame"><img src="../static/minimaps/1740212.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1740212</div>
+            <div class="zone-group">Special area G</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1740221 Special area G">
+          <div class="map-frame"><img src="../static/minimaps/1740221.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1740221</div>
+            <div class="zone-group">Special area G</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1740222 Special area G">
+          <div class="map-frame"><img src="../static/minimaps/1740222.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1740222</div>
+            <div class="zone-group">Special area G</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1740241 Special area G">
+          <div class="map-frame"><img src="../static/minimaps/1740241.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1740241</div>
+            <div class="zone-group">Special area G</div>
+          </div>
+        </div>
+        <div class="zone-card" data-search="1740242 Special area G">
+          <div class="map-frame"><img src="../static/minimaps/1740242.png" alt="" loading="lazy"></div>
+          <div class="zone-meta">
+            <div class="zone-id">1740242</div>
+            <div class="zone-group">Special area G</div>
+          </div>
+        </div></div>
+
+    <footer class="site">
+      <p>Reverse-engineered asset archive of <em>Tales of Eternia Online</em> (Namco / Sigma, 2003-2007). Static structural data extracted from the original client; no copyrighted asset binaries are redistributed here. Numeric gameplay values (HP, levels, drops, XP) were server-authoritative and lost when Namco's servers shut down; they are not part of this archive.</p>
+      <p class="small muted">Generated by <code>build_wiki.py</code> · 7 container formats decoded: BNKD · IDTB · ICND · TDAB · CRSD · NNTB · ATDT/PKDF/CPDT</p>
+    </footer>
+  </main>
+</div>
+<div class="palette-backdrop" id="paletteBackdrop" hidden onclick="closePalette()"></div>
+<section class="command-palette" id="commandPalette" hidden aria-label="Archive search">
+  <div class="palette-panel">
+    <div class="palette-field">
+      <span class="palette-icon">⌕</span>
+      <input id="paletteInput" type="search" placeholder="Search current page and archive sections..." autocomplete="off" oninput="paletteSearch(this.value)">
+      <button type="button" onclick="closePalette()" aria-label="Close search">Esc</button>
+    </div>
+    <div class="palette-results" id="paletteResults"></div>
+  </div>
+</section>
+<script>
+const archiveLinks = [{"href": "../index.html", "label": "Home"}, {"href": "../equipment/index.html", "label": "Equipment"}, {"href": "../beasts/index.html", "label": "Beasts"}, {"href": "../npcs/index.html", "label": "NPCs"}, {"href": "../actions/index.html", "label": "Battle Actions"}, {"href": "../zones/index.html", "label": "Zones"}, {"href": "../audio/index.html", "label": "Audio"}, {"href": "../bundles/index.html", "label": "Bundles"}, {"href": "../about.html", "label": "About"}];
+
+function globalSearch(q) {
+  q = q.trim().toLowerCase();
+  const targets = document.querySelectorAll('[data-search], [data-name], [data-id]');
+  for (const t of targets) {
+    const haystack = (t.dataset.search || t.dataset.name || '' + (t.dataset.id || '') || t.textContent || '').toLowerCase();
+    t.style.display = (!q || haystack.includes(q)) ? '' : 'none';
+  }
+}
+
+function openPalette() {
+  document.getElementById('paletteBackdrop').hidden = false;
+  document.getElementById('commandPalette').hidden = false;
+  const input = document.getElementById('paletteInput');
+  input.value = '';
+  paletteSearch('');
+  input.focus();
+}
+
+function closePalette() {
+  document.getElementById('paletteBackdrop').hidden = true;
+  document.getElementById('commandPalette').hidden = true;
+}
+
+function paletteSearch(q) {
+  q = q.trim().toLowerCase();
+  globalSearch(q);
+  const pageItems = Array.from(document.querySelectorAll('.cat-card, .npc-card, .icon-cell, .action-card, .zone-card, .audio-cell'))
+    .map((el) => {
+      const title = (el.querySelector('.name, .npc-name, .id, .zone-id, .a-name') || el).textContent.trim();
+      const meta = (el.querySelector('.meta, .npc-id, .zone-group, .a-sub') || { textContent: '' }).textContent.trim();
+      const text = (el.dataset.search || el.dataset.name || el.textContent || '').trim();
+      return { title, meta, text };
+    })
+    .filter((item) => !q || item.text.toLowerCase().includes(q))
+    .slice(0, 6);
+  const linkItems = archiveLinks
+    .filter((item) => !q || item.label.toLowerCase().includes(q))
+    .map((item) => `<a class="palette-result" href="${item.href}"><span>${item.label}</span><small>Archive section</small></a>`);
+  const localItems = pageItems
+    .map((item) => `<button class="palette-result" type="button" onclick="closePalette()"><span>${item.title}</span><small>${item.meta || 'Current page match'}</small></button>`);
+  document.getElementById('paletteResults').innerHTML = [...linkItems, ...localItems].join('') || '<div class="palette-empty">No matches in this page.</div>';
+}
+
+document.addEventListener('keydown', (ev) => {
+  if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'k') {
+    ev.preventDefault();
+    openPalette();
+  }
+  if (ev.key === 'Escape') closePalette();
+});
+</script>
+</body>
+</html>

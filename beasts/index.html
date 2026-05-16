@@ -1,0 +1,1726 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beasts · TOEO Asset Wiki</title>
+<link rel="stylesheet" href="../static/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="top-nav">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark">TOEO</span>
+    <span class="brand-text">Tales of Eternia Online</span>
+    <span class="tagline">Recovered MMO Archive</span>
+  </a>
+  <nav class="nav-links">
+      <a class="" href="../index.html">Home</a>
+      <a class="" href="../equipment/index.html">Equipment</a>
+      <a class="active" href="../beasts/index.html">Beasts</a>
+      <a class="" href="../npcs/index.html">NPCs</a>
+      <a class="" href="../actions/index.html">Battle Actions</a>
+      <a class="" href="../zones/index.html">Zones</a>
+      <a class="" href="../audio/index.html">Audio</a>
+      <a class="" href="../bundles/index.html">Bundles</a>
+      <a class="" href="../about.html">About</a>
+  </nav>
+  <div class="search-wrap">
+    <button class="search-top" type="button" onclick="openPalette()" aria-label="Open search">
+      <span>Search archive</span><kbd>Ctrl K</kbd>
+    </button>
+  </div>
+</header>
+<div class="site-shell">
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-kicker">Recovered client index</div>
+      <details class="side-group" open>
+        <summary>Archive</summary>
+        <div class="side-links">
+          <a class="" href="../index.html" data-palette-item="Home" data-search="Home archive section">Home</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Catalogs</summary>
+        <div class="side-links">
+          <a class="" href="../equipment/index.html" data-palette-item="Equipment" data-search="Equipment archive section">Equipment</a><a class="active" href="../beasts/index.html" data-palette-item="Beasts" data-search="Beasts archive section">Beasts</a><a class="" href="../npcs/index.html" data-palette-item="NPCs" data-search="NPCs archive section">NPCs</a><a class="" href="../actions/index.html" data-palette-item="Battle Actions" data-search="Battle Actions archive section">Battle Actions</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Preservation</summary>
+        <div class="side-links">
+          <a class="" href="../zones/index.html" data-palette-item="Zones" data-search="Zones archive section">Zones</a><a class="" href="../audio/index.html" data-palette-item="Audio" data-search="Audio archive section">Audio</a><a class="" href="../bundles/index.html" data-palette-item="Bundles" data-search="Bundles archive section">Bundles</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Project</summary>
+        <div class="side-links">
+          <a class="" href="../about.html" data-palette-item="About" data-search="About archive section">About</a>
+        </div>
+      </details>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="breadcrumb"><a href="../index.html">Archive</a><span>/</span><span>Beasts</span></div>
+
+<h1>Beasts</h1>
+<p class="dim">5,097 entries from <code>cid0.idt</code>. The catalog includes the engine's 26-class behavior taxonomy, every enemy class with an authored sprite atlas, and the named-entity (NE) story bosses.</p>
+
+<div class="stat-grid">
+  <div class="stat"><span class="num">4,804</span><span class="label">Enemy slots reserved</span></div>
+  <div class="stat"><span class="num">155</span><span class="label">Enemy sprites authored</span></div>
+  <div class="stat"><span class="num">3</span><span class="label">Named entities</span></div>
+  <div class="stat"><span class="num">26</span><span class="label">Behavior classes</span></div>
+</div>
+
+<h2>Named-entity bosses <span class="muted" style="font-size:.7em">2 of 3 with sprite</span></h2>
+<p class="dim">Storyline characters with full multi-pose battle rigs. Sprites are sourced from <code>M_NE###</code> (full pose sheet) or <code>B_NE###_01</code> (battle frames) bundles.</p>
+<div class="npc-grid">
+
+        <div class="npc-card" data-name="NE001" data-id="5000">
+          <a href="../static/sprites/ne/NE001.png" target="_blank"><img src="../static/sprites/ne/NE001.png" alt="NE001 sprite" loading="lazy"></a>
+          <div class="npc-meta">
+            <span class="npc-name mono">NE001</span>
+            <span class="npc-id mono dim">id 5000</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="NE002" data-id="5001">
+          <div class="no-sprite">no sprite</div>
+          <div class="npc-meta">
+            <span class="npc-name mono">NE002</span>
+            <span class="npc-id mono dim">id 5001</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="NE003" data-id="5002">
+          <a href="../static/sprites/ne/NE003.png" target="_blank"><img src="../static/sprites/ne/NE003.png" alt="NE003 sprite" loading="lazy"></a>
+          <div class="npc-meta">
+            <span class="npc-name mono">NE003</span>
+            <span class="npc-id mono dim">id 5002</span>
+          </div>
+        </div>
+</div>
+
+<h2>Behavior taxonomy <span class="muted" style="font-size:.7em">26 classes</span></h2>
+<p class="dim">Hardcoded class-name strings at IDs 1200–1225 in <code>cid0.idt</code>. The server's spawn/pathing/attack logic keys on these labels — they decide whether something walks on legs, slithers, swims, or floats.</p>
+<div class="cat-grid">
+  
+        <div class="cat-card">
+          <span class="name">SLIME</span>
+          <div class="meta">id 1200 · Slime</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">MAGICBOT</span>
+          <div class="meta">id 1201 · Constructed magic-driven foe</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">GHOST</span>
+          <div class="meta">id 1202 · Ghost</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">ZOMBIE</span>
+          <div class="meta">id 1203 · Zombie</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">TWOWALKBEAST</span>
+          <div class="meta">id 1204 · Bipedal beast</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">FOURWALKBEAST</span>
+          <div class="meta">id 1205 · Quadruped beast</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">SUBSPECIES_MAN</span>
+          <div class="meta">id 1206 · Humanoid subspecies</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">TREE</span>
+          <div class="meta">id 1207 · Tree</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">MUSHROOM</span>
+          <div class="meta">id 1208 · Mushroom</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">LARGEPLANT</span>
+          <div class="meta">id 1209 · Large plant</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">MAGE</span>
+          <div class="meta">id 1210 · Mage</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">WAR</span>
+          <div class="meta">id 1211 · War</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">SPECIALTYPE</span>
+          <div class="meta">id 1212 · Specialtype</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">HITODE</span>
+          <div class="meta">id 1213 · Starfish</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">KAME</span>
+          <div class="meta">id 1214 · Turtle</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">TAKO</span>
+          <div class="meta">id 1215 · Octopus</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">CATERPILLAR</span>
+          <div class="meta">id 1216 · Caterpillar</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">INSECTSMALL</span>
+          <div class="meta">id 1217 · Small insect</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">INSECTLARGE</span>
+          <div class="meta">id 1218 · Large insect</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">INSECTFLY</span>
+          <div class="meta">id 1219 · Flying insect</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">BIRD</span>
+          <div class="meta">id 1220 · Bird</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">DRAGON</span>
+          <div class="meta">id 1221 · Dragon</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">GAS</span>
+          <div class="meta">id 1222 · Gas</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">MIMIC</span>
+          <div class="meta">id 1223 · Mimic (treasure ambush)</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">ELEMENTAL</span>
+          <div class="meta">id 1224 · Elemental</div>
+        </div>
+        <div class="cat-card">
+          <span class="name">TRANSPARENT</span>
+          <div class="meta">id 1225 · Transparent</div>
+        </div>
+</div>
+
+<h2>Enemy classes <span class="muted" style="font-size:.7em">155 authored sprites of 4,804 reserved slots</span></h2>
+<p class="dim">Enemy bundles use the naming pattern <code>e&lt;XXX&gt;_b.bnd</code>. Letter-suffix variants (E000A, E000B, …) share the same atlas — they're palette/equipment swaps the engine renders at runtime.</p>
+
+<div class="search">
+  <input type="text" placeholder="Filter by ID or symbolic name…" oninput="beastFilter(this)">
+</div>
+<div class="npc-grid" id="enemy-grid">
+
+        <div class="npc-card" data-name="E000" data-id="100">
+          <a href="../static/sprites/e/E000.png" target="_blank">
+            <img src="../static/sprites/e/E000.png" alt="E000 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E000</span>
+            <span class="npc-id mono dim">id 100</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E000A" data-id="101">
+          <a href="../static/sprites/e/E000A.png" target="_blank">
+            <img src="../static/sprites/e/E000A.png" alt="E000A sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E000A</span>
+            <span class="npc-id mono dim">id 101</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E001" data-id="102">
+          <a href="../static/sprites/e/E001.png" target="_blank">
+            <img src="../static/sprites/e/E001.png" alt="E001 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E001</span>
+            <span class="npc-id mono dim">id 102</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E003" data-id="104">
+          <a href="../static/sprites/e/E003.png" target="_blank">
+            <img src="../static/sprites/e/E003.png" alt="E003 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E003</span>
+            <span class="npc-id mono dim">id 104</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E004" data-id="105">
+          <a href="../static/sprites/e/E004.png" target="_blank">
+            <img src="../static/sprites/e/E004.png" alt="E004 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E004</span>
+            <span class="npc-id mono dim">id 105</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E005" data-id="106">
+          <a href="../static/sprites/e/E005.png" target="_blank">
+            <img src="../static/sprites/e/E005.png" alt="E005 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E005</span>
+            <span class="npc-id mono dim">id 106</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E007" data-id="108">
+          <a href="../static/sprites/e/E007.png" target="_blank">
+            <img src="../static/sprites/e/E007.png" alt="E007 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E007</span>
+            <span class="npc-id mono dim">id 108</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E009" data-id="110">
+          <a href="../static/sprites/e/E009.png" target="_blank">
+            <img src="../static/sprites/e/E009.png" alt="E009 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E009</span>
+            <span class="npc-id mono dim">id 110</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E010" data-id="111">
+          <a href="../static/sprites/e/E010.png" target="_blank">
+            <img src="../static/sprites/e/E010.png" alt="E010 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E010</span>
+            <span class="npc-id mono dim">id 111</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E011" data-id="112">
+          <a href="../static/sprites/e/E011.png" target="_blank">
+            <img src="../static/sprites/e/E011.png" alt="E011 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E011</span>
+            <span class="npc-id mono dim">id 112</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E012" data-id="113">
+          <a href="../static/sprites/e/E012.png" target="_blank">
+            <img src="../static/sprites/e/E012.png" alt="E012 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E012</span>
+            <span class="npc-id mono dim">id 113</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E013" data-id="114">
+          <a href="../static/sprites/e/E013.png" target="_blank">
+            <img src="../static/sprites/e/E013.png" alt="E013 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E013</span>
+            <span class="npc-id mono dim">id 114</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E014" data-id="115">
+          <a href="../static/sprites/e/E014.png" target="_blank">
+            <img src="../static/sprites/e/E014.png" alt="E014 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E014</span>
+            <span class="npc-id mono dim">id 115</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E015" data-id="116">
+          <a href="../static/sprites/e/E015.png" target="_blank">
+            <img src="../static/sprites/e/E015.png" alt="E015 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E015</span>
+            <span class="npc-id mono dim">id 116</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E016" data-id="117">
+          <a href="../static/sprites/e/E016.png" target="_blank">
+            <img src="../static/sprites/e/E016.png" alt="E016 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E016</span>
+            <span class="npc-id mono dim">id 117</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E017" data-id="118">
+          <a href="../static/sprites/e/E017.png" target="_blank">
+            <img src="../static/sprites/e/E017.png" alt="E017 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E017</span>
+            <span class="npc-id mono dim">id 118</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E018" data-id="119">
+          <a href="../static/sprites/e/E018.png" target="_blank">
+            <img src="../static/sprites/e/E018.png" alt="E018 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E018</span>
+            <span class="npc-id mono dim">id 119</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E019" data-id="120">
+          <a href="../static/sprites/e/E019.png" target="_blank">
+            <img src="../static/sprites/e/E019.png" alt="E019 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E019</span>
+            <span class="npc-id mono dim">id 120</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E020" data-id="121">
+          <a href="../static/sprites/e/E020.png" target="_blank">
+            <img src="../static/sprites/e/E020.png" alt="E020 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E020</span>
+            <span class="npc-id mono dim">id 121</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E023" data-id="124">
+          <a href="../static/sprites/e/E023.png" target="_blank">
+            <img src="../static/sprites/e/E023.png" alt="E023 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E023</span>
+            <span class="npc-id mono dim">id 124</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E025" data-id="126">
+          <a href="../static/sprites/e/E025.png" target="_blank">
+            <img src="../static/sprites/e/E025.png" alt="E025 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E025</span>
+            <span class="npc-id mono dim">id 126</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E026" data-id="127">
+          <a href="../static/sprites/e/E026.png" target="_blank">
+            <img src="../static/sprites/e/E026.png" alt="E026 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E026</span>
+            <span class="npc-id mono dim">id 127</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E027" data-id="128">
+          <a href="../static/sprites/e/E027.png" target="_blank">
+            <img src="../static/sprites/e/E027.png" alt="E027 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E027</span>
+            <span class="npc-id mono dim">id 128</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E028" data-id="129">
+          <a href="../static/sprites/e/E028.png" target="_blank">
+            <img src="../static/sprites/e/E028.png" alt="E028 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E028</span>
+            <span class="npc-id mono dim">id 129</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E029" data-id="130">
+          <a href="../static/sprites/e/E029.png" target="_blank">
+            <img src="../static/sprites/e/E029.png" alt="E029 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E029</span>
+            <span class="npc-id mono dim">id 130</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E030" data-id="131">
+          <a href="../static/sprites/e/E030.png" target="_blank">
+            <img src="../static/sprites/e/E030.png" alt="E030 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E030</span>
+            <span class="npc-id mono dim">id 131</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E031" data-id="132">
+          <a href="../static/sprites/e/E031.png" target="_blank">
+            <img src="../static/sprites/e/E031.png" alt="E031 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E031</span>
+            <span class="npc-id mono dim">id 132</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E032" data-id="133">
+          <a href="../static/sprites/e/E032.png" target="_blank">
+            <img src="../static/sprites/e/E032.png" alt="E032 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E032</span>
+            <span class="npc-id mono dim">id 133</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E034" data-id="135">
+          <a href="../static/sprites/e/E034.png" target="_blank">
+            <img src="../static/sprites/e/E034.png" alt="E034 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E034</span>
+            <span class="npc-id mono dim">id 135</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E035" data-id="136">
+          <a href="../static/sprites/e/E035.png" target="_blank">
+            <img src="../static/sprites/e/E035.png" alt="E035 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E035</span>
+            <span class="npc-id mono dim">id 136</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E036" data-id="137">
+          <a href="../static/sprites/e/E036.png" target="_blank">
+            <img src="../static/sprites/e/E036.png" alt="E036 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E036</span>
+            <span class="npc-id mono dim">id 137</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E037" data-id="138">
+          <a href="../static/sprites/e/E037.png" target="_blank">
+            <img src="../static/sprites/e/E037.png" alt="E037 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E037</span>
+            <span class="npc-id mono dim">id 138</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E038" data-id="139">
+          <a href="../static/sprites/e/E038.png" target="_blank">
+            <img src="../static/sprites/e/E038.png" alt="E038 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E038</span>
+            <span class="npc-id mono dim">id 139</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E039" data-id="140">
+          <a href="../static/sprites/e/E039.png" target="_blank">
+            <img src="../static/sprites/e/E039.png" alt="E039 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E039</span>
+            <span class="npc-id mono dim">id 140</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E041" data-id="142">
+          <a href="../static/sprites/e/E041.png" target="_blank">
+            <img src="../static/sprites/e/E041.png" alt="E041 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E041</span>
+            <span class="npc-id mono dim">id 142</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E043" data-id="144">
+          <a href="../static/sprites/e/E043.png" target="_blank">
+            <img src="../static/sprites/e/E043.png" alt="E043 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E043</span>
+            <span class="npc-id mono dim">id 144</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E044" data-id="145">
+          <a href="../static/sprites/e/E044.png" target="_blank">
+            <img src="../static/sprites/e/E044.png" alt="E044 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E044</span>
+            <span class="npc-id mono dim">id 145</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E045" data-id="146">
+          <a href="../static/sprites/e/E045.png" target="_blank">
+            <img src="../static/sprites/e/E045.png" alt="E045 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E045</span>
+            <span class="npc-id mono dim">id 146</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E050" data-id="151">
+          <a href="../static/sprites/e/E050.png" target="_blank">
+            <img src="../static/sprites/e/E050.png" alt="E050 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E050</span>
+            <span class="npc-id mono dim">id 151</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E052" data-id="153">
+          <a href="../static/sprites/e/E052.png" target="_blank">
+            <img src="../static/sprites/e/E052.png" alt="E052 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E052</span>
+            <span class="npc-id mono dim">id 153</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E053" data-id="154">
+          <a href="../static/sprites/e/E053.png" target="_blank">
+            <img src="../static/sprites/e/E053.png" alt="E053 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E053</span>
+            <span class="npc-id mono dim">id 154</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E054" data-id="155">
+          <a href="../static/sprites/e/E054.png" target="_blank">
+            <img src="../static/sprites/e/E054.png" alt="E054 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E054</span>
+            <span class="npc-id mono dim">id 155</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E057" data-id="158">
+          <a href="../static/sprites/e/E057.png" target="_blank">
+            <img src="../static/sprites/e/E057.png" alt="E057 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E057</span>
+            <span class="npc-id mono dim">id 158</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E060" data-id="161">
+          <a href="../static/sprites/e/E060.png" target="_blank">
+            <img src="../static/sprites/e/E060.png" alt="E060 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E060</span>
+            <span class="npc-id mono dim">id 161</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E063" data-id="164">
+          <a href="../static/sprites/e/E063.png" target="_blank">
+            <img src="../static/sprites/e/E063.png" alt="E063 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E063</span>
+            <span class="npc-id mono dim">id 164</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E064" data-id="165">
+          <a href="../static/sprites/e/E064.png" target="_blank">
+            <img src="../static/sprites/e/E064.png" alt="E064 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E064</span>
+            <span class="npc-id mono dim">id 165</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E065" data-id="166">
+          <a href="../static/sprites/e/E065.png" target="_blank">
+            <img src="../static/sprites/e/E065.png" alt="E065 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E065</span>
+            <span class="npc-id mono dim">id 166</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E067" data-id="168">
+          <a href="../static/sprites/e/E067.png" target="_blank">
+            <img src="../static/sprites/e/E067.png" alt="E067 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E067</span>
+            <span class="npc-id mono dim">id 168</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E068" data-id="169">
+          <a href="../static/sprites/e/E068.png" target="_blank">
+            <img src="../static/sprites/e/E068.png" alt="E068 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E068</span>
+            <span class="npc-id mono dim">id 169</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E068A" data-id="170">
+          <a href="../static/sprites/e/E068A.png" target="_blank">
+            <img src="../static/sprites/e/E068A.png" alt="E068A sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E068A</span>
+            <span class="npc-id mono dim">id 170</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E068B" data-id="171">
+          <a href="../static/sprites/e/E068B.png" target="_blank">
+            <img src="../static/sprites/e/E068B.png" alt="E068B sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E068B</span>
+            <span class="npc-id mono dim">id 171</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E069" data-id="172">
+          <a href="../static/sprites/e/E069.png" target="_blank">
+            <img src="../static/sprites/e/E069.png" alt="E069 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E069</span>
+            <span class="npc-id mono dim">id 172</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E071" data-id="174">
+          <a href="../static/sprites/e/E071.png" target="_blank">
+            <img src="../static/sprites/e/E071.png" alt="E071 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E071</span>
+            <span class="npc-id mono dim">id 174</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E072" data-id="175">
+          <a href="../static/sprites/e/E072.png" target="_blank">
+            <img src="../static/sprites/e/E072.png" alt="E072 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E072</span>
+            <span class="npc-id mono dim">id 175</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E074" data-id="177">
+          <a href="../static/sprites/e/E074.png" target="_blank">
+            <img src="../static/sprites/e/E074.png" alt="E074 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E074</span>
+            <span class="npc-id mono dim">id 177</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E076" data-id="179">
+          <a href="../static/sprites/e/E076.png" target="_blank">
+            <img src="../static/sprites/e/E076.png" alt="E076 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E076</span>
+            <span class="npc-id mono dim">id 179</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E077" data-id="180">
+          <a href="../static/sprites/e/E077.png" target="_blank">
+            <img src="../static/sprites/e/E077.png" alt="E077 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E077</span>
+            <span class="npc-id mono dim">id 180</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E078" data-id="181">
+          <a href="../static/sprites/e/E078.png" target="_blank">
+            <img src="../static/sprites/e/E078.png" alt="E078 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E078</span>
+            <span class="npc-id mono dim">id 181</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E079" data-id="182">
+          <a href="../static/sprites/e/E079.png" target="_blank">
+            <img src="../static/sprites/e/E079.png" alt="E079 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E079</span>
+            <span class="npc-id mono dim">id 182</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E080" data-id="183">
+          <a href="../static/sprites/e/E080.png" target="_blank">
+            <img src="../static/sprites/e/E080.png" alt="E080 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E080</span>
+            <span class="npc-id mono dim">id 183</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E082" data-id="185">
+          <a href="../static/sprites/e/E082.png" target="_blank">
+            <img src="../static/sprites/e/E082.png" alt="E082 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E082</span>
+            <span class="npc-id mono dim">id 185</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E083" data-id="186">
+          <a href="../static/sprites/e/E083.png" target="_blank">
+            <img src="../static/sprites/e/E083.png" alt="E083 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E083</span>
+            <span class="npc-id mono dim">id 186</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E088" data-id="191">
+          <a href="../static/sprites/e/E088.png" target="_blank">
+            <img src="../static/sprites/e/E088.png" alt="E088 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E088</span>
+            <span class="npc-id mono dim">id 191</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E089" data-id="192">
+          <a href="../static/sprites/e/E089.png" target="_blank">
+            <img src="../static/sprites/e/E089.png" alt="E089 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E089</span>
+            <span class="npc-id mono dim">id 192</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E090" data-id="193">
+          <a href="../static/sprites/e/E090.png" target="_blank">
+            <img src="../static/sprites/e/E090.png" alt="E090 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E090</span>
+            <span class="npc-id mono dim">id 193</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E092" data-id="195">
+          <a href="../static/sprites/e/E092.png" target="_blank">
+            <img src="../static/sprites/e/E092.png" alt="E092 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E092</span>
+            <span class="npc-id mono dim">id 195</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E093" data-id="196">
+          <a href="../static/sprites/e/E093.png" target="_blank">
+            <img src="../static/sprites/e/E093.png" alt="E093 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E093</span>
+            <span class="npc-id mono dim">id 196</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E100" data-id="203">
+          <a href="../static/sprites/e/E100.png" target="_blank">
+            <img src="../static/sprites/e/E100.png" alt="E100 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E100</span>
+            <span class="npc-id mono dim">id 203</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E107" data-id="210">
+          <a href="../static/sprites/e/E107.png" target="_blank">
+            <img src="../static/sprites/e/E107.png" alt="E107 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E107</span>
+            <span class="npc-id mono dim">id 210</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E108" data-id="211">
+          <a href="../static/sprites/e/E108.png" target="_blank">
+            <img src="../static/sprites/e/E108.png" alt="E108 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E108</span>
+            <span class="npc-id mono dim">id 211</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E110" data-id="213">
+          <a href="../static/sprites/e/E110.png" target="_blank">
+            <img src="../static/sprites/e/E110.png" alt="E110 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E110</span>
+            <span class="npc-id mono dim">id 213</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E112" data-id="215">
+          <a href="../static/sprites/e/E112.png" target="_blank">
+            <img src="../static/sprites/e/E112.png" alt="E112 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E112</span>
+            <span class="npc-id mono dim">id 215</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E114" data-id="217">
+          <a href="../static/sprites/e/E114.png" target="_blank">
+            <img src="../static/sprites/e/E114.png" alt="E114 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E114</span>
+            <span class="npc-id mono dim">id 217</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E118" data-id="221">
+          <a href="../static/sprites/e/E118.png" target="_blank">
+            <img src="../static/sprites/e/E118.png" alt="E118 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E118</span>
+            <span class="npc-id mono dim">id 221</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E119" data-id="222">
+          <a href="../static/sprites/e/E119.png" target="_blank">
+            <img src="../static/sprites/e/E119.png" alt="E119 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E119</span>
+            <span class="npc-id mono dim">id 222</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E120" data-id="223">
+          <a href="../static/sprites/e/E120.png" target="_blank">
+            <img src="../static/sprites/e/E120.png" alt="E120 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E120</span>
+            <span class="npc-id mono dim">id 223</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E122" data-id="225">
+          <a href="../static/sprites/e/E122.png" target="_blank">
+            <img src="../static/sprites/e/E122.png" alt="E122 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E122</span>
+            <span class="npc-id mono dim">id 225</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E123" data-id="226">
+          <a href="../static/sprites/e/E123.png" target="_blank">
+            <img src="../static/sprites/e/E123.png" alt="E123 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E123</span>
+            <span class="npc-id mono dim">id 226</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E124" data-id="227">
+          <a href="../static/sprites/e/E124.png" target="_blank">
+            <img src="../static/sprites/e/E124.png" alt="E124 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E124</span>
+            <span class="npc-id mono dim">id 227</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E125" data-id="228">
+          <a href="../static/sprites/e/E125.png" target="_blank">
+            <img src="../static/sprites/e/E125.png" alt="E125 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E125</span>
+            <span class="npc-id mono dim">id 228</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E126" data-id="229">
+          <a href="../static/sprites/e/E126.png" target="_blank">
+            <img src="../static/sprites/e/E126.png" alt="E126 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E126</span>
+            <span class="npc-id mono dim">id 229</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E127" data-id="230">
+          <a href="../static/sprites/e/E127.png" target="_blank">
+            <img src="../static/sprites/e/E127.png" alt="E127 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E127</span>
+            <span class="npc-id mono dim">id 230</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E128" data-id="231">
+          <a href="../static/sprites/e/E128.png" target="_blank">
+            <img src="../static/sprites/e/E128.png" alt="E128 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E128</span>
+            <span class="npc-id mono dim">id 231</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E129" data-id="232">
+          <a href="../static/sprites/e/E129.png" target="_blank">
+            <img src="../static/sprites/e/E129.png" alt="E129 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E129</span>
+            <span class="npc-id mono dim">id 232</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E130" data-id="233">
+          <a href="../static/sprites/e/E130.png" target="_blank">
+            <img src="../static/sprites/e/E130.png" alt="E130 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E130</span>
+            <span class="npc-id mono dim">id 233</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E133" data-id="236">
+          <a href="../static/sprites/e/E133.png" target="_blank">
+            <img src="../static/sprites/e/E133.png" alt="E133 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E133</span>
+            <span class="npc-id mono dim">id 236</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E135" data-id="238">
+          <a href="../static/sprites/e/E135.png" target="_blank">
+            <img src="../static/sprites/e/E135.png" alt="E135 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E135</span>
+            <span class="npc-id mono dim">id 238</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E137" data-id="240">
+          <a href="../static/sprites/e/E137.png" target="_blank">
+            <img src="../static/sprites/e/E137.png" alt="E137 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E137</span>
+            <span class="npc-id mono dim">id 240</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E138" data-id="241">
+          <a href="../static/sprites/e/E138.png" target="_blank">
+            <img src="../static/sprites/e/E138.png" alt="E138 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E138</span>
+            <span class="npc-id mono dim">id 241</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E139" data-id="242">
+          <a href="../static/sprites/e/E139.png" target="_blank">
+            <img src="../static/sprites/e/E139.png" alt="E139 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E139</span>
+            <span class="npc-id mono dim">id 242</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E141" data-id="244">
+          <a href="../static/sprites/e/E141.png" target="_blank">
+            <img src="../static/sprites/e/E141.png" alt="E141 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E141</span>
+            <span class="npc-id mono dim">id 244</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E142" data-id="245">
+          <a href="../static/sprites/e/E142.png" target="_blank">
+            <img src="../static/sprites/e/E142.png" alt="E142 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E142</span>
+            <span class="npc-id mono dim">id 245</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E143" data-id="246">
+          <a href="../static/sprites/e/E143.png" target="_blank">
+            <img src="../static/sprites/e/E143.png" alt="E143 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E143</span>
+            <span class="npc-id mono dim">id 246</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E146" data-id="249">
+          <a href="../static/sprites/e/E146.png" target="_blank">
+            <img src="../static/sprites/e/E146.png" alt="E146 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E146</span>
+            <span class="npc-id mono dim">id 249</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E147" data-id="250">
+          <a href="../static/sprites/e/E147.png" target="_blank">
+            <img src="../static/sprites/e/E147.png" alt="E147 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E147</span>
+            <span class="npc-id mono dim">id 250</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E148" data-id="251">
+          <a href="../static/sprites/e/E148.png" target="_blank">
+            <img src="../static/sprites/e/E148.png" alt="E148 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E148</span>
+            <span class="npc-id mono dim">id 251</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E149" data-id="252">
+          <a href="../static/sprites/e/E149.png" target="_blank">
+            <img src="../static/sprites/e/E149.png" alt="E149 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E149</span>
+            <span class="npc-id mono dim">id 252</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E150" data-id="253">
+          <a href="../static/sprites/e/E150.png" target="_blank">
+            <img src="../static/sprites/e/E150.png" alt="E150 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E150</span>
+            <span class="npc-id mono dim">id 253</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E151" data-id="254">
+          <a href="../static/sprites/e/E151.png" target="_blank">
+            <img src="../static/sprites/e/E151.png" alt="E151 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E151</span>
+            <span class="npc-id mono dim">id 254</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E152" data-id="255">
+          <a href="../static/sprites/e/E152.png" target="_blank">
+            <img src="../static/sprites/e/E152.png" alt="E152 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E152</span>
+            <span class="npc-id mono dim">id 255</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E153" data-id="256">
+          <a href="../static/sprites/e/E153.png" target="_blank">
+            <img src="../static/sprites/e/E153.png" alt="E153 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E153</span>
+            <span class="npc-id mono dim">id 256</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E154" data-id="257">
+          <a href="../static/sprites/e/E154.png" target="_blank">
+            <img src="../static/sprites/e/E154.png" alt="E154 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E154</span>
+            <span class="npc-id mono dim">id 257</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E155" data-id="258">
+          <a href="../static/sprites/e/E155.png" target="_blank">
+            <img src="../static/sprites/e/E155.png" alt="E155 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E155</span>
+            <span class="npc-id mono dim">id 258</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E157" data-id="260">
+          <a href="../static/sprites/e/E157.png" target="_blank">
+            <img src="../static/sprites/e/E157.png" alt="E157 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E157</span>
+            <span class="npc-id mono dim">id 260</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E158" data-id="261">
+          <a href="../static/sprites/e/E158.png" target="_blank">
+            <img src="../static/sprites/e/E158.png" alt="E158 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E158</span>
+            <span class="npc-id mono dim">id 261</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E160" data-id="263">
+          <a href="../static/sprites/e/E160.png" target="_blank">
+            <img src="../static/sprites/e/E160.png" alt="E160 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E160</span>
+            <span class="npc-id mono dim">id 263</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E161" data-id="264">
+          <a href="../static/sprites/e/E161.png" target="_blank">
+            <img src="../static/sprites/e/E161.png" alt="E161 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E161</span>
+            <span class="npc-id mono dim">id 264</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E163" data-id="266">
+          <a href="../static/sprites/e/E163.png" target="_blank">
+            <img src="../static/sprites/e/E163.png" alt="E163 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E163</span>
+            <span class="npc-id mono dim">id 266</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E164" data-id="267">
+          <a href="../static/sprites/e/E164.png" target="_blank">
+            <img src="../static/sprites/e/E164.png" alt="E164 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E164</span>
+            <span class="npc-id mono dim">id 267</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E167" data-id="270">
+          <a href="../static/sprites/e/E167.png" target="_blank">
+            <img src="../static/sprites/e/E167.png" alt="E167 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E167</span>
+            <span class="npc-id mono dim">id 270</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E169" data-id="272">
+          <a href="../static/sprites/e/E169.png" target="_blank">
+            <img src="../static/sprites/e/E169.png" alt="E169 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E169</span>
+            <span class="npc-id mono dim">id 272</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E170" data-id="273">
+          <a href="../static/sprites/e/E170.png" target="_blank">
+            <img src="../static/sprites/e/E170.png" alt="E170 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E170</span>
+            <span class="npc-id mono dim">id 273</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E173" data-id="276">
+          <a href="../static/sprites/e/E173.png" target="_blank">
+            <img src="../static/sprites/e/E173.png" alt="E173 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E173</span>
+            <span class="npc-id mono dim">id 276</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E174" data-id="277">
+          <a href="../static/sprites/e/E174.png" target="_blank">
+            <img src="../static/sprites/e/E174.png" alt="E174 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E174</span>
+            <span class="npc-id mono dim">id 277</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E175" data-id="278">
+          <a href="../static/sprites/e/E175.png" target="_blank">
+            <img src="../static/sprites/e/E175.png" alt="E175 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E175</span>
+            <span class="npc-id mono dim">id 278</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E176" data-id="279">
+          <a href="../static/sprites/e/E176.png" target="_blank">
+            <img src="../static/sprites/e/E176.png" alt="E176 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E176</span>
+            <span class="npc-id mono dim">id 279</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E177" data-id="280">
+          <a href="../static/sprites/e/E177.png" target="_blank">
+            <img src="../static/sprites/e/E177.png" alt="E177 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E177</span>
+            <span class="npc-id mono dim">id 280</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E178" data-id="281">
+          <a href="../static/sprites/e/E178.png" target="_blank">
+            <img src="../static/sprites/e/E178.png" alt="E178 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E178</span>
+            <span class="npc-id mono dim">id 281</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E179" data-id="282">
+          <a href="../static/sprites/e/E179.png" target="_blank">
+            <img src="../static/sprites/e/E179.png" alt="E179 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E179</span>
+            <span class="npc-id mono dim">id 282</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E180" data-id="283">
+          <a href="../static/sprites/e/E180.png" target="_blank">
+            <img src="../static/sprites/e/E180.png" alt="E180 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E180</span>
+            <span class="npc-id mono dim">id 283</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E188" data-id="291">
+          <a href="../static/sprites/e/E188.png" target="_blank">
+            <img src="../static/sprites/e/E188.png" alt="E188 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E188</span>
+            <span class="npc-id mono dim">id 291</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E189" data-id="292">
+          <a href="../static/sprites/e/E189.png" target="_blank">
+            <img src="../static/sprites/e/E189.png" alt="E189 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E189</span>
+            <span class="npc-id mono dim">id 292</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E190" data-id="293">
+          <a href="../static/sprites/e/E190.png" target="_blank">
+            <img src="../static/sprites/e/E190.png" alt="E190 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E190</span>
+            <span class="npc-id mono dim">id 293</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E192" data-id="295">
+          <a href="../static/sprites/e/E192.png" target="_blank">
+            <img src="../static/sprites/e/E192.png" alt="E192 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E192</span>
+            <span class="npc-id mono dim">id 295</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E195" data-id="298">
+          <a href="../static/sprites/e/E195.png" target="_blank">
+            <img src="../static/sprites/e/E195.png" alt="E195 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E195</span>
+            <span class="npc-id mono dim">id 298</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E196" data-id="299">
+          <a href="../static/sprites/e/E196.png" target="_blank">
+            <img src="../static/sprites/e/E196.png" alt="E196 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E196</span>
+            <span class="npc-id mono dim">id 299</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E198" data-id="301">
+          <a href="../static/sprites/e/E198.png" target="_blank">
+            <img src="../static/sprites/e/E198.png" alt="E198 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E198</span>
+            <span class="npc-id mono dim">id 301</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E201" data-id="304">
+          <a href="../static/sprites/e/E201.png" target="_blank">
+            <img src="../static/sprites/e/E201.png" alt="E201 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E201</span>
+            <span class="npc-id mono dim">id 304</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E202" data-id="305">
+          <a href="../static/sprites/e/E202.png" target="_blank">
+            <img src="../static/sprites/e/E202.png" alt="E202 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E202</span>
+            <span class="npc-id mono dim">id 305</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E203" data-id="306">
+          <a href="../static/sprites/e/E203.png" target="_blank">
+            <img src="../static/sprites/e/E203.png" alt="E203 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E203</span>
+            <span class="npc-id mono dim">id 306</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E207" data-id="310">
+          <a href="../static/sprites/e/E207.png" target="_blank">
+            <img src="../static/sprites/e/E207.png" alt="E207 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E207</span>
+            <span class="npc-id mono dim">id 310</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E208" data-id="311">
+          <a href="../static/sprites/e/E208.png" target="_blank">
+            <img src="../static/sprites/e/E208.png" alt="E208 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E208</span>
+            <span class="npc-id mono dim">id 311</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E209" data-id="312">
+          <a href="../static/sprites/e/E209.png" target="_blank">
+            <img src="../static/sprites/e/E209.png" alt="E209 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E209</span>
+            <span class="npc-id mono dim">id 312</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E211" data-id="314">
+          <a href="../static/sprites/e/E211.png" target="_blank">
+            <img src="../static/sprites/e/E211.png" alt="E211 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E211</span>
+            <span class="npc-id mono dim">id 314</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E212" data-id="315">
+          <a href="../static/sprites/e/E212.png" target="_blank">
+            <img src="../static/sprites/e/E212.png" alt="E212 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E212</span>
+            <span class="npc-id mono dim">id 315</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E213" data-id="316">
+          <a href="../static/sprites/e/E213.png" target="_blank">
+            <img src="../static/sprites/e/E213.png" alt="E213 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E213</span>
+            <span class="npc-id mono dim">id 316</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E216" data-id="319">
+          <a href="../static/sprites/e/E216.png" target="_blank">
+            <img src="../static/sprites/e/E216.png" alt="E216 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E216</span>
+            <span class="npc-id mono dim">id 319</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E218" data-id="321">
+          <a href="../static/sprites/e/E218.png" target="_blank">
+            <img src="../static/sprites/e/E218.png" alt="E218 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E218</span>
+            <span class="npc-id mono dim">id 321</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E219" data-id="322">
+          <a href="../static/sprites/e/E219.png" target="_blank">
+            <img src="../static/sprites/e/E219.png" alt="E219 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E219</span>
+            <span class="npc-id mono dim">id 322</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E222" data-id="325">
+          <a href="../static/sprites/e/E222.png" target="_blank">
+            <img src="../static/sprites/e/E222.png" alt="E222 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E222</span>
+            <span class="npc-id mono dim">id 325</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E224" data-id="327">
+          <a href="../static/sprites/e/E224.png" target="_blank">
+            <img src="../static/sprites/e/E224.png" alt="E224 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E224</span>
+            <span class="npc-id mono dim">id 327</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E226" data-id="329">
+          <a href="../static/sprites/e/E226.png" target="_blank">
+            <img src="../static/sprites/e/E226.png" alt="E226 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E226</span>
+            <span class="npc-id mono dim">id 329</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E236" data-id="339">
+          <a href="../static/sprites/e/E236.png" target="_blank">
+            <img src="../static/sprites/e/E236.png" alt="E236 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E236</span>
+            <span class="npc-id mono dim">id 339</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E241" data-id="344">
+          <a href="../static/sprites/e/E241.png" target="_blank">
+            <img src="../static/sprites/e/E241.png" alt="E241 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E241</span>
+            <span class="npc-id mono dim">id 344</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E244" data-id="347">
+          <a href="../static/sprites/e/E244.png" target="_blank">
+            <img src="../static/sprites/e/E244.png" alt="E244 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E244</span>
+            <span class="npc-id mono dim">id 347</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E246" data-id="349">
+          <a href="../static/sprites/e/E246.png" target="_blank">
+            <img src="../static/sprites/e/E246.png" alt="E246 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E246</span>
+            <span class="npc-id mono dim">id 349</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E247" data-id="350">
+          <a href="../static/sprites/e/E247.png" target="_blank">
+            <img src="../static/sprites/e/E247.png" alt="E247 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E247</span>
+            <span class="npc-id mono dim">id 350</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E250" data-id="353">
+          <a href="../static/sprites/e/E250.png" target="_blank">
+            <img src="../static/sprites/e/E250.png" alt="E250 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E250</span>
+            <span class="npc-id mono dim">id 353</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E251" data-id="354">
+          <a href="../static/sprites/e/E251.png" target="_blank">
+            <img src="../static/sprites/e/E251.png" alt="E251 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E251</span>
+            <span class="npc-id mono dim">id 354</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E253" data-id="356">
+          <a href="../static/sprites/e/E253.png" target="_blank">
+            <img src="../static/sprites/e/E253.png" alt="E253 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E253</span>
+            <span class="npc-id mono dim">id 356</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E267" data-id="370">
+          <a href="../static/sprites/e/E267.png" target="_blank">
+            <img src="../static/sprites/e/E267.png" alt="E267 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E267</span>
+            <span class="npc-id mono dim">id 370</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E270" data-id="373">
+          <a href="../static/sprites/e/E270.png" target="_blank">
+            <img src="../static/sprites/e/E270.png" alt="E270 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E270</span>
+            <span class="npc-id mono dim">id 373</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E288" data-id="391">
+          <a href="../static/sprites/e/E288.png" target="_blank">
+            <img src="../static/sprites/e/E288.png" alt="E288 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E288</span>
+            <span class="npc-id mono dim">id 391</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E289" data-id="392">
+          <a href="../static/sprites/e/E289.png" target="_blank">
+            <img src="../static/sprites/e/E289.png" alt="E289 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E289</span>
+            <span class="npc-id mono dim">id 392</span>
+          </div>
+        </div>
+        <div class="npc-card" data-name="E290" data-id="393">
+          <a href="../static/sprites/e/E290.png" target="_blank">
+            <img src="../static/sprites/e/E290.png" alt="E290 sprite" loading="lazy">
+          </a>
+          <div class="npc-meta">
+            <span class="npc-name mono">E290</span>
+            <span class="npc-id mono dim">id 393</span>
+          </div>
+        </div>
+</div>
+
+<div class="note">
+  Of the 5 000 reserved <code>E####</code> slots, only ~150 have authored bundle sprites. The remaining 4,649 entries are content-team placeholders — Sigma planned more enemies than shipped. The full ID list (slots without sprites) follows below.
+</div>
+
+<details>
+<summary class="dim" style="cursor:pointer; padding:0.5em 0;">Show 4,649 reserved slots without sprites…</summary>
+<table class="data" id="enemy-rest-tbl" style="margin-top:1em">
+  <thead><tr><th>ID</th><th>Symbolic name</th></tr></thead>
+  <tbody>
+<tr><td class='mono'>103</td><td class='mono'>E002</td></tr><tr><td class='mono'>107</td><td class='mono'>E006</td></tr><tr><td class='mono'>109</td><td class='mono'>E008</td></tr><tr><td class='mono'>122</td><td class='mono'>E021</td></tr><tr><td class='mono'>123</td><td class='mono'>E022</td></tr><tr><td class='mono'>125</td><td class='mono'>E024</td></tr><tr><td class='mono'>134</td><td class='mono'>E033</td></tr><tr><td class='mono'>141</td><td class='mono'>E040</td></tr><tr><td class='mono'>143</td><td class='mono'>E042</td></tr><tr><td class='mono'>147</td><td class='mono'>E046</td></tr><tr><td class='mono'>148</td><td class='mono'>E047</td></tr><tr><td class='mono'>149</td><td class='mono'>E048</td></tr><tr><td class='mono'>150</td><td class='mono'>E049</td></tr><tr><td class='mono'>152</td><td class='mono'>E051</td></tr><tr><td class='mono'>156</td><td class='mono'>E055</td></tr><tr><td class='mono'>157</td><td class='mono'>E056</td></tr><tr><td class='mono'>159</td><td class='mono'>E058</td></tr><tr><td class='mono'>160</td><td class='mono'>E059</td></tr><tr><td class='mono'>162</td><td class='mono'>E061</td></tr><tr><td class='mono'>163</td><td class='mono'>E062</td></tr><tr><td class='mono'>167</td><td class='mono'>E066</td></tr><tr><td class='mono'>173</td><td class='mono'>E070</td></tr><tr><td class='mono'>176</td><td class='mono'>E073</td></tr><tr><td class='mono'>178</td><td class='mono'>E075</td></tr><tr><td class='mono'>184</td><td class='mono'>E081</td></tr><tr><td class='mono'>187</td><td class='mono'>E084</td></tr><tr><td class='mono'>188</td><td class='mono'>E085</td></tr><tr><td class='mono'>189</td><td class='mono'>E086</td></tr><tr><td class='mono'>190</td><td class='mono'>E087</td></tr><tr><td class='mono'>194</td><td class='mono'>E091</td></tr><tr><td class='mono'>197</td><td class='mono'>E094</td></tr><tr><td class='mono'>198</td><td class='mono'>E095</td></tr><tr><td class='mono'>199</td><td class='mono'>E096</td></tr><tr><td class='mono'>200</td><td class='mono'>E097</td></tr><tr><td class='mono'>201</td><td class='mono'>E098</td></tr><tr><td class='mono'>202</td><td class='mono'>E099</td></tr><tr><td class='mono'>204</td><td class='mono'>E101</td></tr><tr><td class='mono'>205</td><td class='mono'>E102</td></tr><tr><td class='mono'>206</td><td class='mono'>E103</td></tr><tr><td class='mono'>207</td><td class='mono'>E104</td></tr><tr><td class='mono'>208</td><td class='mono'>E105</td></tr><tr><td class='mono'>209</td><td class='mono'>E106</td></tr><tr><td class='mono'>212</td><td class='mono'>E109</td></tr><tr><td class='mono'>214</td><td class='mono'>E111</td></tr><tr><td class='mono'>216</td><td class='mono'>E113</td></tr><tr><td class='mono'>218</td><td class='mono'>E115</td></tr><tr><td class='mono'>219</td><td class='mono'>E116</td></tr><tr><td class='mono'>220</td><td class='mono'>E117</td></tr><tr><td class='mono'>224</td><td class='mono'>E121</td></tr><tr><td class='mono'>234</td><td class='mono'>E131</td></tr><tr><td class='mono'>235</td><td class='mono'>E132</td></tr><tr><td class='mono'>237</td><td class='mono'>E134</td></tr><tr><td class='mono'>239</td><td class='mono'>E136</td></tr><tr><td class='mono'>243</td><td class='mono'>E140</td></tr><tr><td class='mono'>247</td><td class='mono'>E144</td></tr><tr><td class='mono'>248</td><td class='mono'>E145</td></tr><tr><td class='mono'>259</td><td class='mono'>E156</td></tr><tr><td class='mono'>262</td><td class='mono'>E159</td></tr><tr><td class='mono'>265</td><td class='mono'>E162</td></tr><tr><td class='mono'>268</td><td class='mono'>E165</td></tr><tr><td class='mono'>269</td><td class='mono'>E166</td></tr><tr><td class='mono'>271</td><td class='mono'>E168</td></tr><tr><td class='mono'>274</td><td class='mono'>E171</td></tr><tr><td class='mono'>275</td><td class='mono'>E172</td></tr><tr><td class='mono'>284</td><td class='mono'>E181</td></tr><tr><td class='mono'>285</td><td class='mono'>E182</td></tr><tr><td class='mono'>286</td><td class='mono'>E183</td></tr><tr><td class='mono'>287</td><td class='mono'>E184</td></tr><tr><td class='mono'>288</td><td class='mono'>E185</td></tr><tr><td class='mono'>289</td><td class='mono'>E186</td></tr><tr><td class='mono'>290</td><td class='mono'>E187</td></tr><tr><td class='mono'>294</td><td class='mono'>E191</td></tr><tr><td class='mono'>296</td><td class='mono'>E193</td></tr><tr><td class='mono'>297</td><td class='mono'>E194</td></tr><tr><td class='mono'>300</td><td class='mono'>E197</td></tr><tr><td class='mono'>302</td><td class='mono'>E199</td></tr><tr><td class='mono'>303</td><td class='mono'>E200</td></tr><tr><td class='mono'>307</td><td class='mono'>E204</td></tr><tr><td class='mono'>308</td><td class='mono'>E205</td></tr><tr><td class='mono'>309</td><td class='mono'>E206</td></tr><tr><td class='mono'>313</td><td class='mono'>E210</td></tr><tr><td class='mono'>317</td><td class='mono'>E214</td></tr><tr><td class='mono'>318</td><td class='mono'>E215</td></tr><tr><td class='mono'>320</td><td class='mono'>E217</td></tr><tr><td class='mono'>323</td><td class='mono'>E220</td></tr><tr><td class='mono'>324</td><td class='mono'>E221</td></tr><tr><td class='mono'>326</td><td class='mono'>E223</td></tr><tr><td class='mono'>328</td><td class='mono'>E225</td></tr><tr><td class='mono'>330</td><td class='mono'>E227</td></tr><tr><td class='mono'>331</td><td class='mono'>E228</td></tr><tr><td class='mono'>332</td><td class='mono'>E229</td></tr><tr><td class='mono'>333</td><td class='mono'>E230</td></tr><tr><td class='mono'>334</td><td class='mono'>E231</td></tr><tr><td class='mono'>335</td><td class='mono'>E232</td></tr><tr><td class='mono'>336</td><td class='mono'>E233</td></tr><tr><td class='mono'>337</td><td class='mono'>E234</td></tr><tr><td class='mono'>338</td><td class='mono'>E235</td></tr><tr><td class='mono'>340</td><td class='mono'>E237</td></tr><tr><td class='mono'>341</td><td class='mono'>E238</td></tr><tr><td class='mono'>342</td><td class='mono'>E239</td></tr><tr><td class='mono'>343</td><td class='mono'>E240</td></tr><tr><td class='mono'>345</td><td class='mono'>E242</td></tr><tr><td class='mono'>346</td><td class='mono'>E243</td></tr><tr><td class='mono'>348</td><td class='mono'>E245</td></tr><tr><td class='mono'>351</td><td class='mono'>E248</td></tr><tr><td class='mono'>352</td><td class='mono'>E249</td></tr><tr><td class='mono'>355</td><td class='mono'>E252</td></tr><tr><td class='mono'>357</td><td class='mono'>E254</td></tr><tr><td class='mono'>358</td><td class='mono'>E255</td></tr><tr><td class='mono'>359</td><td class='mono'>E256</td></tr><tr><td class='mono'>360</td><td class='mono'>E257</td></tr><tr><td class='mono'>361</td><td class='mono'>E258</td></tr><tr><td class='mono'>362</td><td class='mono'>E259</td></tr><tr><td class='mono'>363</td><td class='mono'>E260</td></tr><tr><td class='mono'>364</td><td class='mono'>E261</td></tr><tr><td class='mono'>365</td><td class='mono'>E262</td></tr><tr><td class='mono'>366</td><td class='mono'>E263</td></tr><tr><td class='mono'>367</td><td class='mono'>E264</td></tr><tr><td class='mono'>368</td><td class='mono'>E265</td></tr><tr><td class='mono'>369</td><td class='mono'>E266</td></tr><tr><td class='mono'>371</td><td class='mono'>E268</td></tr><tr><td class='mono'>372</td><td class='mono'>E269</td></tr><tr><td class='mono'>374</td><td class='mono'>E271</td></tr><tr><td class='mono'>375</td><td class='mono'>E272</td></tr><tr><td class='mono'>376</td><td class='mono'>E273</td></tr><tr><td class='mono'>377</td><td class='mono'>E274</td></tr><tr><td class='mono'>378</td><td class='mono'>E275</td></tr><tr><td class='mono'>379</td><td class='mono'>E276</td></tr><tr><td class='mono'>380</td><td class='mono'>E277</td></tr><tr><td class='mono'>381</td><td class='mono'>E278</td></tr><tr><td class='mono'>382</td><td class='mono'>E279</td></tr><tr><td class='mono'>383</td><td class='mono'>E280</td></tr><tr><td class='mono'>384</td><td class='mono'>E281</td></tr><tr><td class='mono'>385</td><td class='mono'>E282</td></tr><tr><td class='mono'>386</td><td class='mono'>E283</td></tr><tr><td class='mono'>387</td><td class='mono'>E284</td></tr><tr><td class='mono'>388</td><td class='mono'>E285</td></tr><tr><td class='mono'>389</td><td class='mono'>E286</td></tr><tr><td class='mono'>390</td><td class='mono'>E287</td></tr><tr><td class='mono'>394</td><td class='mono'>E291</td></tr><tr><td class='mono'>395</td><td class='mono'>E292</td></tr><tr><td class='mono'>396</td><td class='mono'>E293</td></tr><tr><td class='mono'>397</td><td class='mono'>E294</td></tr><tr><td class='mono'>398</td><td class='mono'>E295</td></tr><tr><td class='mono'>399</td><td class='mono'>E296</td></tr><tr><td class='mono'>400</td><td class='mono'>E297</td></tr><tr><td class='mono'>401</td><td class='mono'>E298</td></tr><tr><td class='mono'>402</td><td class='mono'>E299</td></tr><tr><td class='mono'>403</td><td class='mono'>E300</td></tr><tr><td class='mono'>404</td><td class='mono'>E500</td></tr><tr><td class='mono'>405</td><td class='mono'>E501</td></tr><tr><td class='mono'>406</td><td class='mono'>E502</td></tr><tr><td class='mono'>407</td><td class='mono'>E503</td></tr><tr><td class='mono'>408</td><td class='mono'>E504</td></tr><tr><td class='mono'>409</td><td class='mono'>E505</td></tr><tr><td class='mono'>410</td><td class='mono'>E506</td></tr><tr><td class='mono'>411</td><td class='mono'>E507</td></tr><tr><td class='mono'>412</td><td class='mono'>E508</td></tr><tr><td class='mono'>413</td><td class='mono'>E509</td></tr><tr><td class='mono'>414</td><td class='mono'>E510</td></tr><tr><td class='mono'>415</td><td class='mono'>E511</td></tr><tr><td class='mono'>416</td><td class='mono'>E512</td></tr><tr><td class='mono'>417</td><td class='mono'>E513</td></tr><tr><td class='mono'>418</td><td class='mono'>E514</td></tr><tr><td class='mono'>419</td><td class='mono'>E515</td></tr><tr><td class='mono'>420</td><td class='mono'>E516</td></tr><tr><td class='mono'>421</td><td class='mono'>E517</td></tr><tr><td class='mono'>422</td><td class='mono'>E518</td></tr><tr><td class='mono'>423</td><td class='mono'>E519</td></tr><tr><td class='mono'>424</td><td class='mono'>E520</td></tr><tr><td class='mono'>425</td><td class='mono'>E521</td></tr><tr><td class='mono'>426</td><td class='mono'>E522</td></tr><tr><td class='mono'>427</td><td class='mono'>E523</td></tr><tr><td class='mono'>428</td><td class='mono'>E524</td></tr><tr><td class='mono'>429</td><td class='mono'>E525</td></tr><tr><td class='mono'>430</td><td class='mono'>E526</td></tr><tr><td class='mono'>431</td><td class='mono'>E527</td></tr><tr><td class='mono'>432</td><td class='mono'>E528</td></tr><tr><td class='mono'>433</td><td class='mono'>E529</td></tr><tr><td class='mono'>434</td><td class='mono'>E530</td></tr><tr><td class='mono'>435</td><td class='mono'>E531</td></tr><tr><td class='mono'>436</td><td class='mono'>E532</td></tr><tr><td class='mono'>437</td><td class='mono'>E533</td></tr><tr><td class='mono'>438</td><td class='mono'>E534</td></tr><tr><td class='mono'>439</td><td class='mono'>E535</td></tr><tr><td class='mono'>440</td><td class='mono'>E536</td></tr><tr><td class='mono'>441</td><td class='mono'>E537</td></tr><tr><td class='mono'>442</td><td class='mono'>E538</td></tr><tr><td class='mono'>443</td><td class='mono'>E539</td></tr><tr><td class='mono'>444</td><td class='mono'>E540</td></tr><tr><td class='mono'>445</td><td class='mono'>E541</td></tr><tr><td class='mono'>446</td><td class='mono'>E542</td></tr><tr><td class='mono'>447</td><td class='mono'>E543</td></tr><tr><td class='mono'>448</td><td class='mono'>E544</td></tr><tr><td class='mono'>449</td><td class='mono'>E545</td></tr><tr><td class='mono'>450</td><td class='mono'>E546</td></tr><tr><td class='mono'>451</td><td class='mono'>E547</td></tr><tr><td class='mono'>452</td><td class='mono'>E548</td></tr><tr><td class='mono'>453</td><td class='mono'>E549</td></tr><tr><td class='mono'>454</td><td class='mono'>E550</td></tr><tr><td class='mono'>455</td><td class='mono'>E551</td></tr><tr><td class='mono'>456</td><td class='mono'>E552</td></tr><tr><td class='mono'>457</td><td class='mono'>E553</td></tr><tr><td class='mono'>458</td><td class='mono'>E554</td></tr><tr><td class='mono'>459</td><td class='mono'>E555</td></tr><tr><td class='mono'>460</td><td class='mono'>E556</td></tr><tr><td class='mono'>461</td><td class='mono'>E557</td></tr><tr><td class='mono'>462</td><td class='mono'>E558</td></tr><tr><td class='mono'>463</td><td class='mono'>E559</td></tr><tr><td class='mono'>464</td><td class='mono'>E560</td></tr><tr><td class='mono'>465</td><td class='mono'>E561</td></tr><tr><td class='mono'>466</td><td class='mono'>E562</td></tr><tr><td class='mono'>467</td><td class='mono'>E563</td></tr><tr><td class='mono'>468</td><td class='mono'>E564</td></tr><tr><td class='mono'>469</td><td class='mono'>E565</td></tr><tr><td class='mono'>470</td><td class='mono'>E566</td></tr><tr><td class='mono'>471</td><td class='mono'>E567</td></tr><tr><td class='mono'>472</td><td class='mono'>E568</td></tr><tr><td class='mono'>473</td><td class='mono'>E569</td></tr><tr><td class='mono'>474</td><td class='mono'>E570</td></tr><tr><td class='mono'>475</td><td class='mono'>E571</td></tr><tr><td class='mono'>476</td><td class='mono'>E572</td></tr><tr><td class='mono'>477</td><td class='mono'>E573</td></tr><tr><td class='mono'>478</td><td class='mono'>E574</td></tr><tr><td class='mono'>479</td><td class='mono'>E575</td></tr><tr><td class='mono'>480</td><td class='mono'>E576</td></tr><tr><td class='mono'>481</td><td class='mono'>E577</td></tr><tr><td class='mono'>482</td><td class='mono'>E578</td></tr><tr><td class='mono'>483</td><td class='mono'>E579</td></tr><tr><td class='mono'>484</td><td class='mono'>E580</td></tr><tr><td class='mono'>485</td><td class='mono'>E581</td></tr><tr><td class='mono'>486</td><td class='mono'>E582</td></tr><tr><td class='mono'>487</td><td class='mono'>E583</td></tr><tr><td class='mono'>488</td><td class='mono'>E584</td></tr><tr><td class='mono'>489</td><td class='mono'>E585</td></tr><tr><td class='mono'>490</td><td class='mono'>E586</td></tr><tr><td class='mono'>491</td><td class='mono'>E587</td></tr><tr><td class='mono'>492</td><td class='mono'>E588</td></tr><tr><td class='mono'>493</td><td class='mono'>E589</td></tr><tr><td class='mono'>494</td><td class='mono'>E590</td></tr><tr><td class='mono'>495</td><td class='mono'>E591</td></tr><tr><td class='mono'>496</td><td class='mono'>E592</td></tr><tr><td class='mono'>497</td><td class='mono'>E593</td></tr><tr><td class='mono'>498</td><td class='mono'>E594</td></tr><tr><td class='mono'>499</td><td class='mono'>E595</td></tr><tr><td class='mono'>500</td><td class='mono'>E596</td></tr><tr><td class='mono'>501</td><td class='mono'>E597</td></tr><tr><td class='mono'>502</td><td class='mono'>E598</td></tr><tr><td class='mono'>503</td><td class='mono'>E599</td></tr><tr><td class='mono'>504</td><td class='mono'>E600</td></tr><tr><td class='mono'>505</td><td class='mono'>E601</td></tr><tr><td class='mono'>506</td><td class='mono'>E602</td></tr><tr><td class='mono'>507</td><td class='mono'>E603</td></tr><tr><td class='mono'>508</td><td class='mono'>E604</td></tr><tr><td class='mono'>509</td><td class='mono'>E605</td></tr><tr><td class='mono'>510</td><td class='mono'>E606</td></tr><tr><td class='mono'>511</td><td class='mono'>E607</td></tr><tr><td class='mono'>512</td><td class='mono'>E608</td></tr><tr><td class='mono'>513</td><td class='mono'>E609</td></tr><tr><td class='mono'>514</td><td class='mono'>E610</td></tr><tr><td class='mono'>515</td><td class='mono'>E611</td></tr><tr><td class='mono'>516</td><td class='mono'>E612</td></tr><tr><td class='mono'>517</td><td class='mono'>E613</td></tr><tr><td class='mono'>518</td><td class='mono'>E614</td></tr><tr><td class='mono'>519</td><td class='mono'>E615</td></tr><tr><td class='mono'>520</td><td class='mono'>E616</td></tr><tr><td class='mono'>521</td><td class='mono'>E617</td></tr><tr><td class='mono'>522</td><td class='mono'>E618</td></tr><tr><td class='mono'>523</td><td class='mono'>E619</td></tr><tr><td class='mono'>524</td><td class='mono'>E620</td></tr><tr><td class='mono'>525</td><td class='mono'>E621</td></tr><tr><td class='mono'>526</td><td class='mono'>E622</td></tr><tr><td class='mono'>527</td><td class='mono'>E623</td></tr><tr><td class='mono'>528</td><td class='mono'>E624</td></tr><tr><td class='mono'>529</td><td class='mono'>E625</td></tr><tr><td class='mono'>530</td><td class='mono'>E626</td></tr><tr><td class='mono'>531</td><td class='mono'>E627</td></tr><tr><td class='mono'>532</td><td class='mono'>E628</td></tr><tr><td class='mono'>533</td><td class='mono'>E629</td></tr><tr><td class='mono'>534</td><td class='mono'>E630</td></tr><tr><td class='mono'>535</td><td class='mono'>E631</td></tr><tr><td class='mono'>536</td><td class='mono'>E632</td></tr><tr><td class='mono'>537</td><td class='mono'>E633</td></tr><tr><td class='mono'>538</td><td class='mono'>E634</td></tr><tr><td class='mono'>539</td><td class='mono'>E635</td></tr><tr><td class='mono'>540</td><td class='mono'>E636</td></tr><tr><td class='mono'>541</td><td class='mono'>E637</td></tr><tr><td class='mono'>542</td><td class='mono'>E638</td></tr><tr><td class='mono'>543</td><td class='mono'>E639</td></tr><tr><td class='mono'>544</td><td class='mono'>E640</td></tr><tr><td class='mono'>545</td><td class='mono'>E641</td></tr><tr><td class='mono'>546</td><td class='mono'>E642</td></tr><tr><td class='mono'>547</td><td class='mono'>E643</td></tr><tr><td class='mono'>548</td><td class='mono'>E644</td></tr><tr><td class='mono'>549</td><td class='mono'>E645</td></tr><tr><td class='mono'>550</td><td class='mono'>E646</td></tr><tr><td class='mono'>551</td><td class='mono'>E647</td></tr><tr><td class='mono'>552</td><td class='mono'>E648</td></tr><tr><td class='mono'>553</td><td class='mono'>E649</td></tr><tr><td class='mono'>554</td><td class='mono'>E650</td></tr><tr><td class='mono'>555</td><td class='mono'>E651</td></tr><tr><td class='mono'>556</td><td class='mono'>E652</td></tr><tr><td class='mono'>557</td><td class='mono'>E653</td></tr><tr><td class='mono'>558</td><td class='mono'>E654</td></tr><tr><td class='mono'>559</td><td class='mono'>E655</td></tr><tr><td class='mono'>560</td><td class='mono'>E656</td></tr><tr><td class='mono'>561</td><td class='mono'>E657</td></tr><tr><td class='mono'>562</td><td class='mono'>E658</td></tr><tr><td class='mono'>563</td><td class='mono'>E659</td></tr><tr><td class='mono'>564</td><td class='mono'>E660</td></tr><tr><td class='mono'>565</td><td class='mono'>E661</td></tr><tr><td class='mono'>566</td><td class='mono'>E662</td></tr><tr><td class='mono'>567</td><td class='mono'>E663</td></tr><tr><td class='mono'>568</td><td class='mono'>E664</td></tr><tr><td class='mono'>569</td><td class='mono'>E665</td></tr><tr><td class='mono'>570</td><td class='mono'>E666</td></tr><tr><td class='mono'>571</td><td class='mono'>E667</td></tr><tr><td class='mono'>572</td><td class='mono'>E668</td></tr><tr><td class='mono'>573</td><td class='mono'>E669</td></tr><tr><td class='mono'>574</td><td class='mono'>E670</td></tr><tr><td class='mono'>575</td><td class='mono'>E671</td></tr><tr><td class='mono'>576</td><td class='mono'>E672</td></tr><tr><td class='mono'>577</td><td class='mono'>E673</td></tr><tr><td class='mono'>578</td><td class='mono'>E674</td></tr><tr><td class='mono'>579</td><td class='mono'>E675</td></tr><tr><td class='mono'>580</td><td class='mono'>E676</td></tr><tr><td class='mono'>581</td><td class='mono'>E677</td></tr><tr><td class='mono'>582</td><td class='mono'>E678</td></tr><tr><td class='mono'>583</td><td class='mono'>E679</td></tr><tr><td class='mono'>584</td><td class='mono'>E680</td></tr><tr><td class='mono'>585</td><td class='mono'>E681</td></tr><tr><td class='mono'>586</td><td class='mono'>E682</td></tr><tr><td class='mono'>587</td><td class='mono'>E683</td></tr><tr><td class='mono'>588</td><td class='mono'>E684</td></tr><tr><td class='mono'>589</td><td class='mono'>E685</td></tr><tr><td class='mono'>590</td><td class='mono'>E686</td></tr><tr><td class='mono'>591</td><td class='mono'>E687</td></tr><tr><td class='mono'>592</td><td class='mono'>E688</td></tr><tr><td class='mono'>593</td><td class='mono'>E689</td></tr><tr><td class='mono'>594</td><td class='mono'>E690</td></tr><tr><td class='mono'>595</td><td class='mono'>E691</td></tr><tr><td class='mono'>596</td><td class='mono'>E692</td></tr><tr><td class='mono'>597</td><td class='mono'>E693</td></tr><tr><td class='mono'>598</td><td class='mono'>E694</td></tr><tr><td class='mono'>599</td><td class='mono'>E695</td></tr><tr><td class='mono'>600</td><td class='mono'>E696</td></tr><tr><td class='mono'>601</td><td class='mono'>E697</td></tr><tr><td class='mono'>602</td><td class='mono'>E698</td></tr><tr><td class='mono'>603</td><td class='mono'>E699</td></tr><tr><td class='mono'>604</td><td class='mono'>E700</td></tr><tr><td class='mono'>605</td><td class='mono'>E701</td></tr><tr><td class='mono'>606</td><td class='mono'>E702</td></tr><tr><td class='mono'>607</td><td class='mono'>E703</td></tr><tr><td class='mono'>608</td><td class='mono'>E704</td></tr><tr><td class='mono'>609</td><td class='mono'>E705</td></tr><tr><td class='mono'>610</td><td class='mono'>E706</td></tr><tr><td class='mono'>611</td><td class='mono'>E707</td></tr><tr><td class='mono'>612</td><td class='mono'>E708</td></tr><tr><td class='mono'>613</td><td class='mono'>E709</td></tr><tr><td class='mono'>614</td><td class='mono'>E710</td></tr><tr><td class='mono'>615</td><td class='mono'>E711</td></tr><tr><td class='mono'>616</td><td class='mono'>E712</td></tr><tr><td class='mono'>617</td><td class='mono'>E713</td></tr><tr><td class='mono'>618</td><td class='mono'>E714</td></tr><tr><td class='mono'>619</td><td class='mono'>E715</td></tr><tr><td class='mono'>620</td><td class='mono'>E716</td></tr><tr><td class='mono'>621</td><td class='mono'>E717</td></tr><tr><td class='mono'>622</td><td class='mono'>E718</td></tr><tr><td class='mono'>623</td><td class='mono'>E719</td></tr><tr><td class='mono'>624</td><td class='mono'>E720</td></tr><tr><td class='mono'>625</td><td class='mono'>E721</td></tr><tr><td class='mono'>626</td><td class='mono'>E722</td></tr><tr><td class='mono'>627</td><td class='mono'>E723</td></tr><tr><td class='mono'>628</td><td class='mono'>E724</td></tr><tr><td class='mono'>629</td><td class='mono'>E725</td></tr><tr><td class='mono'>630</td><td class='mono'>E726</td></tr><tr><td class='mono'>631</td><td class='mono'>E727</td></tr><tr><td class='mono'>632</td><td class='mono'>E728</td></tr><tr><td class='mono'>633</td><td class='mono'>E729</td></tr><tr><td class='mono'>634</td><td class='mono'>E730</td></tr><tr><td class='mono'>635</td><td class='mono'>E731</td></tr><tr><td class='mono'>636</td><td class='mono'>E732</td></tr><tr><td class='mono'>637</td><td class='mono'>E733</td></tr><tr><td class='mono'>638</td><td class='mono'>E734</td></tr><tr><td class='mono'>639</td><td class='mono'>E735</td></tr><tr><td class='mono'>640</td><td class='mono'>E736</td></tr><tr><td class='mono'>641</td><td class='mono'>E737</td></tr><tr><td class='mono'>642</td><td class='mono'>E738</td></tr><tr><td class='mono'>643</td><td class='mono'>E739</td></tr><tr><td class='mono'>644</td><td class='mono'>E740</td></tr><tr><td class='mono'>645</td><td class='mono'>E741</td></tr><tr><td class='mono'>646</td><td class='mono'>E742</td></tr><tr><td class='mono'>647</td><td class='mono'>E743</td></tr><tr><td class='mono'>648</td><td class='mono'>E744</td></tr><tr><td class='mono'>649</td><td class='mono'>E745</td></tr><tr><td class='mono'>650</td><td class='mono'>E746</td></tr><tr><td class='mono'>651</td><td class='mono'>E747</td></tr><tr><td class='mono'>652</td><td class='mono'>E748</td></tr><tr><td class='mono'>653</td><td class='mono'>E749</td></tr><tr><td class='mono'>654</td><td class='mono'>E750</td></tr><tr><td class='mono'>655</td><td class='mono'>E751</td></tr><tr><td class='mono'>656</td><td class='mono'>E752</td></tr><tr><td class='mono'>657</td><td class='mono'>E753</td></tr><tr><td class='mono'>658</td><td class='mono'>E754</td></tr><tr><td class='mono'>659</td><td class='mono'>E755</td></tr><tr><td class='mono'>660</td><td class='mono'>E756</td></tr><tr><td class='mono'>661</td><td class='mono'>E757</td></tr><tr><td class='mono'>662</td><td class='mono'>E758</td></tr><tr><td class='mono'>663</td><td class='mono'>E759</td></tr><tr><td class='mono'>664</td><td class='mono'>E760</td></tr><tr><td class='mono'>665</td><td class='mono'>E761</td></tr><tr><td class='mono'>666</td><td class='mono'>E762</td></tr><tr><td class='mono'>667</td><td class='mono'>E763</td></tr><tr><td class='mono'>668</td><td class='mono'>E764</td></tr><tr><td class='mono'>669</td><td class='mono'>E765</td></tr><tr><td class='mono'>670</td><td class='mono'>E766</td></tr><tr><td class='mono'>671</td><td class='mono'>E767</td></tr><tr><td class='mono'>672</td><td class='mono'>E768</td></tr><tr><td class='mono'>673</td><td class='mono'>E769</td></tr><tr><td class='mono'>674</td><td class='mono'>E770</td></tr><tr><td class='mono'>675</td><td class='mono'>E771</td></tr><tr><td class='mono'>676</td><td class='mono'>E772</td></tr><tr><td class='mono'>677</td><td class='mono'>E773</td></tr><tr><td class='mono'>678</td><td class='mono'>E774</td></tr><tr><td class='mono'>679</td><td class='mono'>E775</td></tr><tr><td class='mono'>680</td><td class='mono'>E776</td></tr><tr><td class='mono'>681</td><td class='mono'>E777</td></tr><tr><td class='mono'>682</td><td class='mono'>E778</td></tr><tr><td class='mono'>683</td><td class='mono'>E779</td></tr><tr><td class='mono'>684</td><td class='mono'>E780</td></tr><tr><td class='mono'>685</td><td class='mono'>E781</td></tr><tr><td class='mono'>686</td><td class='mono'>E782</td></tr><tr><td class='mono'>687</td><td class='mono'>E783</td></tr><tr><td class='mono'>688</td><td class='mono'>E784</td></tr><tr><td class='mono'>689</td><td class='mono'>E785</td></tr><tr><td class='mono'>690</td><td class='mono'>E786</td></tr><tr><td class='mono'>691</td><td class='mono'>E787</td></tr><tr><td class='mono'>692</td><td class='mono'>E788</td></tr><tr><td class='mono'>693</td><td class='mono'>E789</td></tr><tr><td class='mono'>694</td><td class='mono'>E790</td></tr><tr><td class='mono'>695</td><td class='mono'>E791</td></tr><tr><td class='mono'>696</td><td class='mono'>E792</td></tr><tr><td class='mono'>697</td><td class='mono'>E793</td></tr><tr><td class='mono'>698</td><td class='mono'>E794</td></tr><tr><td class='mono'>699</td><td class='mono'>E795</td></tr><tr><td class='mono'>700</td><td class='mono'>E796</td></tr><tr><td class='mono'>701</td><td class='mono'>E797</td></tr><tr><td class='mono'>702</td><td class='mono'>E798</td></tr><tr><td class='mono'>703</td><td class='mono'>E799</td></tr><tr><td class='mono'>704</td><td class='mono'>E800</td></tr><tr><td class='mono'>705</td><td class='mono'>E801</td></tr><tr><td class='mono'>706</td><td class='mono'>E802</td></tr><tr><td class='mono'>707</td><td class='mono'>E803</td></tr><tr><td class='mono'>708</td><td class='mono'>E804</td></tr><tr><td class='mono'>709</td><td class='mono'>E805</td></tr><tr><td class='mono'>710</td><td class='mono'>E806</td></tr><tr><td class='mono'>711</td><td class='mono'>E807</td></tr><tr><td class='mono'>712</td><td class='mono'>E808</td></tr><tr><td class='mono'>713</td><td class='mono'>E809</td></tr><tr><td class='mono'>714</td><td class='mono'>E810</td></tr><tr><td class='mono'>715</td><td class='mono'>E811</td></tr><tr><td class='mono'>716</td><td class='mono'>E812</td></tr><tr><td class='mono'>717</td><td class='mono'>E813</td></tr><tr><td class='mono'>718</td><td class='mono'>E814</td></tr><tr><td class='mono'>719</td><td class='mono'>E815</td></tr><tr><td class='mono'>720</td><td class='mono'>E816</td></tr><tr><td class='mono'>721</td><td class='mono'>E817</td></tr><tr><td class='mono'>722</td><td class='mono'>E818</td></tr><tr><td class='mono'>723</td><td class='mono'>E819</td></tr><tr><td class='mono'>724</td><td class='mono'>E820</td></tr><tr><td class='mono'>725</td><td class='mono'>E821</td></tr><tr><td class='mono'>726</td><td class='mono'>E822</td></tr><tr><td class='mono'>727</td><td class='mono'>E823</td></tr><tr><td class='mono'>728</td><td class='mono'>E824</td></tr><tr><td class='mono'>729</td><td class='mono'>E825</td></tr><tr><td class='mono'>730</td><td class='mono'>E826</td></tr><tr><td class='mono'>731</td><td class='mono'>E827</td></tr><tr><td class='mono'>732</td><td class='mono'>E828</td></tr><tr><td class='mono'>733</td><td class='mono'>E829</td></tr><tr><td class='mono'>734</td><td class='mono'>E830</td></tr><tr><td class='mono'>735</td><td class='mono'>E831</td></tr><tr><td class='mono'>736</td><td class='mono'>E832</td></tr><tr><td class='mono'>737</td><td class='mono'>E833</td></tr><tr><td class='mono'>738</td><td class='mono'>E834</td></tr><tr><td class='mono'>739</td><td class='mono'>E835</td></tr><tr><td class='mono'>740</td><td class='mono'>E836</td></tr><tr><td class='mono'>741</td><td class='mono'>E837</td></tr><tr><td class='mono'>742</td><td class='mono'>E838</td></tr><tr><td class='mono'>743</td><td class='mono'>E839</td></tr><tr><td class='mono'>744</td><td class='mono'>E840</td></tr><tr><td class='mono'>745</td><td class='mono'>E841</td></tr><tr><td class='mono'>746</td><td class='mono'>E842</td></tr><tr><td class='mono'>747</td><td class='mono'>E843</td></tr><tr><td class='mono'>748</td><td class='mono'>E844</td></tr><tr><td class='mono'>749</td><td class='mono'>E845</td></tr><tr><td class='mono'>750</td><td class='mono'>E846</td></tr><tr><td class='mono'>751</td><td class='mono'>E847</td></tr><tr><td class='mono'>752</td><td class='mono'>E848</td></tr><tr><td class='mono'>753</td><td class='mono'>E849</td></tr><tr><td class='mono'>754</td><td class='mono'>E850</td></tr>
+  </tbody>
+</table>
+<p class="dim" style="font-size:.85em">(showing first 500 of 4,649)</p>
+</details>
+
+<h2>Other categories</h2>
+<table class="data">
+  <thead><tr><th>Category</th><th>Count</th></tr></thead>
+  <tbody>
+    <tr><td>Boss</td><td class='mono'>5</td></tr><tr><td>FO-class</td><td class='mono'>1</td></tr><tr><td>Gender</td><td class='mono'>3</td></tr><tr><td>KD-class</td><td class='mono'>3</td></tr><tr><td>Mount/mob</td><td class='mono'>18</td></tr><tr><td>NM family</td><td class='mono'>54</td></tr><tr><td>NPC family</td><td class='mono'>180</td></tr>
+  </tbody>
+</table>
+
+<script>
+function beastFilter(input) {
+  const q = input.value.trim().toLowerCase();
+  for (const c of document.querySelectorAll('#enemy-grid .npc-card')) {
+    const t = (c.dataset.name + ' ' + c.dataset.id).toLowerCase();
+    c.style.display = (!q || t.includes(q)) ? '' : 'none';
+  }
+}
+</script>
+
+    <footer class="site">
+      <p>Reverse-engineered asset archive of <em>Tales of Eternia Online</em> (Namco / Sigma, 2003-2007). Static structural data extracted from the original client; no copyrighted asset binaries are redistributed here. Numeric gameplay values (HP, levels, drops, XP) were server-authoritative and lost when Namco's servers shut down; they are not part of this archive.</p>
+      <p class="small muted">Generated by <code>build_wiki.py</code> · 7 container formats decoded: BNKD · IDTB · ICND · TDAB · CRSD · NNTB · ATDT/PKDF/CPDT</p>
+    </footer>
+  </main>
+</div>
+<div class="palette-backdrop" id="paletteBackdrop" hidden onclick="closePalette()"></div>
+<section class="command-palette" id="commandPalette" hidden aria-label="Archive search">
+  <div class="palette-panel">
+    <div class="palette-field">
+      <span class="palette-icon">⌕</span>
+      <input id="paletteInput" type="search" placeholder="Search current page and archive sections..." autocomplete="off" oninput="paletteSearch(this.value)">
+      <button type="button" onclick="closePalette()" aria-label="Close search">Esc</button>
+    </div>
+    <div class="palette-results" id="paletteResults"></div>
+  </div>
+</section>
+<script>
+const archiveLinks = [{"href": "../index.html", "label": "Home"}, {"href": "../equipment/index.html", "label": "Equipment"}, {"href": "../beasts/index.html", "label": "Beasts"}, {"href": "../npcs/index.html", "label": "NPCs"}, {"href": "../actions/index.html", "label": "Battle Actions"}, {"href": "../zones/index.html", "label": "Zones"}, {"href": "../audio/index.html", "label": "Audio"}, {"href": "../bundles/index.html", "label": "Bundles"}, {"href": "../about.html", "label": "About"}];
+
+function globalSearch(q) {
+  q = q.trim().toLowerCase();
+  const targets = document.querySelectorAll('[data-search], [data-name], [data-id]');
+  for (const t of targets) {
+    const haystack = (t.dataset.search || t.dataset.name || '' + (t.dataset.id || '') || t.textContent || '').toLowerCase();
+    t.style.display = (!q || haystack.includes(q)) ? '' : 'none';
+  }
+}
+
+function openPalette() {
+  document.getElementById('paletteBackdrop').hidden = false;
+  document.getElementById('commandPalette').hidden = false;
+  const input = document.getElementById('paletteInput');
+  input.value = '';
+  paletteSearch('');
+  input.focus();
+}
+
+function closePalette() {
+  document.getElementById('paletteBackdrop').hidden = true;
+  document.getElementById('commandPalette').hidden = true;
+}
+
+function paletteSearch(q) {
+  q = q.trim().toLowerCase();
+  globalSearch(q);
+  const pageItems = Array.from(document.querySelectorAll('.cat-card, .npc-card, .icon-cell, .action-card, .zone-card, .audio-cell'))
+    .map((el) => {
+      const title = (el.querySelector('.name, .npc-name, .id, .zone-id, .a-name') || el).textContent.trim();
+      const meta = (el.querySelector('.meta, .npc-id, .zone-group, .a-sub') || { textContent: '' }).textContent.trim();
+      const text = (el.dataset.search || el.dataset.name || el.textContent || '').trim();
+      return { title, meta, text };
+    })
+    .filter((item) => !q || item.text.toLowerCase().includes(q))
+    .slice(0, 6);
+  const linkItems = archiveLinks
+    .filter((item) => !q || item.label.toLowerCase().includes(q))
+    .map((item) => `<a class="palette-result" href="${item.href}"><span>${item.label}</span><small>Archive section</small></a>`);
+  const localItems = pageItems
+    .map((item) => `<button class="palette-result" type="button" onclick="closePalette()"><span>${item.title}</span><small>${item.meta || 'Current page match'}</small></button>`);
+  document.getElementById('paletteResults').innerHTML = [...linkItems, ...localItems].join('') || '<div class="palette-empty">No matches in this page.</div>';
+}
+
+document.addEventListener('keydown', (ev) => {
+  if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'k') {
+    ev.preventDefault();
+    openPalette();
+  }
+  if (ev.key === 'Escape') closePalette();
+});
+</script>
+</body>
+</html>

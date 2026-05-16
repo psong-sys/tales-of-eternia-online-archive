@@ -1,0 +1,1817 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NPCs · TOEO Asset Wiki</title>
+<link rel="stylesheet" href="../static/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="top-nav">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark">TOEO</span>
+    <span class="brand-text">Tales of Eternia Online</span>
+    <span class="tagline">Recovered MMO Archive</span>
+  </a>
+  <nav class="nav-links">
+      <a class="" href="../index.html">Home</a>
+      <a class="" href="../equipment/index.html">Equipment</a>
+      <a class="" href="../beasts/index.html">Beasts</a>
+      <a class="active" href="../npcs/index.html">NPCs</a>
+      <a class="" href="../actions/index.html">Battle Actions</a>
+      <a class="" href="../zones/index.html">Zones</a>
+      <a class="" href="../audio/index.html">Audio</a>
+      <a class="" href="../bundles/index.html">Bundles</a>
+      <a class="" href="../about.html">About</a>
+  </nav>
+  <div class="search-wrap">
+    <button class="search-top" type="button" onclick="openPalette()" aria-label="Open search">
+      <span>Search archive</span><kbd>Ctrl K</kbd>
+    </button>
+  </div>
+</header>
+<div class="site-shell">
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-kicker">Recovered client index</div>
+      <details class="side-group" open>
+        <summary>Archive</summary>
+        <div class="side-links">
+          <a class="" href="../index.html" data-palette-item="Home" data-search="Home archive section">Home</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Catalogs</summary>
+        <div class="side-links">
+          <a class="" href="../equipment/index.html" data-palette-item="Equipment" data-search="Equipment archive section">Equipment</a><a class="" href="../beasts/index.html" data-palette-item="Beasts" data-search="Beasts archive section">Beasts</a><a class="active" href="../npcs/index.html" data-palette-item="NPCs" data-search="NPCs archive section">NPCs</a><a class="" href="../actions/index.html" data-palette-item="Battle Actions" data-search="Battle Actions archive section">Battle Actions</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Preservation</summary>
+        <div class="side-links">
+          <a class="" href="../zones/index.html" data-palette-item="Zones" data-search="Zones archive section">Zones</a><a class="" href="../audio/index.html" data-palette-item="Audio" data-search="Audio archive section">Audio</a><a class="" href="../bundles/index.html" data-palette-item="Bundles" data-search="Bundles archive section">Bundles</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Project</summary>
+        <div class="side-links">
+          <a class="" href="../about.html" data-palette-item="About" data-search="About archive section">About</a>
+        </div>
+      </details>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="breadcrumb"><a href="../index.html">Archive</a><span>/</span><span>NPCs</span></div>
+
+<h1>NPCs</h1>
+<p class="dim">234 NPC entries from <code>cid0.idt</code> with sprite atlases extracted from the corresponding <code>.bnd</code> bundles. Each thumbnail shows the NPC's full 8-direction walk cycle plus pose variants — the same atlas the engine streams to the renderer.</p>
+
+<div class="stat-grid">
+  <div class="stat"><span class="num">180</span><span class="label">NN entries</span></div>
+  <div class="stat"><span class="num">180</span><span class="label">with sprite</span></div>
+  <div class="stat"><span class="num">54</span><span class="label">NM entries</span></div>
+  <div class="stat"><span class="num">54</span><span class="label">with sprite</span></div>
+</div>
+
+<div class="search">
+  <input type="text" placeholder="Filter by ID or symbolic name…" oninput="npcFilter(this)">
+</div>
+
+<h2>NN family — townfolk, vendors, quest-givers <span class="muted" style="font-size:.7em">180 entries</span></h2>
+<div class="npc-grid" id="npc-nn">
+
+            <div class="npc-card" data-name="NN001" data-id="1400">
+              <a href="../static/sprites/nn/NN001.png" target="_blank"><img src="../static/sprites/nn/NN001.png" alt="NN001 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN001</span>
+                <span class="npc-id mono dim">id 1400</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN002" data-id="1401">
+              <a href="../static/sprites/nn/NN002.png" target="_blank"><img src="../static/sprites/nn/NN002.png" alt="NN002 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN002</span>
+                <span class="npc-id mono dim">id 1401</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN003" data-id="1402">
+              <a href="../static/sprites/nn/NN003.png" target="_blank"><img src="../static/sprites/nn/NN003.png" alt="NN003 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN003</span>
+                <span class="npc-id mono dim">id 1402</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN004" data-id="1403">
+              <a href="../static/sprites/nn/NN004.png" target="_blank"><img src="../static/sprites/nn/NN004.png" alt="NN004 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN004</span>
+                <span class="npc-id mono dim">id 1403</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN005" data-id="1404">
+              <a href="../static/sprites/nn/NN005.png" target="_blank"><img src="../static/sprites/nn/NN005.png" alt="NN005 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN005</span>
+                <span class="npc-id mono dim">id 1404</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN006" data-id="1405">
+              <a href="../static/sprites/nn/NN006.png" target="_blank"><img src="../static/sprites/nn/NN006.png" alt="NN006 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN006</span>
+                <span class="npc-id mono dim">id 1405</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN007" data-id="1406">
+              <a href="../static/sprites/nn/NN007.png" target="_blank"><img src="../static/sprites/nn/NN007.png" alt="NN007 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN007</span>
+                <span class="npc-id mono dim">id 1406</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN008" data-id="1407">
+              <a href="../static/sprites/nn/NN008.png" target="_blank"><img src="../static/sprites/nn/NN008.png" alt="NN008 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN008</span>
+                <span class="npc-id mono dim">id 1407</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN009" data-id="1408">
+              <a href="../static/sprites/nn/NN009.png" target="_blank"><img src="../static/sprites/nn/NN009.png" alt="NN009 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN009</span>
+                <span class="npc-id mono dim">id 1408</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN010" data-id="1409">
+              <a href="../static/sprites/nn/NN010.png" target="_blank"><img src="../static/sprites/nn/NN010.png" alt="NN010 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN010</span>
+                <span class="npc-id mono dim">id 1409</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN011" data-id="1410">
+              <a href="../static/sprites/nn/NN011.png" target="_blank"><img src="../static/sprites/nn/NN011.png" alt="NN011 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN011</span>
+                <span class="npc-id mono dim">id 1410</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN012" data-id="1411">
+              <a href="../static/sprites/nn/NN012.png" target="_blank"><img src="../static/sprites/nn/NN012.png" alt="NN012 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN012</span>
+                <span class="npc-id mono dim">id 1411</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN013" data-id="1412">
+              <a href="../static/sprites/nn/NN013.png" target="_blank"><img src="../static/sprites/nn/NN013.png" alt="NN013 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN013</span>
+                <span class="npc-id mono dim">id 1412</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN014" data-id="1413">
+              <a href="../static/sprites/nn/NN014.png" target="_blank"><img src="../static/sprites/nn/NN014.png" alt="NN014 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN014</span>
+                <span class="npc-id mono dim">id 1413</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN015" data-id="1414">
+              <a href="../static/sprites/nn/NN015.png" target="_blank"><img src="../static/sprites/nn/NN015.png" alt="NN015 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN015</span>
+                <span class="npc-id mono dim">id 1414</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN016" data-id="1415">
+              <a href="../static/sprites/nn/NN016.png" target="_blank"><img src="../static/sprites/nn/NN016.png" alt="NN016 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN016</span>
+                <span class="npc-id mono dim">id 1415</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN017" data-id="1416">
+              <a href="../static/sprites/nn/NN017.png" target="_blank"><img src="../static/sprites/nn/NN017.png" alt="NN017 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN017</span>
+                <span class="npc-id mono dim">id 1416</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN018" data-id="1417">
+              <a href="../static/sprites/nn/NN018.png" target="_blank"><img src="../static/sprites/nn/NN018.png" alt="NN018 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN018</span>
+                <span class="npc-id mono dim">id 1417</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN019" data-id="1418">
+              <a href="../static/sprites/nn/NN019.png" target="_blank"><img src="../static/sprites/nn/NN019.png" alt="NN019 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN019</span>
+                <span class="npc-id mono dim">id 1418</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN020" data-id="1419">
+              <a href="../static/sprites/nn/NN020.png" target="_blank"><img src="../static/sprites/nn/NN020.png" alt="NN020 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN020</span>
+                <span class="npc-id mono dim">id 1419</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN021" data-id="1420">
+              <a href="../static/sprites/nn/NN021.png" target="_blank"><img src="../static/sprites/nn/NN021.png" alt="NN021 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN021</span>
+                <span class="npc-id mono dim">id 1420</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN022" data-id="1421">
+              <a href="../static/sprites/nn/NN022.png" target="_blank"><img src="../static/sprites/nn/NN022.png" alt="NN022 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN022</span>
+                <span class="npc-id mono dim">id 1421</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN023" data-id="1422">
+              <a href="../static/sprites/nn/NN023.png" target="_blank"><img src="../static/sprites/nn/NN023.png" alt="NN023 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN023</span>
+                <span class="npc-id mono dim">id 1422</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN024" data-id="1423">
+              <a href="../static/sprites/nn/NN024.png" target="_blank"><img src="../static/sprites/nn/NN024.png" alt="NN024 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN024</span>
+                <span class="npc-id mono dim">id 1423</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN025" data-id="1424">
+              <a href="../static/sprites/nn/NN025.png" target="_blank"><img src="../static/sprites/nn/NN025.png" alt="NN025 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN025</span>
+                <span class="npc-id mono dim">id 1424</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN026" data-id="1425">
+              <a href="../static/sprites/nn/NN026.png" target="_blank"><img src="../static/sprites/nn/NN026.png" alt="NN026 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN026</span>
+                <span class="npc-id mono dim">id 1425</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN027" data-id="1426">
+              <a href="../static/sprites/nn/NN027.png" target="_blank"><img src="../static/sprites/nn/NN027.png" alt="NN027 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN027</span>
+                <span class="npc-id mono dim">id 1426</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN028" data-id="1427">
+              <a href="../static/sprites/nn/NN028.png" target="_blank"><img src="../static/sprites/nn/NN028.png" alt="NN028 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN028</span>
+                <span class="npc-id mono dim">id 1427</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN029" data-id="1428">
+              <a href="../static/sprites/nn/NN029.png" target="_blank"><img src="../static/sprites/nn/NN029.png" alt="NN029 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN029</span>
+                <span class="npc-id mono dim">id 1428</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN030" data-id="1429">
+              <a href="../static/sprites/nn/NN030.png" target="_blank"><img src="../static/sprites/nn/NN030.png" alt="NN030 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN030</span>
+                <span class="npc-id mono dim">id 1429</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN031" data-id="1430">
+              <a href="../static/sprites/nn/NN031.png" target="_blank"><img src="../static/sprites/nn/NN031.png" alt="NN031 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN031</span>
+                <span class="npc-id mono dim">id 1430</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN032" data-id="1431">
+              <a href="../static/sprites/nn/NN032.png" target="_blank"><img src="../static/sprites/nn/NN032.png" alt="NN032 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN032</span>
+                <span class="npc-id mono dim">id 1431</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN033" data-id="1432">
+              <a href="../static/sprites/nn/NN033.png" target="_blank"><img src="../static/sprites/nn/NN033.png" alt="NN033 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN033</span>
+                <span class="npc-id mono dim">id 1432</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN034" data-id="1433">
+              <a href="../static/sprites/nn/NN034.png" target="_blank"><img src="../static/sprites/nn/NN034.png" alt="NN034 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN034</span>
+                <span class="npc-id mono dim">id 1433</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN035" data-id="1434">
+              <a href="../static/sprites/nn/NN035.png" target="_blank"><img src="../static/sprites/nn/NN035.png" alt="NN035 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN035</span>
+                <span class="npc-id mono dim">id 1434</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN036" data-id="1435">
+              <a href="../static/sprites/nn/NN036.png" target="_blank"><img src="../static/sprites/nn/NN036.png" alt="NN036 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN036</span>
+                <span class="npc-id mono dim">id 1435</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN037" data-id="1436">
+              <a href="../static/sprites/nn/NN037.png" target="_blank"><img src="../static/sprites/nn/NN037.png" alt="NN037 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN037</span>
+                <span class="npc-id mono dim">id 1436</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN038" data-id="1437">
+              <a href="../static/sprites/nn/NN038.png" target="_blank"><img src="../static/sprites/nn/NN038.png" alt="NN038 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN038</span>
+                <span class="npc-id mono dim">id 1437</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN039" data-id="1438">
+              <a href="../static/sprites/nn/NN039.png" target="_blank"><img src="../static/sprites/nn/NN039.png" alt="NN039 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN039</span>
+                <span class="npc-id mono dim">id 1438</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN040" data-id="1439">
+              <a href="../static/sprites/nn/NN040.png" target="_blank"><img src="../static/sprites/nn/NN040.png" alt="NN040 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN040</span>
+                <span class="npc-id mono dim">id 1439</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN041" data-id="1440">
+              <a href="../static/sprites/nn/NN041.png" target="_blank"><img src="../static/sprites/nn/NN041.png" alt="NN041 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN041</span>
+                <span class="npc-id mono dim">id 1440</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN042" data-id="1441">
+              <a href="../static/sprites/nn/NN042.png" target="_blank"><img src="../static/sprites/nn/NN042.png" alt="NN042 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN042</span>
+                <span class="npc-id mono dim">id 1441</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN043" data-id="1442">
+              <a href="../static/sprites/nn/NN043.png" target="_blank"><img src="../static/sprites/nn/NN043.png" alt="NN043 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN043</span>
+                <span class="npc-id mono dim">id 1442</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN044" data-id="1443">
+              <a href="../static/sprites/nn/NN044.png" target="_blank"><img src="../static/sprites/nn/NN044.png" alt="NN044 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN044</span>
+                <span class="npc-id mono dim">id 1443</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN045A" data-id="1444">
+              <a href="../static/sprites/nn/NN045A.png" target="_blank"><img src="../static/sprites/nn/NN045A.png" alt="NN045A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN045A</span>
+                <span class="npc-id mono dim">id 1444</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN046" data-id="1445">
+              <a href="../static/sprites/nn/NN046.png" target="_blank"><img src="../static/sprites/nn/NN046.png" alt="NN046 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN046</span>
+                <span class="npc-id mono dim">id 1445</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN047" data-id="1446">
+              <a href="../static/sprites/nn/NN047.png" target="_blank"><img src="../static/sprites/nn/NN047.png" alt="NN047 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN047</span>
+                <span class="npc-id mono dim">id 1446</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN048" data-id="1447">
+              <a href="../static/sprites/nn/NN048.png" target="_blank"><img src="../static/sprites/nn/NN048.png" alt="NN048 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN048</span>
+                <span class="npc-id mono dim">id 1447</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN049" data-id="1448">
+              <a href="../static/sprites/nn/NN049.png" target="_blank"><img src="../static/sprites/nn/NN049.png" alt="NN049 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN049</span>
+                <span class="npc-id mono dim">id 1448</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN050" data-id="1449">
+              <a href="../static/sprites/nn/NN050.png" target="_blank"><img src="../static/sprites/nn/NN050.png" alt="NN050 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN050</span>
+                <span class="npc-id mono dim">id 1449</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN051" data-id="1450">
+              <a href="../static/sprites/nn/NN051.png" target="_blank"><img src="../static/sprites/nn/NN051.png" alt="NN051 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN051</span>
+                <span class="npc-id mono dim">id 1450</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN052" data-id="1451">
+              <a href="../static/sprites/nn/NN052.png" target="_blank"><img src="../static/sprites/nn/NN052.png" alt="NN052 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN052</span>
+                <span class="npc-id mono dim">id 1451</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN053" data-id="1452">
+              <a href="../static/sprites/nn/NN053.png" target="_blank"><img src="../static/sprites/nn/NN053.png" alt="NN053 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN053</span>
+                <span class="npc-id mono dim">id 1452</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN054A" data-id="1453">
+              <a href="../static/sprites/nn/NN054A.png" target="_blank"><img src="../static/sprites/nn/NN054A.png" alt="NN054A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN054A</span>
+                <span class="npc-id mono dim">id 1453</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN055A" data-id="1454">
+              <a href="../static/sprites/nn/NN055A.png" target="_blank"><img src="../static/sprites/nn/NN055A.png" alt="NN055A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN055A</span>
+                <span class="npc-id mono dim">id 1454</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN056" data-id="1455">
+              <a href="../static/sprites/nn/NN056.png" target="_blank"><img src="../static/sprites/nn/NN056.png" alt="NN056 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN056</span>
+                <span class="npc-id mono dim">id 1455</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN057" data-id="1456">
+              <a href="../static/sprites/nn/NN057.png" target="_blank"><img src="../static/sprites/nn/NN057.png" alt="NN057 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN057</span>
+                <span class="npc-id mono dim">id 1456</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN058" data-id="1457">
+              <a href="../static/sprites/nn/NN058.png" target="_blank"><img src="../static/sprites/nn/NN058.png" alt="NN058 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN058</span>
+                <span class="npc-id mono dim">id 1457</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN059" data-id="1458">
+              <a href="../static/sprites/nn/NN059.png" target="_blank"><img src="../static/sprites/nn/NN059.png" alt="NN059 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN059</span>
+                <span class="npc-id mono dim">id 1458</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN060" data-id="1459">
+              <a href="../static/sprites/nn/NN060.png" target="_blank"><img src="../static/sprites/nn/NN060.png" alt="NN060 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN060</span>
+                <span class="npc-id mono dim">id 1459</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN061" data-id="1460">
+              <a href="../static/sprites/nn/NN061.png" target="_blank"><img src="../static/sprites/nn/NN061.png" alt="NN061 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN061</span>
+                <span class="npc-id mono dim">id 1460</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN062" data-id="1461">
+              <a href="../static/sprites/nn/NN062.png" target="_blank"><img src="../static/sprites/nn/NN062.png" alt="NN062 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN062</span>
+                <span class="npc-id mono dim">id 1461</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN063A" data-id="1462">
+              <a href="../static/sprites/nn/NN063A.png" target="_blank"><img src="../static/sprites/nn/NN063A.png" alt="NN063A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN063A</span>
+                <span class="npc-id mono dim">id 1462</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN063B" data-id="1463">
+              <a href="../static/sprites/nn/NN063B.png" target="_blank"><img src="../static/sprites/nn/NN063B.png" alt="NN063B sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN063B</span>
+                <span class="npc-id mono dim">id 1463</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN063C" data-id="1464">
+              <a href="../static/sprites/nn/NN063C.png" target="_blank"><img src="../static/sprites/nn/NN063C.png" alt="NN063C sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN063C</span>
+                <span class="npc-id mono dim">id 1464</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN063D" data-id="1465">
+              <a href="../static/sprites/nn/NN063D.png" target="_blank"><img src="../static/sprites/nn/NN063D.png" alt="NN063D sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN063D</span>
+                <span class="npc-id mono dim">id 1465</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN063E" data-id="1466">
+              <a href="../static/sprites/nn/NN063E.png" target="_blank"><img src="../static/sprites/nn/NN063E.png" alt="NN063E sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN063E</span>
+                <span class="npc-id mono dim">id 1466</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN063F" data-id="1467">
+              <a href="../static/sprites/nn/NN063F.png" target="_blank"><img src="../static/sprites/nn/NN063F.png" alt="NN063F sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN063F</span>
+                <span class="npc-id mono dim">id 1467</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN064" data-id="1468">
+              <a href="../static/sprites/nn/NN064.png" target="_blank"><img src="../static/sprites/nn/NN064.png" alt="NN064 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN064</span>
+                <span class="npc-id mono dim">id 1468</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN065A" data-id="1469">
+              <a href="../static/sprites/nn/NN065A.png" target="_blank"><img src="../static/sprites/nn/NN065A.png" alt="NN065A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN065A</span>
+                <span class="npc-id mono dim">id 1469</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN066" data-id="1470">
+              <a href="../static/sprites/nn/NN066.png" target="_blank"><img src="../static/sprites/nn/NN066.png" alt="NN066 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN066</span>
+                <span class="npc-id mono dim">id 1470</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN067" data-id="1471">
+              <a href="../static/sprites/nn/NN067.png" target="_blank"><img src="../static/sprites/nn/NN067.png" alt="NN067 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN067</span>
+                <span class="npc-id mono dim">id 1471</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN068" data-id="1472">
+              <a href="../static/sprites/nn/NN068.png" target="_blank"><img src="../static/sprites/nn/NN068.png" alt="NN068 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN068</span>
+                <span class="npc-id mono dim">id 1472</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN069" data-id="1473">
+              <a href="../static/sprites/nn/NN069.png" target="_blank"><img src="../static/sprites/nn/NN069.png" alt="NN069 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN069</span>
+                <span class="npc-id mono dim">id 1473</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN070" data-id="1474">
+              <a href="../static/sprites/nn/NN070.png" target="_blank"><img src="../static/sprites/nn/NN070.png" alt="NN070 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN070</span>
+                <span class="npc-id mono dim">id 1474</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN071" data-id="1475">
+              <a href="../static/sprites/nn/NN071.png" target="_blank"><img src="../static/sprites/nn/NN071.png" alt="NN071 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN071</span>
+                <span class="npc-id mono dim">id 1475</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN072A" data-id="1476">
+              <a href="../static/sprites/nn/NN072A.png" target="_blank"><img src="../static/sprites/nn/NN072A.png" alt="NN072A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN072A</span>
+                <span class="npc-id mono dim">id 1476</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN073A" data-id="1477">
+              <a href="../static/sprites/nn/NN073A.png" target="_blank"><img src="../static/sprites/nn/NN073A.png" alt="NN073A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN073A</span>
+                <span class="npc-id mono dim">id 1477</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN074A" data-id="1478">
+              <a href="../static/sprites/nn/NN074A.png" target="_blank"><img src="../static/sprites/nn/NN074A.png" alt="NN074A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN074A</span>
+                <span class="npc-id mono dim">id 1478</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN075A" data-id="1479">
+              <a href="../static/sprites/nn/NN075A.png" target="_blank"><img src="../static/sprites/nn/NN075A.png" alt="NN075A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN075A</span>
+                <span class="npc-id mono dim">id 1479</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN076A" data-id="1480">
+              <a href="../static/sprites/nn/NN076A.png" target="_blank"><img src="../static/sprites/nn/NN076A.png" alt="NN076A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN076A</span>
+                <span class="npc-id mono dim">id 1480</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN077" data-id="1481">
+              <a href="../static/sprites/nn/NN077.png" target="_blank"><img src="../static/sprites/nn/NN077.png" alt="NN077 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN077</span>
+                <span class="npc-id mono dim">id 1481</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN078" data-id="1482">
+              <a href="../static/sprites/nn/NN078.png" target="_blank"><img src="../static/sprites/nn/NN078.png" alt="NN078 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN078</span>
+                <span class="npc-id mono dim">id 1482</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN079" data-id="1483">
+              <a href="../static/sprites/nn/NN079.png" target="_blank"><img src="../static/sprites/nn/NN079.png" alt="NN079 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN079</span>
+                <span class="npc-id mono dim">id 1483</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN080" data-id="1484">
+              <a href="../static/sprites/nn/NN080.png" target="_blank"><img src="../static/sprites/nn/NN080.png" alt="NN080 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN080</span>
+                <span class="npc-id mono dim">id 1484</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN081" data-id="1485">
+              <a href="../static/sprites/nn/NN081.png" target="_blank"><img src="../static/sprites/nn/NN081.png" alt="NN081 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN081</span>
+                <span class="npc-id mono dim">id 1485</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN082" data-id="1486">
+              <a href="../static/sprites/nn/NN082.png" target="_blank"><img src="../static/sprites/nn/NN082.png" alt="NN082 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN082</span>
+                <span class="npc-id mono dim">id 1486</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN083" data-id="1487">
+              <a href="../static/sprites/nn/NN083.png" target="_blank"><img src="../static/sprites/nn/NN083.png" alt="NN083 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN083</span>
+                <span class="npc-id mono dim">id 1487</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN084" data-id="1488">
+              <a href="../static/sprites/nn/NN084.png" target="_blank"><img src="../static/sprites/nn/NN084.png" alt="NN084 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN084</span>
+                <span class="npc-id mono dim">id 1488</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN085A" data-id="1489">
+              <a href="../static/sprites/nn/NN085A.png" target="_blank"><img src="../static/sprites/nn/NN085A.png" alt="NN085A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN085A</span>
+                <span class="npc-id mono dim">id 1489</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN086" data-id="1490">
+              <a href="../static/sprites/nn/NN086.png" target="_blank"><img src="../static/sprites/nn/NN086.png" alt="NN086 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN086</span>
+                <span class="npc-id mono dim">id 1490</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN087" data-id="1491">
+              <a href="../static/sprites/nn/NN087.png" target="_blank"><img src="../static/sprites/nn/NN087.png" alt="NN087 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN087</span>
+                <span class="npc-id mono dim">id 1491</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN088" data-id="1492">
+              <a href="../static/sprites/nn/NN088.png" target="_blank"><img src="../static/sprites/nn/NN088.png" alt="NN088 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN088</span>
+                <span class="npc-id mono dim">id 1492</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN089" data-id="1493">
+              <a href="../static/sprites/nn/NN089.png" target="_blank"><img src="../static/sprites/nn/NN089.png" alt="NN089 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN089</span>
+                <span class="npc-id mono dim">id 1493</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN090" data-id="1494">
+              <a href="../static/sprites/nn/NN090.png" target="_blank"><img src="../static/sprites/nn/NN090.png" alt="NN090 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN090</span>
+                <span class="npc-id mono dim">id 1494</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN091" data-id="1495">
+              <a href="../static/sprites/nn/NN091.png" target="_blank"><img src="../static/sprites/nn/NN091.png" alt="NN091 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN091</span>
+                <span class="npc-id mono dim">id 1495</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN092" data-id="1496">
+              <a href="../static/sprites/nn/NN092.png" target="_blank"><img src="../static/sprites/nn/NN092.png" alt="NN092 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN092</span>
+                <span class="npc-id mono dim">id 1496</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN093" data-id="1497">
+              <a href="../static/sprites/nn/NN093.png" target="_blank"><img src="../static/sprites/nn/NN093.png" alt="NN093 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN093</span>
+                <span class="npc-id mono dim">id 1497</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN094" data-id="1498">
+              <a href="../static/sprites/nn/NN094.png" target="_blank"><img src="../static/sprites/nn/NN094.png" alt="NN094 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN094</span>
+                <span class="npc-id mono dim">id 1498</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN095" data-id="1499">
+              <a href="../static/sprites/nn/NN095.png" target="_blank"><img src="../static/sprites/nn/NN095.png" alt="NN095 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN095</span>
+                <span class="npc-id mono dim">id 1499</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN096" data-id="1500">
+              <a href="../static/sprites/nn/NN096.png" target="_blank"><img src="../static/sprites/nn/NN096.png" alt="NN096 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN096</span>
+                <span class="npc-id mono dim">id 1500</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN097" data-id="1501">
+              <a href="../static/sprites/nn/NN097.png" target="_blank"><img src="../static/sprites/nn/NN097.png" alt="NN097 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN097</span>
+                <span class="npc-id mono dim">id 1501</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN098" data-id="1502">
+              <a href="../static/sprites/nn/NN098.png" target="_blank"><img src="../static/sprites/nn/NN098.png" alt="NN098 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN098</span>
+                <span class="npc-id mono dim">id 1502</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN099" data-id="1503">
+              <a href="../static/sprites/nn/NN099.png" target="_blank"><img src="../static/sprites/nn/NN099.png" alt="NN099 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN099</span>
+                <span class="npc-id mono dim">id 1503</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN101" data-id="1504">
+              <a href="../static/sprites/nn/NN101.png" target="_blank"><img src="../static/sprites/nn/NN101.png" alt="NN101 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN101</span>
+                <span class="npc-id mono dim">id 1504</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN102" data-id="1505">
+              <a href="../static/sprites/nn/NN102.png" target="_blank"><img src="../static/sprites/nn/NN102.png" alt="NN102 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN102</span>
+                <span class="npc-id mono dim">id 1505</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN103" data-id="1506">
+              <a href="../static/sprites/nn/NN103.png" target="_blank"><img src="../static/sprites/nn/NN103.png" alt="NN103 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN103</span>
+                <span class="npc-id mono dim">id 1506</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN104" data-id="1507">
+              <a href="../static/sprites/nn/NN104.png" target="_blank"><img src="../static/sprites/nn/NN104.png" alt="NN104 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN104</span>
+                <span class="npc-id mono dim">id 1507</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN105" data-id="1508">
+              <a href="../static/sprites/nn/NN105.png" target="_blank"><img src="../static/sprites/nn/NN105.png" alt="NN105 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN105</span>
+                <span class="npc-id mono dim">id 1508</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN106" data-id="1509">
+              <a href="../static/sprites/nn/NN106.png" target="_blank"><img src="../static/sprites/nn/NN106.png" alt="NN106 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN106</span>
+                <span class="npc-id mono dim">id 1509</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN107" data-id="1510">
+              <a href="../static/sprites/nn/NN107.png" target="_blank"><img src="../static/sprites/nn/NN107.png" alt="NN107 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN107</span>
+                <span class="npc-id mono dim">id 1510</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN108" data-id="1511">
+              <a href="../static/sprites/nn/NN108.png" target="_blank"><img src="../static/sprites/nn/NN108.png" alt="NN108 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN108</span>
+                <span class="npc-id mono dim">id 1511</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN109" data-id="1512">
+              <a href="../static/sprites/nn/NN109.png" target="_blank"><img src="../static/sprites/nn/NN109.png" alt="NN109 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN109</span>
+                <span class="npc-id mono dim">id 1512</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN111" data-id="1513">
+              <a href="../static/sprites/nn/NN111.png" target="_blank"><img src="../static/sprites/nn/NN111.png" alt="NN111 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN111</span>
+                <span class="npc-id mono dim">id 1513</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN112A" data-id="1514">
+              <a href="../static/sprites/nn/NN112A.png" target="_blank"><img src="../static/sprites/nn/NN112A.png" alt="NN112A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN112A</span>
+                <span class="npc-id mono dim">id 1514</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN113" data-id="1515">
+              <a href="../static/sprites/nn/NN113.png" target="_blank"><img src="../static/sprites/nn/NN113.png" alt="NN113 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN113</span>
+                <span class="npc-id mono dim">id 1515</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN114A" data-id="1516">
+              <a href="../static/sprites/nn/NN114A.png" target="_blank"><img src="../static/sprites/nn/NN114A.png" alt="NN114A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN114A</span>
+                <span class="npc-id mono dim">id 1516</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN116" data-id="1517">
+              <a href="../static/sprites/nn/NN116.png" target="_blank"><img src="../static/sprites/nn/NN116.png" alt="NN116 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN116</span>
+                <span class="npc-id mono dim">id 1517</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN118" data-id="1518">
+              <a href="../static/sprites/nn/NN118.png" target="_blank"><img src="../static/sprites/nn/NN118.png" alt="NN118 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN118</span>
+                <span class="npc-id mono dim">id 1518</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN119" data-id="1519">
+              <a href="../static/sprites/nn/NN119.png" target="_blank"><img src="../static/sprites/nn/NN119.png" alt="NN119 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN119</span>
+                <span class="npc-id mono dim">id 1519</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN120A" data-id="1520">
+              <a href="../static/sprites/nn/NN120A.png" target="_blank"><img src="../static/sprites/nn/NN120A.png" alt="NN120A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN120A</span>
+                <span class="npc-id mono dim">id 1520</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN121" data-id="1521">
+              <a href="../static/sprites/nn/NN121.png" target="_blank"><img src="../static/sprites/nn/NN121.png" alt="NN121 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN121</span>
+                <span class="npc-id mono dim">id 1521</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN123" data-id="1522">
+              <a href="../static/sprites/nn/NN123.png" target="_blank"><img src="../static/sprites/nn/NN123.png" alt="NN123 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN123</span>
+                <span class="npc-id mono dim">id 1522</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN124" data-id="1523">
+              <a href="../static/sprites/nn/NN124.png" target="_blank"><img src="../static/sprites/nn/NN124.png" alt="NN124 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN124</span>
+                <span class="npc-id mono dim">id 1523</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN125" data-id="1524">
+              <a href="../static/sprites/nn/NN125.png" target="_blank"><img src="../static/sprites/nn/NN125.png" alt="NN125 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN125</span>
+                <span class="npc-id mono dim">id 1524</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN126" data-id="1525">
+              <a href="../static/sprites/nn/NN126.png" target="_blank"><img src="../static/sprites/nn/NN126.png" alt="NN126 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN126</span>
+                <span class="npc-id mono dim">id 1525</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN127" data-id="1526">
+              <a href="../static/sprites/nn/NN127.png" target="_blank"><img src="../static/sprites/nn/NN127.png" alt="NN127 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN127</span>
+                <span class="npc-id mono dim">id 1526</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN128" data-id="1527">
+              <a href="../static/sprites/nn/NN128.png" target="_blank"><img src="../static/sprites/nn/NN128.png" alt="NN128 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN128</span>
+                <span class="npc-id mono dim">id 1527</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN129" data-id="1528">
+              <a href="../static/sprites/nn/NN129.png" target="_blank"><img src="../static/sprites/nn/NN129.png" alt="NN129 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN129</span>
+                <span class="npc-id mono dim">id 1528</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN130" data-id="1529">
+              <a href="../static/sprites/nn/NN130.png" target="_blank"><img src="../static/sprites/nn/NN130.png" alt="NN130 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN130</span>
+                <span class="npc-id mono dim">id 1529</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN131" data-id="1530">
+              <a href="../static/sprites/nn/NN131.png" target="_blank"><img src="../static/sprites/nn/NN131.png" alt="NN131 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN131</span>
+                <span class="npc-id mono dim">id 1530</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN132" data-id="1531">
+              <a href="../static/sprites/nn/NN132.png" target="_blank"><img src="../static/sprites/nn/NN132.png" alt="NN132 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN132</span>
+                <span class="npc-id mono dim">id 1531</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN133" data-id="1532">
+              <a href="../static/sprites/nn/NN133.png" target="_blank"><img src="../static/sprites/nn/NN133.png" alt="NN133 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN133</span>
+                <span class="npc-id mono dim">id 1532</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN134" data-id="1533">
+              <a href="../static/sprites/nn/NN134.png" target="_blank"><img src="../static/sprites/nn/NN134.png" alt="NN134 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN134</span>
+                <span class="npc-id mono dim">id 1533</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN135" data-id="1534">
+              <a href="../static/sprites/nn/NN135.png" target="_blank"><img src="../static/sprites/nn/NN135.png" alt="NN135 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN135</span>
+                <span class="npc-id mono dim">id 1534</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN136A" data-id="1535">
+              <a href="../static/sprites/nn/NN136A.png" target="_blank"><img src="../static/sprites/nn/NN136A.png" alt="NN136A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN136A</span>
+                <span class="npc-id mono dim">id 1535</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN137" data-id="1536">
+              <a href="../static/sprites/nn/NN137.png" target="_blank"><img src="../static/sprites/nn/NN137.png" alt="NN137 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN137</span>
+                <span class="npc-id mono dim">id 1536</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN138" data-id="1537">
+              <a href="../static/sprites/nn/NN138.png" target="_blank"><img src="../static/sprites/nn/NN138.png" alt="NN138 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN138</span>
+                <span class="npc-id mono dim">id 1537</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN139" data-id="1538">
+              <a href="../static/sprites/nn/NN139.png" target="_blank"><img src="../static/sprites/nn/NN139.png" alt="NN139 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN139</span>
+                <span class="npc-id mono dim">id 1538</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN145" data-id="1539">
+              <a href="../static/sprites/nn/NN145.png" target="_blank"><img src="../static/sprites/nn/NN145.png" alt="NN145 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN145</span>
+                <span class="npc-id mono dim">id 1539</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN148A" data-id="1540">
+              <a href="../static/sprites/nn/NN148A.png" target="_blank"><img src="../static/sprites/nn/NN148A.png" alt="NN148A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN148A</span>
+                <span class="npc-id mono dim">id 1540</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN149" data-id="1541">
+              <a href="../static/sprites/nn/NN149.png" target="_blank"><img src="../static/sprites/nn/NN149.png" alt="NN149 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN149</span>
+                <span class="npc-id mono dim">id 1541</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN150" data-id="1542">
+              <a href="../static/sprites/nn/NN150.png" target="_blank"><img src="../static/sprites/nn/NN150.png" alt="NN150 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN150</span>
+                <span class="npc-id mono dim">id 1542</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN151" data-id="1543">
+              <a href="../static/sprites/nn/NN151.png" target="_blank"><img src="../static/sprites/nn/NN151.png" alt="NN151 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN151</span>
+                <span class="npc-id mono dim">id 1543</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN152" data-id="1544">
+              <a href="../static/sprites/nn/NN152.png" target="_blank"><img src="../static/sprites/nn/NN152.png" alt="NN152 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN152</span>
+                <span class="npc-id mono dim">id 1544</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN153" data-id="1545">
+              <a href="../static/sprites/nn/NN153.png" target="_blank"><img src="../static/sprites/nn/NN153.png" alt="NN153 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN153</span>
+                <span class="npc-id mono dim">id 1545</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN154" data-id="1546">
+              <a href="../static/sprites/nn/NN154.png" target="_blank"><img src="../static/sprites/nn/NN154.png" alt="NN154 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN154</span>
+                <span class="npc-id mono dim">id 1546</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN155" data-id="1547">
+              <a href="../static/sprites/nn/NN155.png" target="_blank"><img src="../static/sprites/nn/NN155.png" alt="NN155 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN155</span>
+                <span class="npc-id mono dim">id 1547</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN156" data-id="1548">
+              <a href="../static/sprites/nn/NN156.png" target="_blank"><img src="../static/sprites/nn/NN156.png" alt="NN156 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN156</span>
+                <span class="npc-id mono dim">id 1548</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN158A" data-id="1549">
+              <a href="../static/sprites/nn/NN158A.png" target="_blank"><img src="../static/sprites/nn/NN158A.png" alt="NN158A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN158A</span>
+                <span class="npc-id mono dim">id 1549</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN159" data-id="1550">
+              <a href="../static/sprites/nn/NN159.png" target="_blank"><img src="../static/sprites/nn/NN159.png" alt="NN159 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN159</span>
+                <span class="npc-id mono dim">id 1550</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN160" data-id="1551">
+              <a href="../static/sprites/nn/NN160.png" target="_blank"><img src="../static/sprites/nn/NN160.png" alt="NN160 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN160</span>
+                <span class="npc-id mono dim">id 1551</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN161A" data-id="1552">
+              <a href="../static/sprites/nn/NN161A.png" target="_blank"><img src="../static/sprites/nn/NN161A.png" alt="NN161A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN161A</span>
+                <span class="npc-id mono dim">id 1552</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN162" data-id="1553">
+              <a href="../static/sprites/nn/NN162.png" target="_blank"><img src="../static/sprites/nn/NN162.png" alt="NN162 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN162</span>
+                <span class="npc-id mono dim">id 1553</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN163" data-id="1554">
+              <a href="../static/sprites/nn/NN163.png" target="_blank"><img src="../static/sprites/nn/NN163.png" alt="NN163 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN163</span>
+                <span class="npc-id mono dim">id 1554</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN164A" data-id="1555">
+              <a href="../static/sprites/nn/NN164A.png" target="_blank"><img src="../static/sprites/nn/NN164A.png" alt="NN164A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN164A</span>
+                <span class="npc-id mono dim">id 1555</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN165" data-id="1556">
+              <a href="../static/sprites/nn/NN165.png" target="_blank"><img src="../static/sprites/nn/NN165.png" alt="NN165 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN165</span>
+                <span class="npc-id mono dim">id 1556</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN166" data-id="1557">
+              <a href="../static/sprites/nn/NN166.png" target="_blank"><img src="../static/sprites/nn/NN166.png" alt="NN166 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN166</span>
+                <span class="npc-id mono dim">id 1557</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN167" data-id="1558">
+              <a href="../static/sprites/nn/NN167.png" target="_blank"><img src="../static/sprites/nn/NN167.png" alt="NN167 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN167</span>
+                <span class="npc-id mono dim">id 1558</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN168" data-id="1559">
+              <a href="../static/sprites/nn/NN168.png" target="_blank"><img src="../static/sprites/nn/NN168.png" alt="NN168 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN168</span>
+                <span class="npc-id mono dim">id 1559</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN169" data-id="1560">
+              <a href="../static/sprites/nn/NN169.png" target="_blank"><img src="../static/sprites/nn/NN169.png" alt="NN169 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN169</span>
+                <span class="npc-id mono dim">id 1560</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN170" data-id="1561">
+              <a href="../static/sprites/nn/NN170.png" target="_blank"><img src="../static/sprites/nn/NN170.png" alt="NN170 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN170</span>
+                <span class="npc-id mono dim">id 1561</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN171" data-id="1562">
+              <a href="../static/sprites/nn/NN171.png" target="_blank"><img src="../static/sprites/nn/NN171.png" alt="NN171 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN171</span>
+                <span class="npc-id mono dim">id 1562</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN172A" data-id="1563">
+              <a href="../static/sprites/nn/NN172A.png" target="_blank"><img src="../static/sprites/nn/NN172A.png" alt="NN172A sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN172A</span>
+                <span class="npc-id mono dim">id 1563</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN172B" data-id="1564">
+              <a href="../static/sprites/nn/NN172B.png" target="_blank"><img src="../static/sprites/nn/NN172B.png" alt="NN172B sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN172B</span>
+                <span class="npc-id mono dim">id 1564</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN173" data-id="1565">
+              <a href="../static/sprites/nn/NN173.png" target="_blank"><img src="../static/sprites/nn/NN173.png" alt="NN173 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN173</span>
+                <span class="npc-id mono dim">id 1565</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN175" data-id="1566">
+              <a href="../static/sprites/nn/NN175.png" target="_blank"><img src="../static/sprites/nn/NN175.png" alt="NN175 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN175</span>
+                <span class="npc-id mono dim">id 1566</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN176" data-id="1567">
+              <a href="../static/sprites/nn/NN176.png" target="_blank"><img src="../static/sprites/nn/NN176.png" alt="NN176 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN176</span>
+                <span class="npc-id mono dim">id 1567</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN177" data-id="1568">
+              <a href="../static/sprites/nn/NN177.png" target="_blank"><img src="../static/sprites/nn/NN177.png" alt="NN177 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN177</span>
+                <span class="npc-id mono dim">id 1568</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN178" data-id="1569">
+              <a href="../static/sprites/nn/NN178.png" target="_blank"><img src="../static/sprites/nn/NN178.png" alt="NN178 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN178</span>
+                <span class="npc-id mono dim">id 1569</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN179" data-id="1570">
+              <a href="../static/sprites/nn/NN179.png" target="_blank"><img src="../static/sprites/nn/NN179.png" alt="NN179 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN179</span>
+                <span class="npc-id mono dim">id 1570</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN180" data-id="1571">
+              <a href="../static/sprites/nn/NN180.png" target="_blank"><img src="../static/sprites/nn/NN180.png" alt="NN180 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN180</span>
+                <span class="npc-id mono dim">id 1571</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN181" data-id="1572">
+              <a href="../static/sprites/nn/NN181.png" target="_blank"><img src="../static/sprites/nn/NN181.png" alt="NN181 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN181</span>
+                <span class="npc-id mono dim">id 1572</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN182" data-id="1573">
+              <a href="../static/sprites/nn/NN182.png" target="_blank"><img src="../static/sprites/nn/NN182.png" alt="NN182 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN182</span>
+                <span class="npc-id mono dim">id 1573</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN183" data-id="1574">
+              <a href="../static/sprites/nn/NN183.png" target="_blank"><img src="../static/sprites/nn/NN183.png" alt="NN183 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN183</span>
+                <span class="npc-id mono dim">id 1574</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN184" data-id="1575">
+              <a href="../static/sprites/nn/NN184.png" target="_blank"><img src="../static/sprites/nn/NN184.png" alt="NN184 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN184</span>
+                <span class="npc-id mono dim">id 1575</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN185" data-id="1576">
+              <a href="../static/sprites/nn/NN185.png" target="_blank"><img src="../static/sprites/nn/NN185.png" alt="NN185 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN185</span>
+                <span class="npc-id mono dim">id 1576</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN186" data-id="1577">
+              <a href="../static/sprites/nn/NN186.png" target="_blank"><img src="../static/sprites/nn/NN186.png" alt="NN186 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN186</span>
+                <span class="npc-id mono dim">id 1577</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN187" data-id="1579">
+              <a href="../static/sprites/nn/NN187.png" target="_blank"><img src="../static/sprites/nn/NN187.png" alt="NN187 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN187</span>
+                <span class="npc-id mono dim">id 1579</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NN188" data-id="1580">
+              <a href="../static/sprites/nn/NN188.png" target="_blank"><img src="../static/sprites/nn/NN188.png" alt="NN188 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NN188</span>
+                <span class="npc-id mono dim">id 1580</span>
+              </div>
+            </div>
+</div>
+
+<h2>NM family <span class="muted" style="font-size:.7em">54 entries</span></h2>
+<div class="npc-grid" id="npc-nm">
+
+            <div class="npc-card" data-name="NM001" data-id="1300">
+              <a href="../static/sprites/nm/NM001.png" target="_blank"><img src="../static/sprites/nm/NM001.png" alt="NM001 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM001</span>
+                <span class="npc-id mono dim">id 1300</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM002" data-id="1301">
+              <a href="../static/sprites/nm/NM002.png" target="_blank"><img src="../static/sprites/nm/NM002.png" alt="NM002 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM002</span>
+                <span class="npc-id mono dim">id 1301</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM003" data-id="1302">
+              <a href="../static/sprites/nm/NM003.png" target="_blank"><img src="../static/sprites/nm/NM003.png" alt="NM003 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM003</span>
+                <span class="npc-id mono dim">id 1302</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM004" data-id="1303">
+              <a href="../static/sprites/nm/NM004.png" target="_blank"><img src="../static/sprites/nm/NM004.png" alt="NM004 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM004</span>
+                <span class="npc-id mono dim">id 1303</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM006" data-id="1304">
+              <a href="../static/sprites/nm/NM006.png" target="_blank"><img src="../static/sprites/nm/NM006.png" alt="NM006 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM006</span>
+                <span class="npc-id mono dim">id 1304</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM007" data-id="1305">
+              <a href="../static/sprites/nm/NM007.png" target="_blank"><img src="../static/sprites/nm/NM007.png" alt="NM007 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM007</span>
+                <span class="npc-id mono dim">id 1305</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM009" data-id="1306">
+              <a href="../static/sprites/nm/NM009.png" target="_blank"><img src="../static/sprites/nm/NM009.png" alt="NM009 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM009</span>
+                <span class="npc-id mono dim">id 1306</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM010" data-id="1307">
+              <a href="../static/sprites/nm/NM010.png" target="_blank"><img src="../static/sprites/nm/NM010.png" alt="NM010 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM010</span>
+                <span class="npc-id mono dim">id 1307</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM011" data-id="1308">
+              <a href="../static/sprites/nm/NM011.png" target="_blank"><img src="../static/sprites/nm/NM011.png" alt="NM011 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM011</span>
+                <span class="npc-id mono dim">id 1308</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM012" data-id="1309">
+              <a href="../static/sprites/nm/NM012.png" target="_blank"><img src="../static/sprites/nm/NM012.png" alt="NM012 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM012</span>
+                <span class="npc-id mono dim">id 1309</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM013" data-id="1310">
+              <a href="../static/sprites/nm/NM013.png" target="_blank"><img src="../static/sprites/nm/NM013.png" alt="NM013 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM013</span>
+                <span class="npc-id mono dim">id 1310</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM014" data-id="1311">
+              <a href="../static/sprites/nm/NM014.png" target="_blank"><img src="../static/sprites/nm/NM014.png" alt="NM014 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM014</span>
+                <span class="npc-id mono dim">id 1311</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM015" data-id="1312">
+              <a href="../static/sprites/nm/NM015.png" target="_blank"><img src="../static/sprites/nm/NM015.png" alt="NM015 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM015</span>
+                <span class="npc-id mono dim">id 1312</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM016" data-id="1313">
+              <a href="../static/sprites/nm/NM016.png" target="_blank"><img src="../static/sprites/nm/NM016.png" alt="NM016 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM016</span>
+                <span class="npc-id mono dim">id 1313</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM018" data-id="1314">
+              <a href="../static/sprites/nm/NM018.png" target="_blank"><img src="../static/sprites/nm/NM018.png" alt="NM018 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM018</span>
+                <span class="npc-id mono dim">id 1314</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM019" data-id="1315">
+              <a href="../static/sprites/nm/NM019.png" target="_blank"><img src="../static/sprites/nm/NM019.png" alt="NM019 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM019</span>
+                <span class="npc-id mono dim">id 1315</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM020" data-id="1316">
+              <a href="../static/sprites/nm/NM020.png" target="_blank"><img src="../static/sprites/nm/NM020.png" alt="NM020 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM020</span>
+                <span class="npc-id mono dim">id 1316</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM023" data-id="1317">
+              <a href="../static/sprites/nm/NM023.png" target="_blank"><img src="../static/sprites/nm/NM023.png" alt="NM023 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM023</span>
+                <span class="npc-id mono dim">id 1317</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM024" data-id="1318">
+              <a href="../static/sprites/nm/NM024.png" target="_blank"><img src="../static/sprites/nm/NM024.png" alt="NM024 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM024</span>
+                <span class="npc-id mono dim">id 1318</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM025" data-id="1319">
+              <a href="../static/sprites/nm/NM025.png" target="_blank"><img src="../static/sprites/nm/NM025.png" alt="NM025 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM025</span>
+                <span class="npc-id mono dim">id 1319</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM026" data-id="1320">
+              <a href="../static/sprites/nm/NM026.png" target="_blank"><img src="../static/sprites/nm/NM026.png" alt="NM026 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM026</span>
+                <span class="npc-id mono dim">id 1320</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM027" data-id="1321">
+              <a href="../static/sprites/nm/NM027.png" target="_blank"><img src="../static/sprites/nm/NM027.png" alt="NM027 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM027</span>
+                <span class="npc-id mono dim">id 1321</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM028" data-id="1322">
+              <a href="../static/sprites/nm/NM028.png" target="_blank"><img src="../static/sprites/nm/NM028.png" alt="NM028 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM028</span>
+                <span class="npc-id mono dim">id 1322</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM029" data-id="1323">
+              <a href="../static/sprites/nm/NM029.png" target="_blank"><img src="../static/sprites/nm/NM029.png" alt="NM029 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM029</span>
+                <span class="npc-id mono dim">id 1323</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM030" data-id="1324">
+              <a href="../static/sprites/nm/NM030.png" target="_blank"><img src="../static/sprites/nm/NM030.png" alt="NM030 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM030</span>
+                <span class="npc-id mono dim">id 1324</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM033" data-id="1325">
+              <a href="../static/sprites/nm/NM033.png" target="_blank"><img src="../static/sprites/nm/NM033.png" alt="NM033 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM033</span>
+                <span class="npc-id mono dim">id 1325</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM034" data-id="1326">
+              <a href="../static/sprites/nm/NM034.png" target="_blank"><img src="../static/sprites/nm/NM034.png" alt="NM034 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM034</span>
+                <span class="npc-id mono dim">id 1326</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM037" data-id="1327">
+              <a href="../static/sprites/nm/NM037.png" target="_blank"><img src="../static/sprites/nm/NM037.png" alt="NM037 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM037</span>
+                <span class="npc-id mono dim">id 1327</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM038" data-id="1328">
+              <a href="../static/sprites/nm/NM038.png" target="_blank"><img src="../static/sprites/nm/NM038.png" alt="NM038 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM038</span>
+                <span class="npc-id mono dim">id 1328</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM039" data-id="1329">
+              <a href="../static/sprites/nm/NM039.png" target="_blank"><img src="../static/sprites/nm/NM039.png" alt="NM039 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM039</span>
+                <span class="npc-id mono dim">id 1329</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM041" data-id="1330">
+              <a href="../static/sprites/nm/NM041.png" target="_blank"><img src="../static/sprites/nm/NM041.png" alt="NM041 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM041</span>
+                <span class="npc-id mono dim">id 1330</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM042" data-id="1331">
+              <a href="../static/sprites/nm/NM042.png" target="_blank"><img src="../static/sprites/nm/NM042.png" alt="NM042 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM042</span>
+                <span class="npc-id mono dim">id 1331</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM043" data-id="1332">
+              <a href="../static/sprites/nm/NM043.png" target="_blank"><img src="../static/sprites/nm/NM043.png" alt="NM043 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM043</span>
+                <span class="npc-id mono dim">id 1332</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM044" data-id="1333">
+              <a href="../static/sprites/nm/NM044.png" target="_blank"><img src="../static/sprites/nm/NM044.png" alt="NM044 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM044</span>
+                <span class="npc-id mono dim">id 1333</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM045" data-id="1334">
+              <a href="../static/sprites/nm/NM045.png" target="_blank"><img src="../static/sprites/nm/NM045.png" alt="NM045 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM045</span>
+                <span class="npc-id mono dim">id 1334</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM046" data-id="1335">
+              <a href="../static/sprites/nm/NM046.png" target="_blank"><img src="../static/sprites/nm/NM046.png" alt="NM046 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM046</span>
+                <span class="npc-id mono dim">id 1335</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM047" data-id="1336">
+              <a href="../static/sprites/nm/NM047.png" target="_blank"><img src="../static/sprites/nm/NM047.png" alt="NM047 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM047</span>
+                <span class="npc-id mono dim">id 1336</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM048" data-id="1337">
+              <a href="../static/sprites/nm/NM048.png" target="_blank"><img src="../static/sprites/nm/NM048.png" alt="NM048 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM048</span>
+                <span class="npc-id mono dim">id 1337</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM049" data-id="1338">
+              <a href="../static/sprites/nm/NM049.png" target="_blank"><img src="../static/sprites/nm/NM049.png" alt="NM049 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM049</span>
+                <span class="npc-id mono dim">id 1338</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM050" data-id="1339">
+              <a href="../static/sprites/nm/NM050.png" target="_blank"><img src="../static/sprites/nm/NM050.png" alt="NM050 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM050</span>
+                <span class="npc-id mono dim">id 1339</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM051" data-id="1340">
+              <a href="../static/sprites/nm/NM051.png" target="_blank"><img src="../static/sprites/nm/NM051.png" alt="NM051 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM051</span>
+                <span class="npc-id mono dim">id 1340</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM051B" data-id="1341">
+              <a href="../static/sprites/nm/NM051B.png" target="_blank"><img src="../static/sprites/nm/NM051B.png" alt="NM051B sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM051B</span>
+                <span class="npc-id mono dim">id 1341</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM051C" data-id="1342">
+              <a href="../static/sprites/nm/NM051C.png" target="_blank"><img src="../static/sprites/nm/NM051C.png" alt="NM051C sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM051C</span>
+                <span class="npc-id mono dim">id 1342</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM051D" data-id="1343">
+              <a href="../static/sprites/nm/NM051D.png" target="_blank"><img src="../static/sprites/nm/NM051D.png" alt="NM051D sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM051D</span>
+                <span class="npc-id mono dim">id 1343</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM053" data-id="1344">
+              <a href="../static/sprites/nm/NM053.png" target="_blank"><img src="../static/sprites/nm/NM053.png" alt="NM053 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM053</span>
+                <span class="npc-id mono dim">id 1344</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM055" data-id="1345">
+              <a href="../static/sprites/nm/NM055.png" target="_blank"><img src="../static/sprites/nm/NM055.png" alt="NM055 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM055</span>
+                <span class="npc-id mono dim">id 1345</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM057" data-id="1346">
+              <a href="../static/sprites/nm/NM057.png" target="_blank"><img src="../static/sprites/nm/NM057.png" alt="NM057 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM057</span>
+                <span class="npc-id mono dim">id 1346</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM059" data-id="1347">
+              <a href="../static/sprites/nm/NM059.png" target="_blank"><img src="../static/sprites/nm/NM059.png" alt="NM059 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM059</span>
+                <span class="npc-id mono dim">id 1347</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM067" data-id="1349">
+              <a href="../static/sprites/nm/NM067.png" target="_blank"><img src="../static/sprites/nm/NM067.png" alt="NM067 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM067</span>
+                <span class="npc-id mono dim">id 1349</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM068" data-id="1350">
+              <a href="../static/sprites/nm/NM068.png" target="_blank"><img src="../static/sprites/nm/NM068.png" alt="NM068 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM068</span>
+                <span class="npc-id mono dim">id 1350</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM069" data-id="1351">
+              <a href="../static/sprites/nm/NM069.png" target="_blank"><img src="../static/sprites/nm/NM069.png" alt="NM069 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM069</span>
+                <span class="npc-id mono dim">id 1351</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM070" data-id="1352">
+              <a href="../static/sprites/nm/NM070.png" target="_blank"><img src="../static/sprites/nm/NM070.png" alt="NM070 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM070</span>
+                <span class="npc-id mono dim">id 1352</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM072" data-id="1353">
+              <a href="../static/sprites/nm/NM072.png" target="_blank"><img src="../static/sprites/nm/NM072.png" alt="NM072 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM072</span>
+                <span class="npc-id mono dim">id 1353</span>
+              </div>
+            </div>
+            <div class="npc-card" data-name="NM073" data-id="1354">
+              <a href="../static/sprites/nm/NM073.png" target="_blank"><img src="../static/sprites/nm/NM073.png" alt="NM073 sprite" loading="lazy"></a>
+              <div class="npc-meta">
+                <span class="npc-name mono">NM073</span>
+                <span class="npc-id mono dim">id 1354</span>
+              </div>
+            </div>
+</div>
+
+<div class="note">
+  Sprites are full atlases — typically 8 walking directions stacked vertically. Click any sprite to view at native size. English / Japanese display names, dialog, and shop inventories live in <code>toeomsg*_jp.sms</code> and the help <code>.bcv</code> files; that JOIN to these IDs is the next pending step.
+</div>
+
+<script>
+function npcFilter(input) {
+  const q = input.value.trim().toLowerCase();
+  for (const c of document.querySelectorAll('.npc-card')) {
+    const t = (c.dataset.name + ' ' + c.dataset.id).toLowerCase();
+    c.style.display = (!q || t.includes(q)) ? '' : 'none';
+  }
+}
+</script>
+
+    <footer class="site">
+      <p>Reverse-engineered asset archive of <em>Tales of Eternia Online</em> (Namco / Sigma, 2003-2007). Static structural data extracted from the original client; no copyrighted asset binaries are redistributed here. Numeric gameplay values (HP, levels, drops, XP) were server-authoritative and lost when Namco's servers shut down; they are not part of this archive.</p>
+      <p class="small muted">Generated by <code>build_wiki.py</code> · 7 container formats decoded: BNKD · IDTB · ICND · TDAB · CRSD · NNTB · ATDT/PKDF/CPDT</p>
+    </footer>
+  </main>
+</div>
+<div class="palette-backdrop" id="paletteBackdrop" hidden onclick="closePalette()"></div>
+<section class="command-palette" id="commandPalette" hidden aria-label="Archive search">
+  <div class="palette-panel">
+    <div class="palette-field">
+      <span class="palette-icon">⌕</span>
+      <input id="paletteInput" type="search" placeholder="Search current page and archive sections..." autocomplete="off" oninput="paletteSearch(this.value)">
+      <button type="button" onclick="closePalette()" aria-label="Close search">Esc</button>
+    </div>
+    <div class="palette-results" id="paletteResults"></div>
+  </div>
+</section>
+<script>
+const archiveLinks = [{"href": "../index.html", "label": "Home"}, {"href": "../equipment/index.html", "label": "Equipment"}, {"href": "../beasts/index.html", "label": "Beasts"}, {"href": "../npcs/index.html", "label": "NPCs"}, {"href": "../actions/index.html", "label": "Battle Actions"}, {"href": "../zones/index.html", "label": "Zones"}, {"href": "../audio/index.html", "label": "Audio"}, {"href": "../bundles/index.html", "label": "Bundles"}, {"href": "../about.html", "label": "About"}];
+
+function globalSearch(q) {
+  q = q.trim().toLowerCase();
+  const targets = document.querySelectorAll('[data-search], [data-name], [data-id]');
+  for (const t of targets) {
+    const haystack = (t.dataset.search || t.dataset.name || '' + (t.dataset.id || '') || t.textContent || '').toLowerCase();
+    t.style.display = (!q || haystack.includes(q)) ? '' : 'none';
+  }
+}
+
+function openPalette() {
+  document.getElementById('paletteBackdrop').hidden = false;
+  document.getElementById('commandPalette').hidden = false;
+  const input = document.getElementById('paletteInput');
+  input.value = '';
+  paletteSearch('');
+  input.focus();
+}
+
+function closePalette() {
+  document.getElementById('paletteBackdrop').hidden = true;
+  document.getElementById('commandPalette').hidden = true;
+}
+
+function paletteSearch(q) {
+  q = q.trim().toLowerCase();
+  globalSearch(q);
+  const pageItems = Array.from(document.querySelectorAll('.cat-card, .npc-card, .icon-cell, .action-card, .zone-card, .audio-cell'))
+    .map((el) => {
+      const title = (el.querySelector('.name, .npc-name, .id, .zone-id, .a-name') || el).textContent.trim();
+      const meta = (el.querySelector('.meta, .npc-id, .zone-group, .a-sub') || { textContent: '' }).textContent.trim();
+      const text = (el.dataset.search || el.dataset.name || el.textContent || '').trim();
+      return { title, meta, text };
+    })
+    .filter((item) => !q || item.text.toLowerCase().includes(q))
+    .slice(0, 6);
+  const linkItems = archiveLinks
+    .filter((item) => !q || item.label.toLowerCase().includes(q))
+    .map((item) => `<a class="palette-result" href="${item.href}"><span>${item.label}</span><small>Archive section</small></a>`);
+  const localItems = pageItems
+    .map((item) => `<button class="palette-result" type="button" onclick="closePalette()"><span>${item.title}</span><small>${item.meta || 'Current page match'}</small></button>`);
+  document.getElementById('paletteResults').innerHTML = [...linkItems, ...localItems].join('') || '<div class="palette-empty">No matches in this page.</div>';
+}
+
+document.addEventListener('keydown', (ev) => {
+  if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'k') {
+    ev.preventDefault();
+    openPalette();
+  }
+  if (ev.key === 'Escape') closePalette();
+});
+</script>
+</body>
+</html>

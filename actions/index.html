@@ -1,0 +1,1625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Battle Actions · TOEO Asset Wiki</title>
+<link rel="stylesheet" href="../static/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="top-nav">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark">TOEO</span>
+    <span class="brand-text">Tales of Eternia Online</span>
+    <span class="tagline">Recovered MMO Archive</span>
+  </a>
+  <nav class="nav-links">
+      <a class="" href="../index.html">Home</a>
+      <a class="" href="../equipment/index.html">Equipment</a>
+      <a class="" href="../beasts/index.html">Beasts</a>
+      <a class="" href="../npcs/index.html">NPCs</a>
+      <a class="active" href="../actions/index.html">Battle Actions</a>
+      <a class="" href="../zones/index.html">Zones</a>
+      <a class="" href="../audio/index.html">Audio</a>
+      <a class="" href="../bundles/index.html">Bundles</a>
+      <a class="" href="../about.html">About</a>
+  </nav>
+  <div class="search-wrap">
+    <button class="search-top" type="button" onclick="openPalette()" aria-label="Open search">
+      <span>Search archive</span><kbd>Ctrl K</kbd>
+    </button>
+  </div>
+</header>
+<div class="site-shell">
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-kicker">Recovered client index</div>
+      <details class="side-group" open>
+        <summary>Archive</summary>
+        <div class="side-links">
+          <a class="" href="../index.html" data-palette-item="Home" data-search="Home archive section">Home</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Catalogs</summary>
+        <div class="side-links">
+          <a class="" href="../equipment/index.html" data-palette-item="Equipment" data-search="Equipment archive section">Equipment</a><a class="" href="../beasts/index.html" data-palette-item="Beasts" data-search="Beasts archive section">Beasts</a><a class="" href="../npcs/index.html" data-palette-item="NPCs" data-search="NPCs archive section">NPCs</a><a class="active" href="../actions/index.html" data-palette-item="Battle Actions" data-search="Battle Actions archive section">Battle Actions</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Preservation</summary>
+        <div class="side-links">
+          <a class="" href="../zones/index.html" data-palette-item="Zones" data-search="Zones archive section">Zones</a><a class="" href="../audio/index.html" data-palette-item="Audio" data-search="Audio archive section">Audio</a><a class="" href="../bundles/index.html" data-palette-item="Bundles" data-search="Bundles archive section">Bundles</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Project</summary>
+        <div class="side-links">
+          <a class="" href="../about.html" data-palette-item="About" data-search="About archive section">About</a>
+        </div>
+      </details>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="breadcrumb"><a href="../index.html">Archive</a><span>/</span><span>Battle Actions</span></div>
+
+<h1>Battle Actions</h1>
+<p class="dim">1,668 action scripts decoded from <code>btlact.dat</code> (TDAB chunk-stream). Each action is a sequence of typed <em>parts</em> — discrete trigger frames for animation, sound, visual effect, or movement. The format is Namco's frame-by-frame event-track model.</p>
+
+<div class="stat-grid">
+  <div class="stat"><span class="num">1,668</span><span class="label">Actions</span></div>
+  <div class="stat"><span class="num">6,779</span><span class="label">Total parts</span></div>
+  <div class="stat"><span class="num">51</span><span class="label">Unique animations</span></div>
+  <div class="stat"><span class="num">7</span><span class="label">Unique sounds</span></div>
+</div>
+
+<h2>Part-type distribution</h2>
+<p><span class="tag t-effect">effect · 3,103</span> <span class="tag t-anim">anim · 1,892</span> <span class="tag t-move">move · 1,739</span> <span class="tag t-sound">sound · 45</span></p>
+
+<h2>Animation vocabulary <span class="muted" style="font-size:.7em">51 unique tokens</span></h2>
+<p class="dim mono">B_ATTACK1_A, B_ATTACK1_B, B_ATTACK1_C, B_ATTACK1_D, B_ATTACK2_A, B_ATTACK2_B, B_ATTACK2_C, B_ATTACK2_D, B_CHIRISAZAME, B_DAMAGE, B_DEAD, B_GUARD, B_JUMP_ATTACK, B_JUMP_DOWN, B_JUMP_UP, B_LANDING, B_PIYORI, B_RUN, B_SPECIAL_00, B_SPECIAL_01, B_SPECIAL_02, B_SPECIAL_03, B_SPECIAL_04, B_SPECIAL_05, B_SPECIAL_07, B_SPECIAL_08, B_SPECIAL_09, B_SPECIAL_10, B_SPECIAL_11, B_SPECIAL_12, B_SPECIAL_13, B_SPECIAL_14, B_SPECIAL_15, B_SPECIAL_17, B_SPECIAL_18, B_SPECIAL_19, B_SPECIAL_20, B_SPECIAL_21, B_SPECIAL_22, B_SPECIAL_23, B_SPECIAL_24, B_SPECIAL_25, B_SPECIAL_26, B_SPECIAL_27, B_SPECIAL_28, B_SPELLCAST, B_SUMMONS, B_WAIT, B_WALK, B_WIN_A, B_WIN_B</p>
+
+<h2>Sound vocabulary <span class="muted" style="font-size:.7em">7 unique tokens</span></h2>
+<p class="dim mono">SE_BAZOOKA1, SE_DEFENSE2_W, SE_EXPLOSION2, SE_FREEZE2, SE_RECOVER, SE_SLASH1, SE_USE_ITEM</p>
+
+<h2>Action timelines <span class="muted" style="font-size:.7em">first 80 of 1,668</span></h2>
+<p class="dim">Each card is one combat script. The horizontal bars are <em>parts</em> — discrete frame-track events for animation, sound, effect, or movement — placed on a frame timeline (30-frame ticks; the engine runs the game world at 60 fps so a tick ≈ 0.5 s). Trigger relationships between parts are resolved transitively: a part that "starts when part 0 ends" is positioned accordingly. The text rows below each timeline show every part's named payload.</p>
+
+<div class="search">
+  <input type="text" placeholder="Filter actions by id, anim name, sound name, effect…" oninput="actFilter(this)">
+</div>
+
+<div id="actions">
+
+        <div class="action-card" data-search="1 move">
+          <div class="head">
+            <span class="id">action 1</span>
+            <span class="meta">flag=0 · 1 part</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:26.67%;" title="part #0 · move · t=0..8 (8 frames)">move</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div></div>
+        </div>
+        <div class="action-card" data-search="2 b_damage anim">
+          <div class="head">
+            <span class="id">action 2</span>
+            <span class="meta">flag=1 · 1 part</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:66.67%;" title="part #0 · anim · t=0..40 (40 frames)">B_DAMAGE</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE · end_time=40</span></div></div>
+        </div>
+        <div class="action-card" data-search="3 b_dead anim">
+          <div class="head">
+            <span class="id">action 3</span>
+            <span class="meta">flag=1 · 1 part</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_DEAD</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD</span></div></div>
+        </div>
+        <div class="action-card" data-search="4 b_spellcast anim effect">
+          <div class="head">
+            <span class="id">action 4</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPELLCAST</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#400200</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPELLCAST</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=400200</span></div></div>
+        </div>
+        <div class="action-card" data-search="5 b_summons anim se_use_item sound">
+          <div class="head">
+            <span class="id">action 5</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SUMMONS</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #1 · sound · t=0..8 (8 frames)">SE_USE_ITEM</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SUMMONS</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_USE_ITEM</span></div></div>
+        </div>
+        <div class="action-card" data-search="6 move b_damage anim">
+          <div class="head">
+            <span class="id">action 6</span>
+            <span class="meta">flag=1 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:26.67%;" title="part #0 · move · t=0..8 (8 frames)">move(-4,0)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #1 · anim · t=0..30 (30 frames)">B_DAMAGE</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE · end_time=30</span></div></div>
+        </div>
+        <div class="action-card" data-search="7 move b_piyori anim">
+          <div class="head">
+            <span class="id">action 7</span>
+            <span class="meta">flag=1 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:4.44%;" title="part #0 · move · t=0..8 (8 frames)">move(-2,0)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #1 · anim · t=0..180 (180 frames)">B_PIYORI</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:16.67%">30</span><span class="tick" style="left:33.33%">60</span><span class="tick" style="left:50.00%">90</span><span class="tick" style="left:66.67%">120</span><span class="tick" style="left:83.33%">150</span><span class="tick" style="left:100.00%">180</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_PIYORI · end_time=180</span></div></div>
+        </div>
+        <div class="action-card" data-search="8 move b_dead anim">
+          <div class="head">
+            <span class="id">action 8</span>
+            <span class="meta">flag=1 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:4.44%;" title="part #0 · move · t=0..8 (8 frames)">move(-2,0)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #1 · anim · t=0..180 (180 frames)">B_DEAD</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:16.67%">30</span><span class="tick" style="left:33.33%">60</span><span class="tick" style="left:50.00%">90</span><span class="tick" style="left:66.67%">120</span><span class="tick" style="left:83.33%">150</span><span class="tick" style="left:100.00%">180</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD · end_time=180</span></div></div>
+        </div>
+        <div class="action-card" data-search="9 b_win_a anim">
+          <div class="head">
+            <span class="id">action 9</span>
+            <span class="meta">flag=0 · 1 part</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_WIN_A</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WIN_A</span></div></div>
+        </div>
+        <div class="action-card" data-search="10 move b_damage anim b_dead anim effect">
+          <div class="head">
+            <span class="id">action 10</span>
+            <span class="meta">flag=1 · 4 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:6.67%;" title="part #0 · move · t=0..8 (8 frames)">move(-3,-10)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:6.67%;" title="part #1 · anim · t=0..8 (8 frames)">B_DAMAGE</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #2 · anim · t=0..120 (120 frames)">B_DEAD</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:6.67%;" title="part #3 · effect · t=0..8 (8 frames)">effect#200000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:25.00%">30</span><span class="tick" style="left:50.00%">60</span><span class="tick" style="left:75.00%">90</span><span class="tick" style="left:100.00%">120</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD · end_time=120</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=200000</span></div></div>
+        </div>
+        <div class="action-card" data-search="11 move b_dead anim effect">
+          <div class="head">
+            <span class="id">action 11</span>
+            <span class="meta">flag=1 · 3 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:6.67%;" title="part #0 · move · t=0..8 (8 frames)">move(-7,0)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #1 · anim · t=0..120 (120 frames)">B_DEAD</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:6.67%;" title="part #2 · effect · t=0..8 (8 frames)">effect#200000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:25.00%">30</span><span class="tick" style="left:50.00%">60</span><span class="tick" style="left:75.00%">90</span><span class="tick" style="left:100.00%">120</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD · end_time=120</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=200000</span></div></div>
+        </div>
+        <div class="action-card" data-search="12 move b_damage anim">
+          <div class="head">
+            <span class="id">action 12</span>
+            <span class="meta">flag=1 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:66.67%;" title="part #0 · move · t=0..40 (40 frames)">move(0,-10)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:66.67%;" title="part #1 · anim · t=0..40 (40 frames)">B_DAMAGE</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE · end_time=40</span></div></div>
+        </div>
+        <div class="action-card" data-search="13 move b_damage anim b_dead anim effect">
+          <div class="head">
+            <span class="id">action 13</span>
+            <span class="meta">flag=1 · 4 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:6.67%;" title="part #0 · move · t=0..8 (8 frames)">move(0,-15)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:6.67%;" title="part #1 · anim · t=0..8 (8 frames)">B_DAMAGE</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #2 · anim · t=0..120 (120 frames)">B_DEAD</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:6.67%;" title="part #3 · effect · t=0..8 (8 frames)">effect#200000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:25.00%">30</span><span class="tick" style="left:50.00%">60</span><span class="tick" style="left:75.00%">90</span><span class="tick" style="left:100.00%">120</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD · end_time=120</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=200000</span></div></div>
+        </div>
+        <div class="action-card" data-search="14 b_damage anim move">
+          <div class="head">
+            <span class="id">action 14</span>
+            <span class="meta">flag=1 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_DAMAGE</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:26.67%;" title="part #1 · move · t=0..8 (8 frames)">move(-2,-6)</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE</span></div><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div></div>
+        </div>
+        <div class="action-card" data-search="15 b_wait anim effect">
+          <div class="head">
+            <span class="id">action 15</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_WAIT</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#400000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WAIT</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=400000</span></div></div>
+        </div>
+        <div class="action-card" data-search="16 move b_jump_attack anim move b_jump_down anim b_wait anim se_slash1 sound">
+          <div class="head">
+            <span class="id">action 16</span>
+            <span class="meta">flag=0 · 6 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:26.67%;" title="part #0 · move · t=0..8 (8 frames)">move(1,-10)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #1 · anim · t=0..8 (8 frames)">B_JUMP_ATTACK</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:26.67%;" title="part #2 · move · t=0..8 (8 frames)">move</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #3 · anim · t=0..8 (8 frames)">B_JUMP_DOWN</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:3.33%;" title="part #4 · anim · t=0..1 (1 frames)">B_WAIT</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #5 · sound · t=0..8 (8 frames)">SE_SLASH1</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_JUMP_ATTACK</span></div><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_JUMP_DOWN</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WAIT · end_time=1</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_SLASH1</span></div></div>
+        </div>
+        <div class="action-card" data-search="17 b_spellcast anim effect">
+          <div class="head">
+            <span class="id">action 17</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPELLCAST</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#400000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPELLCAST</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=400000</span></div></div>
+        </div>
+        <div class="action-card" data-search="18 b_spellcast anim effect">
+          <div class="head">
+            <span class="id">action 18</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPELLCAST</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#400100</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPELLCAST</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=400100</span></div></div>
+        </div>
+        <div class="action-card" data-search="19 b_spellcast anim effect">
+          <div class="head">
+            <span class="id">action 19</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPELLCAST</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#400200</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPELLCAST</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=400200</span></div></div>
+        </div>
+        <div class="action-card" data-search="20 b_spellcast anim effect">
+          <div class="head">
+            <span class="id">action 20</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPELLCAST</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#400300</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPELLCAST</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=400300</span></div></div>
+        </div>
+        <div class="action-card" data-search="21 b_spellcast anim effect">
+          <div class="head">
+            <span class="id">action 21</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPELLCAST</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#400400</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPELLCAST</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=400400</span></div></div>
+        </div>
+        <div class="action-card" data-search="22 b_spellcast anim effect">
+          <div class="head">
+            <span class="id">action 22</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPELLCAST</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#400500</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPELLCAST</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=400500</span></div></div>
+        </div>
+        <div class="action-card" data-search="23 b_spellcast anim effect">
+          <div class="head">
+            <span class="id">action 23</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPELLCAST</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#400000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPELLCAST</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=400000</span></div></div>
+        </div>
+        <div class="action-card" data-search="24 move b_damage anim b_dead anim effect">
+          <div class="head">
+            <span class="id">action 24</span>
+            <span class="meta">flag=1 · 4 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:3.33%;" title="part #0 · move · t=0..8 (8 frames)">move(-3,-10)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:3.33%;" title="part #1 · anim · t=0..8 (8 frames)">B_DAMAGE</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #2 · anim · t=0..240 (240 frames)">B_DEAD</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:3.33%;" title="part #3 · effect · t=0..8 (8 frames)">effect#200000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:12.50%">30</span><span class="tick" style="left:25.00%">60</span><span class="tick" style="left:37.50%">90</span><span class="tick" style="left:50.00%">120</span><span class="tick" style="left:62.50%">150</span><span class="tick" style="left:75.00%">180</span><span class="tick" style="left:87.50%">210</span><span class="tick" style="left:100.00%">240</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD · end_time=240</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=200000</span></div></div>
+        </div>
+        <div class="action-card" data-search="25 move b_dead anim effect">
+          <div class="head">
+            <span class="id">action 25</span>
+            <span class="meta">flag=1 · 3 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:3.33%;" title="part #0 · move · t=0..8 (8 frames)">move(-7,0)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #1 · anim · t=0..240 (240 frames)">B_DEAD</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:3.33%;" title="part #2 · effect · t=0..8 (8 frames)">effect#200000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:12.50%">30</span><span class="tick" style="left:25.00%">60</span><span class="tick" style="left:37.50%">90</span><span class="tick" style="left:50.00%">120</span><span class="tick" style="left:62.50%">150</span><span class="tick" style="left:75.00%">180</span><span class="tick" style="left:87.50%">210</span><span class="tick" style="left:100.00%">240</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD · end_time=240</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=200000</span></div></div>
+        </div>
+        <div class="action-card" data-search="26 move b_damage anim b_dead anim effect">
+          <div class="head">
+            <span class="id">action 26</span>
+            <span class="meta">flag=1 · 4 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:3.33%;" title="part #0 · move · t=0..8 (8 frames)">move(0,-15)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:3.33%;" title="part #1 · anim · t=0..8 (8 frames)">B_DAMAGE</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #2 · anim · t=0..240 (240 frames)">B_DEAD</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:3.33%;" title="part #3 · effect · t=0..8 (8 frames)">effect#200000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:12.50%">30</span><span class="tick" style="left:25.00%">60</span><span class="tick" style="left:37.50%">90</span><span class="tick" style="left:50.00%">120</span><span class="tick" style="left:62.50%">150</span><span class="tick" style="left:75.00%">180</span><span class="tick" style="left:87.50%">210</span><span class="tick" style="left:100.00%">240</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD · end_time=240</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=200000</span></div></div>
+        </div>
+        <div class="action-card" data-search="27 move b_damage anim">
+          <div class="head">
+            <span class="id">action 27</span>
+            <span class="meta">flag=1 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:26.67%;" title="part #0 · move · t=0..8 (8 frames)">move(-3,0)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:83.33%;" title="part #1 · anim · t=0..25 (25 frames)">B_DAMAGE</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE · end_time=25</span></div></div>
+        </div>
+        <div class="action-card" data-search="28 move b_damage anim">
+          <div class="head">
+            <span class="id">action 28</span>
+            <span class="meta">flag=1 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:26.67%;" title="part #0 · move · t=0..8 (8 frames)">move(-2,0)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:66.67%;" title="part #1 · anim · t=0..20 (20 frames)">B_DAMAGE</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE · end_time=20</span></div></div>
+        </div>
+        <div class="action-card" data-search="29 move b_damage anim">
+          <div class="head">
+            <span class="id">action 29</span>
+            <span class="meta">flag=1 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:26.67%;" title="part #0 · move · t=0..8 (8 frames)">move(-2,0)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:50.00%;" title="part #1 · anim · t=0..15 (15 frames)">B_DAMAGE</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE · end_time=15</span></div></div>
+        </div>
+        <div class="action-card" data-search="30 move b_damage anim">
+          <div class="head">
+            <span class="id">action 30</span>
+            <span class="meta">flag=1 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:26.67%;" title="part #0 · move · t=0..8 (8 frames)">move(-2,0)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:50.00%;" title="part #1 · anim · t=0..15 (15 frames)">B_DAMAGE</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE · end_time=15</span></div></div>
+        </div>
+        <div class="action-card" data-search="31 move b_damage anim b_dead anim effect">
+          <div class="head">
+            <span class="id">action 31</span>
+            <span class="meta">flag=1 · 4 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:6.67%;" title="part #0 · move · t=0..8 (8 frames)">move(-3,-8)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:6.67%;" title="part #1 · anim · t=0..8 (8 frames)">B_DAMAGE</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #2 · anim · t=0..120 (120 frames)">B_DEAD</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:6.67%;" title="part #3 · effect · t=0..8 (8 frames)">effect#200000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:25.00%">30</span><span class="tick" style="left:50.00%">60</span><span class="tick" style="left:75.00%">90</span><span class="tick" style="left:100.00%">120</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD · end_time=120</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=200000</span></div></div>
+        </div>
+        <div class="action-card" data-search="32 move b_damage anim effect move">
+          <div class="head">
+            <span class="id">action 32</span>
+            <span class="meta">flag=1 · 4 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:26.67%;" title="part #0 · move · t=0..8 (8 frames)">move(-4,-3)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:83.33%;" title="part #1 · anim · t=0..25 (25 frames)">B_DAMAGE</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #2 · effect · t=0..8 (8 frames)">effect#200000</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:66.67%;" title="part #3 · move · t=0..20 (20 frames)">move</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE · end_time=25</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=200000</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=20</span></div></div>
+        </div>
+        <div class="action-card" data-search="33 b_spellcast anim effect">
+          <div class="head">
+            <span class="id">action 33</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPELLCAST</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#944</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPELLCAST</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=944</span></div></div>
+        </div>
+        <div class="action-card" data-search="34 b_damage anim">
+          <div class="head">
+            <span class="id">action 34</span>
+            <span class="meta">flag=0 · 1 part</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:56.67%;" title="part #0 · anim · t=0..17 (17 frames)">B_DAMAGE</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE · end_time=17</span></div></div>
+        </div>
+        <div class="action-card" data-search="35 move b_dead anim">
+          <div class="head">
+            <span class="id">action 35</span>
+            <span class="meta">flag=1 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:8.89%;" title="part #0 · move · t=0..8 (8 frames)">move(-2,-2)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:83.33%;" title="part #1 · anim · t=0..75 (75 frames)">B_DEAD</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:33.33%">30</span><span class="tick" style="left:66.67%">60</span><span class="tick" style="left:100.00%">90</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD · end_time=75</span></div></div>
+        </div>
+        <div class="action-card" data-search="36 move b_dead anim">
+          <div class="head">
+            <span class="id">action 36</span>
+            <span class="meta">flag=1 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:8.89%;" title="part #0 · move · t=0..8 (8 frames)">move(-2,-2)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:83.33%;" title="part #1 · anim · t=0..75 (75 frames)">B_DEAD</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:33.33%">30</span><span class="tick" style="left:66.67%">60</span><span class="tick" style="left:100.00%">90</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD · end_time=75</span></div></div>
+        </div>
+        <div class="action-card" data-search="37 b_damage anim move b_dead anim effect">
+          <div class="head">
+            <span class="id">action 37</span>
+            <span class="meta">flag=1 · 4 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:50.00%;" title="part #0 · anim · t=0..60 (60 frames)">B_DAMAGE</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:25.00%;" title="part #1 · move · t=0..30 (30 frames)">move(-2,-6)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #2 · anim · t=0..120 (120 frames)">B_DEAD</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:6.67%;" title="part #3 · effect · t=0..8 (8 frames)">effect#3001</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:25.00%">30</span><span class="tick" style="left:50.00%">60</span><span class="tick" style="left:75.00%">90</span><span class="tick" style="left:100.00%">120</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE · end_time=60</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD · end_time=120</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=3001</span></div></div>
+        </div>
+        <div class="action-card" data-search="38 b_damage anim move b_dead anim effect">
+          <div class="head">
+            <span class="id">action 38</span>
+            <span class="meta">flag=1 · 4 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:50.00%;" title="part #0 · anim · t=0..60 (60 frames)">B_DAMAGE</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:25.00%;" title="part #1 · move · t=0..30 (30 frames)">move(-2,-6)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #2 · anim · t=0..120 (120 frames)">B_DEAD</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:6.67%;" title="part #3 · effect · t=0..8 (8 frames)">effect#200000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:25.00%">30</span><span class="tick" style="left:50.00%">60</span><span class="tick" style="left:75.00%">90</span><span class="tick" style="left:100.00%">120</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE · end_time=60</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DEAD · end_time=120</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=200000</span></div></div>
+        </div>
+        <div class="action-card" data-search="41 b_spellcast anim effect">
+          <div class="head">
+            <span class="id">action 41</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPELLCAST</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#400600</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPELLCAST</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=400600</span></div></div>
+        </div>
+        <div class="action-card" data-search="10002 b_run anim">
+          <div class="head">
+            <span class="id">action 10002</span>
+            <span class="meta">flag=0 · 1 part</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_RUN</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_RUN</span></div></div>
+        </div>
+        <div class="action-card" data-search="10003 move b_jump_attack anim move b_jump_down anim b_wait anim se_slash1 sound">
+          <div class="head">
+            <span class="id">action 10003</span>
+            <span class="meta">flag=1 · 6 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-move" style="left:0.00%; width:26.67%;" title="part #0 · move · t=0..8 (8 frames)">move(1,-10)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #1 · anim · t=0..8 (8 frames)">B_JUMP_ATTACK</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:26.67%;" title="part #2 · move · t=0..8 (8 frames)">move</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #3 · anim · t=0..8 (8 frames)">B_JUMP_DOWN</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:3.33%;" title="part #4 · anim · t=0..1 (1 frames)">B_WAIT</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #5 · sound · t=0..8 (8 frames)">SE_SLASH1</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_JUMP_ATTACK</span></div><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_JUMP_DOWN</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WAIT · end_time=1</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_SLASH1</span></div></div>
+        </div>
+        <div class="action-card" data-search="10004 b_attack1_a anim se_slash1 sound">
+          <div class="head">
+            <span class="id">action 10004</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_ATTACK1_A</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #1 · sound · t=0..8 (8 frames)">SE_SLASH1</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_ATTACK1_A</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_SLASH1</span></div></div>
+        </div>
+        <div class="action-card" data-search="10005 b_attack1_b anim se_slash1 sound">
+          <div class="head">
+            <span class="id">action 10005</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_ATTACK1_B</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #1 · sound · t=0..8 (8 frames)">SE_SLASH1</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_ATTACK1_B</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_SLASH1</span></div></div>
+        </div>
+        <div class="action-card" data-search="10006 b_attack1_c anim se_slash1 sound">
+          <div class="head">
+            <span class="id">action 10006</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_ATTACK1_C</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #1 · sound · t=0..8 (8 frames)">SE_SLASH1</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_ATTACK1_C</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_SLASH1</span></div></div>
+        </div>
+        <div class="action-card" data-search="10007 b_attack1_d anim se_slash1 sound">
+          <div class="head">
+            <span class="id">action 10007</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_ATTACK1_D</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #1 · sound · t=0..8 (8 frames)">SE_SLASH1</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_ATTACK1_D</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_SLASH1</span></div></div>
+        </div>
+        <div class="action-card" data-search="10008 b_attack2_a anim se_slash1 sound">
+          <div class="head">
+            <span class="id">action 10008</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_ATTACK2_A</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #1 · sound · t=0..8 (8 frames)">SE_SLASH1</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_ATTACK2_A</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_SLASH1</span></div></div>
+        </div>
+        <div class="action-card" data-search="10009 b_attack2_b anim se_slash1 sound">
+          <div class="head">
+            <span class="id">action 10009</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_ATTACK2_B</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #1 · sound · t=0..8 (8 frames)">SE_SLASH1</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_ATTACK2_B</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_SLASH1</span></div></div>
+        </div>
+        <div class="action-card" data-search="10010 b_attack2_c anim se_slash1 sound">
+          <div class="head">
+            <span class="id">action 10010</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_ATTACK2_C</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #1 · sound · t=0..8 (8 frames)">SE_SLASH1</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_ATTACK2_C</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_SLASH1</span></div></div>
+        </div>
+        <div class="action-card" data-search="10011 b_attack2_d anim se_slash1 sound">
+          <div class="head">
+            <span class="id">action 10011</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_ATTACK2_D</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #1 · sound · t=0..8 (8 frames)">SE_SLASH1</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_ATTACK2_D</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_SLASH1</span></div></div>
+        </div>
+        <div class="action-card" data-search="10012 b_chirisazame anim effect effect">
+          <div class="head">
+            <span class="id">action 10012</span>
+            <span class="meta">flag=0 · 3 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:8.89%;" title="part #0 · anim · t=0..8 (8 frames)">B_CHIRISAZAME</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:88.89%;" title="part #1 · effect · t=0..80 (80 frames)">effect#600500</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:8.89%;" title="part #2 · effect · t=0..8 (8 frames)">effect#707000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:33.33%">30</span><span class="tick" style="left:66.67%">60</span><span class="tick" style="left:100.00%">90</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_CHIRISAZAME</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500 · end_time=80</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=707000</span></div></div>
+        </div>
+        <div class="action-card" data-search="10013 b_guard anim">
+          <div class="head">
+            <span class="id">action 10013</span>
+            <span class="meta">flag=0 · 1 part</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #0 · anim · t=0..180 (180 frames)">B_GUARD</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:16.67%">30</span><span class="tick" style="left:33.33%">60</span><span class="tick" style="left:50.00%">90</span><span class="tick" style="left:66.67%">120</span><span class="tick" style="left:83.33%">150</span><span class="tick" style="left:100.00%">180</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_GUARD · end_time=180</span></div></div>
+        </div>
+        <div class="action-card" data-search="10014 b_win_a anim effect">
+          <div class="head">
+            <span class="id">action 10014</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:77.78%;" title="part #0 · anim · t=0..70 (70 frames)">B_WIN_A</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:8.89%;" title="part #1 · effect · t=0..8 (8 frames)">effect#800000</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:33.33%">30</span><span class="tick" style="left:66.67%">60</span><span class="tick" style="left:100.00%">90</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WIN_A · end_time=70</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=800000</span></div></div>
+        </div>
+        <div class="action-card" data-search="10015 b_chirisazame anim">
+          <div class="head">
+            <span class="id">action 10015</span>
+            <span class="meta">flag=0 · 1 part</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_CHIRISAZAME</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_CHIRISAZAME</span></div></div>
+        </div>
+        <div class="action-card" data-search="10016 b_win_b anim effect se_recover sound">
+          <div class="head">
+            <span class="id">action 10016</span>
+            <span class="meta">flag=0 · 3 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #0 · anim · t=0..60 (60 frames)">B_WIN_B</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #1 · effect · t=0..8 (8 frames)">effect#917000</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:13.33%;" title="part #2 · sound · t=0..8 (8 frames)">SE_RECOVER</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WIN_B · end_time=60</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=917000</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_RECOVER</span></div></div>
+        </div>
+        <div class="action-card" data-search="10017 b_win_b anim se_freeze2 sound">
+          <div class="head">
+            <span class="id">action 10017</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_WIN_B</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #1 · sound · t=0..8 (8 frames)">SE_FREEZE2</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WIN_B</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_FREEZE2</span></div></div>
+        </div>
+        <div class="action-card" data-search="10018 b_win_b anim se_freeze2 sound">
+          <div class="head">
+            <span class="id">action 10018</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_WIN_B</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #1 · sound · t=0..8 (8 frames)">SE_FREEZE2</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WIN_B</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_FREEZE2</span></div></div>
+        </div>
+        <div class="action-card" data-search="10019 b_win_b anim se_freeze2 sound effect effect move effect move effect move">
+          <div class="head">
+            <span class="id">action 10019</span>
+            <span class="meta">flag=0 · 9 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:13.33%;" title="part #0 · anim · t=0..8 (8 frames)">B_WIN_B</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:13.33%;" title="part #1 · sound · t=0..8 (8 frames)">SE_FREEZE2</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #2 · effect · t=0..8 (8 frames)">effect#1032100</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:50.00%;" title="part #3 · effect · t=0..30 (30 frames)">effect#1032101</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:55.00%;" title="part #4 · move · t=0..33 (33 frames)">move</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:50.00%;" title="part #5 · effect · t=0..30 (30 frames)">effect#1032101</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:21.67%;" title="part #6 · move · t=0..13 (13 frames)">move</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:50.00%;" title="part #7 · effect · t=0..30 (30 frames)">effect#1032101</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:21.67%;" title="part #8 · move · t=0..13 (13 frames)">move</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WIN_B</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_FREEZE2</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1032100</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1032101 · end_time=30</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=33</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1032101 · end_time=30</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=13</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1032101 · end_time=30</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=13</span></div></div>
+        </div>
+        <div class="action-card" data-search="10020 b_win_b anim se_freeze2 sound">
+          <div class="head">
+            <span class="id">action 10020</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_WIN_B</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:26.67%;" title="part #1 · sound · t=0..8 (8 frames)">SE_FREEZE2</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WIN_B</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_FREEZE2</span></div></div>
+        </div>
+        <div class="action-card" data-search="10021 b_win_b anim se_bazooka1 sound effect se_explosion2 sound move">
+          <div class="head">
+            <span class="id">action 10021</span>
+            <span class="meta">flag=0 · 5 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:5.33%;" title="part #0 · anim · t=0..8 (8 frames)">B_WIN_B</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:5.33%;" title="part #1 · sound · t=0..8 (8 frames)">SE_BAZOOKA1</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:5.33%;" title="part #2 · effect · t=0..8 (8 frames)">effect#1025000</div></div><div class="track"><div class="bar t-sound" style="left:0.00%; width:5.33%;" title="part #3 · sound · t=0..8 (8 frames)">SE_EXPLOSION2</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:86.67%;" title="part #4 · move · t=0..130 (130 frames)">move</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:20.00%">30</span><span class="tick" style="left:40.00%">60</span><span class="tick" style="left:60.00%">90</span><span class="tick" style="left:80.00%">120</span><span class="tick" style="left:100.00%">150</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WIN_B</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_BAZOOKA1</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1025000</span></div><div class="row"><span class="pn">sound</span><span class="pd">sound_name=SE_EXPLOSION2</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=130</span></div></div>
+        </div>
+        <div class="action-card" data-search="20001 b_attack1_a anim effect">
+          <div class="head">
+            <span class="id">action 20001</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_ATTACK1_A</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#10005701</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_ATTACK1_A</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=10005701</span></div></div>
+        </div>
+        <div class="action-card" data-search="310001 b_attack1_a anim effect">
+          <div class="head">
+            <span class="id">action 310001</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_ATTACK1_A</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#600500</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_ATTACK1_A</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div></div>
+        </div>
+        <div class="action-card" data-search="310005 b_damage anim">
+          <div class="head">
+            <span class="id">action 310005</span>
+            <span class="meta">flag=0 · 1 part</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #0 · anim · t=0..300 (300 frames)">B_DAMAGE</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:10.00%">30</span><span class="tick" style="left:20.00%">60</span><span class="tick" style="left:30.00%">90</span><span class="tick" style="left:40.00%">120</span><span class="tick" style="left:50.00%">150</span><span class="tick" style="left:60.00%">180</span><span class="tick" style="left:70.00%">210</span><span class="tick" style="left:80.00%">240</span><span class="tick" style="left:90.00%">270</span><span class="tick" style="left:100.00%">300</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_DAMAGE · end_time=300</span></div></div>
+        </div>
+        <div class="action-card" data-search="310006 b_special_28 anim effect">
+          <div class="head">
+            <span class="id">action 310006</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #0 · anim · t=0..60 (60 frames)">B_SPECIAL_28</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #1 · effect · t=0..8 (8 frames)">effect#703001</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_28 · end_time=60</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=703001</span></div></div>
+        </div>
+        <div class="action-card" data-search="310007 b_special_26 anim effect">
+          <div class="head">
+            <span class="id">action 310007</span>
+            <span class="meta">flag=0 · 2 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #0 · anim · t=0..60 (60 frames)">B_SPECIAL_26</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #1 · effect · t=0..8 (8 frames)">effect#703001</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_26 · end_time=60</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=703001</span></div></div>
+        </div>
+        <div class="action-card" data-search="500001 b_special_09 anim effect move move effect move effect">
+          <div class="head">
+            <span class="id">action 500001</span>
+            <span class="meta">flag=0 · 7 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:13.33%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPECIAL_09</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #1 · effect · t=0..8 (8 frames)">effect#803000</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:83.33%;" title="part #2 · move · t=0..50 (50 frames)">move</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:50.00%;" title="part #3 · move · t=0..30 (30 frames)">move(4,0)</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #4 · effect · t=0..8 (8 frames)">effect#600500</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:50.00%;" title="part #5 · move · t=0..30 (30 frames)">move(4,0)</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #6 · effect · t=0..8 (8 frames)">effect#1806014</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_09</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=803000</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=50</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div></div>
+        </div>
+        <div class="action-card" data-search="500002 b_special_19 anim effect move effect effect">
+          <div class="head">
+            <span class="id">action 500002</span>
+            <span class="meta">flag=0 · 5 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPECIAL_19</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#802000</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:100.00%;" title="part #2 · move · t=0..30 (30 frames)">move(4,0)</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #3 · effect · t=0..8 (8 frames)">effect#600500</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #4 · effect · t=0..8 (8 frames)">effect#1806014</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_19</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=802000</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div></div>
+        </div>
+        <div class="action-card" data-search="500003 b_special_07 anim move effect move effect effect">
+          <div class="head">
+            <span class="id">action 500003</span>
+            <span class="meta">flag=0 · 6 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:13.33%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPECIAL_07</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:16.67%;" title="part #1 · move · t=0..10 (10 frames)">move</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #2 · effect · t=0..8 (8 frames)">effect#804000</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:66.67%;" title="part #3 · move · t=0..40 (40 frames)">move(3,-7)</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #4 · effect · t=0..8 (8 frames)">effect#600500</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #5 · effect · t=0..8 (8 frames)">effect#1806014</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_07</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=10</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=804000</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=40</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div></div>
+        </div>
+        <div class="action-card" data-search="500004 b_summons anim effect effect">
+          <div class="head">
+            <span class="id">action 500004</span>
+            <span class="meta">flag=0 · 3 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SUMMONS</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#819000</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #2 · effect · t=0..8 (8 frames)">effect#600500</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SUMMONS</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=819000</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div></div>
+        </div>
+        <div class="action-card" data-search="500005 b_special_20 anim move effect move effect effect">
+          <div class="head">
+            <span class="id">action 500005</span>
+            <span class="meta">flag=0 · 6 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:13.33%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPECIAL_20</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:16.67%;" title="part #1 · move · t=0..10 (10 frames)">move</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #2 · effect · t=0..8 (8 frames)">effect#705000</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:83.33%;" title="part #3 · move · t=0..50 (50 frames)">move(4,-8)</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #4 · effect · t=0..8 (8 frames)">effect#600500</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #5 · effect · t=0..8 (8 frames)">effect#1806014</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_20</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=10</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=705000</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=50</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div></div>
+        </div>
+        <div class="action-card" data-search="500006 b_special_02 anim b_special_21 anim effect move move move effect effect">
+          <div class="head">
+            <span class="id">action 500006</span>
+            <span class="meta">flag=0 · 8 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:50.00%;" title="part #0 · anim · t=0..15 (15 frames)">B_SPECIAL_02</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #1 · anim · t=0..8 (8 frames)">B_SPECIAL_21</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #2 · effect · t=0..8 (8 frames)">effect#805000</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:33.33%;" title="part #3 · move · t=0..10 (10 frames)">move</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:83.33%;" title="part #4 · move · t=0..25 (25 frames)">move(0,-11)</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:100.00%;" title="part #5 · move · t=0..30 (30 frames)">move(6,0)</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #6 · effect · t=0..8 (8 frames)">effect#600500</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #7 · effect · t=0..8 (8 frames)">effect#1806014</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_02 · end_time=15</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_21</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=805000</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=10</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=25</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div></div>
+        </div>
+        <div class="action-card" data-search="500007 b_win_b anim effect effect">
+          <div class="head">
+            <span class="id">action 500007</span>
+            <span class="meta">flag=0 · 3 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:75.00%;" title="part #0 · anim · t=0..45 (45 frames)">B_WIN_B</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #1 · effect · t=0..8 (8 frames)">effect#819100</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:75.00%;" title="part #2 · effect · t=0..45 (45 frames)">effect#600500</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WIN_B · end_time=45</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=819100</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div></div>
+        </div>
+        <div class="action-card" data-search="500008 b_summons anim effect effect">
+          <div class="head">
+            <span class="id">action 500008</span>
+            <span class="meta">flag=0 · 3 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_SUMMONS</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#819200</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #2 · effect · t=0..8 (8 frames)">effect#600500</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SUMMONS</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=819200</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div></div>
+        </div>
+        <div class="action-card" data-search="500009 b_attack2_c anim effect move effect effect">
+          <div class="head">
+            <span class="id">action 500009</span>
+            <span class="meta">flag=0 · 5 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:26.67%;" title="part #0 · anim · t=0..8 (8 frames)">B_ATTACK2_C</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#806000</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:100.00%;" title="part #2 · move · t=0..30 (30 frames)">move(4,0)</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #3 · effect · t=0..8 (8 frames)">effect#600500</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:26.67%;" title="part #4 · effect · t=0..8 (8 frames)">effect#1806014</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:100.00%">30</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_ATTACK2_C</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=806000</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div></div>
+        </div>
+        <div class="action-card" data-search="500010 b_special_10 anim effect move move move effect effect">
+          <div class="head">
+            <span class="id">action 500010</span>
+            <span class="meta">flag=0 · 7 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:13.33%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPECIAL_10</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #1 · effect · t=0..8 (8 frames)">effect#807000</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:16.67%;" title="part #2 · move · t=0..10 (10 frames)">move</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:66.67%;" title="part #3 · move · t=0..40 (40 frames)">move(2,-8)</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:50.00%;" title="part #4 · move · t=0..30 (30 frames)">move(0,-6)</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #5 · effect · t=0..8 (8 frames)">effect#600500</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #6 · effect · t=0..8 (8 frames)">effect#1806014</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_10</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=807000</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=10</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=40</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div></div>
+        </div>
+        <div class="action-card" data-search="500011 b_special_05 anim effect b_wait anim move move effect effect">
+          <div class="head">
+            <span class="id">action 500011</span>
+            <span class="meta">flag=0 · 7 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:87.50%;" title="part #0 · anim · t=0..105 (105 frames)">B_SPECIAL_05</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:6.67%;" title="part #1 · effect · t=0..8 (8 frames)">effect#808000</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:8.33%;" title="part #2 · anim · t=0..10 (10 frames)">B_WAIT</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:50.00%;" title="part #3 · move · t=0..60 (60 frames)">move(3,0)</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:8.33%;" title="part #4 · move · t=0..10 (10 frames)">move(3,-8)</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:87.50%;" title="part #5 · effect · t=0..105 (105 frames)">effect#600500</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:6.67%;" title="part #6 · effect · t=0..8 (8 frames)">effect#1806014</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:25.00%">30</span><span class="tick" style="left:50.00%">60</span><span class="tick" style="left:75.00%">90</span><span class="tick" style="left:100.00%">120</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_05 · end_time=105</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=808000</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WAIT · end_time=10</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=60</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=10</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div></div>
+        </div>
+        <div class="action-card" data-search="500012 b_special_00 anim move move move b_jump_down anim effect b_landing anim effect">
+          <div class="head">
+            <span class="id">action 500012</span>
+            <span class="meta">flag=0 · 8 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #0 · anim · t=0..60 (60 frames)">B_SPECIAL_00</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:16.67%;" title="part #1 · move · t=0..10 (10 frames)">move</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:13.33%;" title="part #2 · move · t=0..8 (8 frames)">move(0,-8)</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:13.33%;" title="part #3 · move · t=0..8 (8 frames)">move(0,-10)</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:50.00%;" title="part #4 · anim · t=0..30 (30 frames)">B_JUMP_DOWN</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #5 · effect · t=0..8 (8 frames)">effect#814000</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:50.00%;" title="part #6 · anim · t=0..30 (30 frames)">B_LANDING</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #7 · effect · t=0..8 (8 frames)">effect#1806014</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_00 · end_time=60</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=10</span></div><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">move</span><span class="pd"><span class=muted>(no payload)</span></span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_JUMP_DOWN · end_time=30</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=814000</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_LANDING · end_time=30</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div></div>
+        </div>
+        <div class="action-card" data-search="500013 b_special_22 anim move move move move move effect effect effect effect effect effect effect effect effect">
+          <div class="head">
+            <span class="id">action 500013</span>
+            <span class="meta">flag=0 · 15 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:13.33%;" title="part #0 · anim · t=0..8 (8 frames)">B_SPECIAL_22</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:66.67%;" title="part #1 · move · t=0..40 (40 frames)">move(3,0)</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:50.00%;" title="part #2 · move · t=0..30 (30 frames)">move(3,0)</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:50.00%;" title="part #3 · move · t=0..30 (30 frames)">move(3,0)</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:25.00%;" title="part #4 · move · t=0..15 (15 frames)">move(3,0)</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:75.00%;" title="part #5 · move · t=0..45 (45 frames)">move(2,-9)</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #6 · effect · t=0..8 (8 frames)">effect#817000</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #7 · effect · t=0..8 (8 frames)">effect#817002</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #8 · effect · t=0..8 (8 frames)">effect#817002</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #9 · effect · t=0..8 (8 frames)">effect#817002</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #10 · effect · t=0..8 (8 frames)">effect#817002</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #11 · effect · t=0..8 (8 frames)">effect#817001</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #12 · effect · t=0..8 (8 frames)">effect#600500</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #13 · effect · t=0..8 (8 frames)">effect#1806014</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #14 · effect · t=0..8 (8 frames)">effect#1806014</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_22</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=40</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=15</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=45</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=817000</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=817002</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=817002</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=817002</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=817002</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=817001</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div></div>
+        </div>
+        <div class="action-card" data-search="500014 b_special_23 anim move move move effect effect">
+          <div class="head">
+            <span class="id">action 500014</span>
+            <span class="meta">flag=0 · 6 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:100.00%;" title="part #0 · anim · t=0..60 (60 frames)">B_SPECIAL_23</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:16.67%;" title="part #1 · move · t=0..10 (10 frames)">move</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:75.00%;" title="part #2 · move · t=0..45 (45 frames)">move(3,-7)</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:50.00%;" title="part #3 · move · t=0..30 (30 frames)">move(5,0)</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #4 · effect · t=0..8 (8 frames)">effect#809000</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #5 · effect · t=0..8 (8 frames)">effect#1806014</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_23 · end_time=60</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=10</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=45</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=809000</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div></div>
+        </div>
+        <div class="action-card" data-search="500015 effect move b_special_02 anim b_special_26 anim move move move move move effect effect">
+          <div class="head">
+            <span class="id">action 500015</span>
+            <span class="meta">flag=0 · 11 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-effect" style="left:0.00%; width:4.44%;" title="part #0 · effect · t=0..8 (8 frames)">effect#810000</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:16.67%;" title="part #1 · move · t=0..30 (30 frames)">move</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:5.56%;" title="part #2 · anim · t=0..10 (10 frames)">B_SPECIAL_02</div></div><div class="track"><div class="bar t-anim" style="left:0.00%; width:66.67%;" title="part #3 · anim · t=0..120 (120 frames)">B_SPECIAL_26</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:22.22%;" title="part #4 · move · t=0..40 (40 frames)">move</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:19.44%;" title="part #5 · move · t=0..35 (35 frames)">move(0,-9)</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:13.89%;" title="part #6 · move · t=0..25 (25 frames)">move(3,0)</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:16.67%;" title="part #7 · move · t=0..30 (30 frames)">move(-3,-9)</div></div><div class="track"><div class="bar t-move" style="left:0.00%; width:5.56%;" title="part #8 · move · t=0..10 (10 frames)">move(5,0)</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:88.89%;" title="part #9 · effect · t=0..160 (160 frames)">effect#600500</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:4.44%;" title="part #10 · effect · t=0..8 (8 frames)">effect#1806014</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:16.67%">30</span><span class="tick" style="left:33.33%">60</span><span class="tick" style="left:50.00%">90</span><span class="tick" style="left:66.67%">120</span><span class="tick" style="left:83.33%">150</span><span class="tick" style="left:100.00%">180</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">effect</span><span class="pd">effect_id=810000</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_02 · end_time=10</span></div><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_SPECIAL_26 · end_time=120</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=40</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=35</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=25</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=30</span></div><div class="row"><span class="pn">move</span><span class="pd">end_time=10</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500 · end_time=160</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=1806014</span></div></div>
+        </div>
+        <div class="action-card" data-search="500016 b_win_b anim effect effect">
+          <div class="head">
+            <span class="id">action 500016</span>
+            <span class="meta">flag=0 · 3 parts</span>
+          </div>
+          <div class="timeline">
+      <div class="track"><div class="bar t-anim" style="left:0.00%; width:75.00%;" title="part #0 · anim · t=0..45 (45 frames)">B_WIN_B</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:13.33%;" title="part #1 · effect · t=0..8 (8 frames)">effect#819100</div></div><div class="track"><div class="bar t-effect" style="left:0.00%; width:75.00%;" title="part #2 · effect · t=0..45 (45 frames)">effect#600500</div></div>
+      <div class="scale"><span class="tick" style="left:0.00%">0</span><span class="tick" style="left:50.00%">30</span><span class="tick" style="left:100.00%">60</span></div>
+      <div class="legend">
+      <span><span class="swatch t-anim"></span>anim</span>
+      <span><span class="swatch t-sound"></span>sound</span>
+      <span><span class="swatch t-effect"></span>effect</span>
+      <span><span class="swatch t-move"></span>move</span>
+      <span class="muted">frames →</span>
+    </div>
+    </div>
+          <div class="parts-table"><div class="row"><span class="pn">anim</span><span class="pd">anim_name=B_WIN_B · end_time=45</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=819100</span></div><div class="row"><span class="pn">effect</span><span class="pd">effect_id=600500</span></div></div>
+        </div>
+</div>
+
+<div class="note">
+  Action IDs span <code>1..90 001 610</code> in clusters: 39 generic baseline actions (1–99), 277 NPC/enemy combat scripts (100k–1M), and a 1 325-action <strong>main-character combo bank</strong> in the <code>90001xxx</code> namespace (matches the <code>B_ATTACK1_*</code> / <code>B_SPECIAL_*</code> animation vocabulary). The equipment ↔ action JOIN — which weapon plays which combo — is not in CRSD (we checked); it likely lives inside TDAB itself as an unsurfaced per-action owner field, or in a <code>.cpd</code> manifest of the right row count.
+</div>
+
+<script>
+function actFilter(input) {
+  const q = input.value.trim().toLowerCase();
+  for (const c of document.querySelectorAll('#actions .action-card')) {
+    const haystack = (c.dataset.search || c.textContent).toLowerCase();
+    c.style.display = (!q || haystack.includes(q)) ? '' : 'none';
+  }
+}
+</script>
+
+    <footer class="site">
+      <p>Reverse-engineered asset archive of <em>Tales of Eternia Online</em> (Namco / Sigma, 2003-2007). Static structural data extracted from the original client; no copyrighted asset binaries are redistributed here. Numeric gameplay values (HP, levels, drops, XP) were server-authoritative and lost when Namco's servers shut down; they are not part of this archive.</p>
+      <p class="small muted">Generated by <code>build_wiki.py</code> · 7 container formats decoded: BNKD · IDTB · ICND · TDAB · CRSD · NNTB · ATDT/PKDF/CPDT</p>
+    </footer>
+  </main>
+</div>
+<div class="palette-backdrop" id="paletteBackdrop" hidden onclick="closePalette()"></div>
+<section class="command-palette" id="commandPalette" hidden aria-label="Archive search">
+  <div class="palette-panel">
+    <div class="palette-field">
+      <span class="palette-icon">⌕</span>
+      <input id="paletteInput" type="search" placeholder="Search current page and archive sections..." autocomplete="off" oninput="paletteSearch(this.value)">
+      <button type="button" onclick="closePalette()" aria-label="Close search">Esc</button>
+    </div>
+    <div class="palette-results" id="paletteResults"></div>
+  </div>
+</section>
+<script>
+const archiveLinks = [{"href": "../index.html", "label": "Home"}, {"href": "../equipment/index.html", "label": "Equipment"}, {"href": "../beasts/index.html", "label": "Beasts"}, {"href": "../npcs/index.html", "label": "NPCs"}, {"href": "../actions/index.html", "label": "Battle Actions"}, {"href": "../zones/index.html", "label": "Zones"}, {"href": "../audio/index.html", "label": "Audio"}, {"href": "../bundles/index.html", "label": "Bundles"}, {"href": "../about.html", "label": "About"}];
+
+function globalSearch(q) {
+  q = q.trim().toLowerCase();
+  const targets = document.querySelectorAll('[data-search], [data-name], [data-id]');
+  for (const t of targets) {
+    const haystack = (t.dataset.search || t.dataset.name || '' + (t.dataset.id || '') || t.textContent || '').toLowerCase();
+    t.style.display = (!q || haystack.includes(q)) ? '' : 'none';
+  }
+}
+
+function openPalette() {
+  document.getElementById('paletteBackdrop').hidden = false;
+  document.getElementById('commandPalette').hidden = false;
+  const input = document.getElementById('paletteInput');
+  input.value = '';
+  paletteSearch('');
+  input.focus();
+}
+
+function closePalette() {
+  document.getElementById('paletteBackdrop').hidden = true;
+  document.getElementById('commandPalette').hidden = true;
+}
+
+function paletteSearch(q) {
+  q = q.trim().toLowerCase();
+  globalSearch(q);
+  const pageItems = Array.from(document.querySelectorAll('.cat-card, .npc-card, .icon-cell, .action-card, .zone-card, .audio-cell'))
+    .map((el) => {
+      const title = (el.querySelector('.name, .npc-name, .id, .zone-id, .a-name') || el).textContent.trim();
+      const meta = (el.querySelector('.meta, .npc-id, .zone-group, .a-sub') || { textContent: '' }).textContent.trim();
+      const text = (el.dataset.search || el.dataset.name || el.textContent || '').trim();
+      return { title, meta, text };
+    })
+    .filter((item) => !q || item.text.toLowerCase().includes(q))
+    .slice(0, 6);
+  const linkItems = archiveLinks
+    .filter((item) => !q || item.label.toLowerCase().includes(q))
+    .map((item) => `<a class="palette-result" href="${item.href}"><span>${item.label}</span><small>Archive section</small></a>`);
+  const localItems = pageItems
+    .map((item) => `<button class="palette-result" type="button" onclick="closePalette()"><span>${item.title}</span><small>${item.meta || 'Current page match'}</small></button>`);
+  document.getElementById('paletteResults').innerHTML = [...linkItems, ...localItems].join('') || '<div class="palette-empty">No matches in this page.</div>';
+}
+
+document.addEventListener('keydown', (ev) => {
+  if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'k') {
+    ev.preventDefault();
+    openPalette();
+  }
+  if (ev.key === 'Escape') closePalette();
+});
+</script>
+</body>
+</html>
