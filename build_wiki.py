@@ -1540,7 +1540,10 @@ MSC_GLOSS = {
 
 def _audio_inventory():
     """Walk toeo/data/resource/ and bucket audio .dat files by filename prefix."""
-    res = Path("/mnt/c/Users/songs/Desktop/project/toeo/data/resource")
+    res_candidates = [
+        ROOT.parents[1] / "toeo" / "data" / "resource",
+        Path("/mnt/c/Users/songs/Desktop/project/toeo/data/resource"),
+    ]
     buckets: dict[str, list[tuple[str, int]]] = {
         "Music (MSC_)":           [],
         "Sound effects (SE_)":    [],
@@ -1548,8 +1551,9 @@ def _audio_inventory():
         "Jingles":                [],
         "Other audio":            [],
     }
-    if not res.exists():
-        return buckets
+    res = next((p for p in res_candidates if p.exists()), None)
+    if res is None:
+        return _audio_inventory_from_static()
     for p in sorted(res.glob("*.dat")):
         n = p.name
         sz = p.stat().st_size
@@ -1561,6 +1565,35 @@ def _audio_inventory():
             buckets["Environmental (ENV_)"].append((n, sz))
         elif n.startswith("JINGLE_"):
             buckets["Jingles"].append((n, sz))
+    return buckets
+
+
+def _audio_inventory_from_static():
+    """Fallback for GitHub Pages rebuilds where source .dat files are absent."""
+    audio_root = ROOT / "static" / "audio"
+    buckets: dict[str, list[tuple[str, int]]] = {
+        "Music (MSC_)":           [],
+        "Sound effects (SE_)":    [],
+        "Environmental (ENV_)":   [],
+        "Jingles":                [],
+        "Other audio":            [],
+    }
+    if not audio_root.exists():
+        return buckets
+    static_to_bucket = {
+        "music": "Music (MSC_)",
+        "se": "Sound effects (SE_)",
+        "env": "Environmental (ENV_)",
+        "jingle": "Jingles",
+    }
+    for subdir, bucket in static_to_bucket.items():
+        d = audio_root / subdir
+        if not d.exists():
+            continue
+        for p in sorted(d.iterdir()):
+            if not p.is_file():
+                continue
+            buckets[bucket].append((f"{p.stem}.dat", p.stat().st_size))
     return buckets
 
 

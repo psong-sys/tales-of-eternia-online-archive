@@ -7,13 +7,12 @@
 <link rel="stylesheet" href="../static/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <header class="top-nav">
-  <a class="brand" href="../index.html">
-    Tales of Eternia Online
-    <span class="tagline">Asset Database</span>
+  <a class="brand" href="../index.html" aria-label="Tales of Eternia Online archive home">
+    <img class="brand-logo" src="../static/toeo-logo.webp" alt="Tales of Eternia Online" width="178" height="50">
   </a>
   <nav class="nav-links">
       <a class="" href="../index.html">Home</a>
@@ -27,10 +26,43 @@
       <a class="" href="../about.html">About</a>
   </nav>
   <div class="search-wrap">
-    <input type="search" class="search-top" placeholder="Search…" oninput="globalSearch(this.value)">
+    <button class="search-top" type="button" onclick="openPalette()" aria-label="Open search">
+      <span>Search archive</span><kbd>Ctrl K</kbd>
+    </button>
   </div>
 </header>
-<main class="main">
+<div class="site-shell">
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-kicker">Recovered client index</div>
+      <details class="side-group" open>
+        <summary>Archive</summary>
+        <div class="side-links">
+          <a class="" href="../index.html" data-palette-item="Home" data-search="Home archive section">Home</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Catalogs</summary>
+        <div class="side-links">
+          <a class="" href="../equipment/index.html" data-palette-item="Equipment" data-search="Equipment archive section">Equipment</a><a class="" href="../beasts/index.html" data-palette-item="Beasts" data-search="Beasts archive section">Beasts</a><a class="" href="../npcs/index.html" data-palette-item="NPCs" data-search="NPCs archive section">NPCs</a><a class="" href="../actions/index.html" data-palette-item="Battle Actions" data-search="Battle Actions archive section">Battle Actions</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Preservation</summary>
+        <div class="side-links">
+          <a class="" href="../zones/index.html" data-palette-item="Zones" data-search="Zones archive section">Zones</a><a class="active" href="../audio/index.html" data-palette-item="Audio" data-search="Audio archive section">Audio</a><a class="" href="../bundles/index.html" data-palette-item="Bundles" data-search="Bundles archive section">Bundles</a>
+        </div>
+      </details>
+      <details class="side-group" open>
+        <summary>Project</summary>
+        <div class="side-links">
+          <a class="" href="../about.html" data-palette-item="About" data-search="About archive section">About</a>
+        </div>
+      </details>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="breadcrumb"><a href="../index.html">Archive</a><span>/</span><span>Audio</span></div>
 
 <h1>Audio</h1>
 <p class="dim">390 audio files shipped on the original disc, stored as <code>resource/*.dat</code> (filename extension is opaque; contents are stock <strong>WAV</strong> for SE/jingles and <strong>WMA / ASF</strong> for music + environmentals). Filenames are descriptive English tokens — Sigma's sound team's internal names — and many double as a place-name index for zones with no other identifying string in the client. Click ▶ to listen; music tracks were transcoded to OGG for browser playback.</p>
@@ -326,15 +358,6 @@
                 </div>
               </div>
             </div>
-            <div class="audio-cell" data-search="se_ashioto">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_ASHIOTO.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_ASHIOTO"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_ASHIOTO</span>
-                  <span class="a-sub muted">38.6 KB</span>
-                </div>
-              </div>
-            </div>
             <div class="audio-cell" data-search="se_ashiot_c">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_ASHIOT_C.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_ASHIOT_C"><span class="play-icon">▶</span></button>
@@ -353,6 +376,15 @@
                 </div>
               </div>
             </div>
+            <div class="audio-cell" data-search="se_ashioto">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_ASHIOTO.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_ASHIOTO"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_ASHIOTO</span>
+                  <span class="a-sub muted">38.6 KB</span>
+                </div>
+              </div>
+            </div>
             <div class="audio-cell" data-search="se_attack_grass">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_ATTACK_GRASS.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_ATTACK_GRASS"><span class="play-icon">▶</span></button>
@@ -362,21 +394,30 @@
                 </div>
               </div>
             </div>
+            <div class="audio-cell" data-search="se_b_tooboe">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_B_TOOBOE.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_B_TOOBOE"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_B_TOOBOE</span>
+                  <span class="a-sub muted">167.2 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell" data-search="se_b_tooboe_k">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_B_TOOBOE_K.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_B_TOOBOE_K"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_B_TOOBOE_K</span>
+                  <span class="a-sub muted">167.2 KB</span>
+                </div>
+              </div>
+            </div>
             <div class="audio-cell" data-search="se_bachi">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_BACHI.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_BACHI"><span class="play-icon">▶</span></button>
                 <div class="a-text">
                   <span class="a-name">SE_BACHI</span>
                   <span class="a-sub muted">48.1 KB</span>
-                </div>
-              </div>
-            </div>
-            <div class="audio-cell" data-search="se_bakuha_d">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_BAKUHA_D.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_BAKUHA_D"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_BAKUHA_D</span>
-                  <span class="a-sub muted">189.8 KB</span>
                 </div>
               </div>
             </div>
@@ -395,6 +436,15 @@
                 <div class="a-text">
                   <span class="a-name">SE_BAKUH_LM</span>
                   <span class="a-sub muted">51.2 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell" data-search="se_bakuha_d">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_BAKUHA_D.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_BAKUHA_D"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_BAKUHA_D</span>
+                  <span class="a-sub muted">189.8 KB</span>
                 </div>
               </div>
             </div>
@@ -575,24 +625,6 @@
                 <div class="a-text">
                   <span class="a-name">SE_BUZZER</span>
                   <span class="a-sub muted">38.0 KB</span>
-                </div>
-              </div>
-            </div>
-            <div class="audio-cell" data-search="se_b_tooboe">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_B_TOOBOE.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_B_TOOBOE"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_B_TOOBOE</span>
-                  <span class="a-sub muted">167.2 KB</span>
-                </div>
-              </div>
-            </div>
-            <div class="audio-cell" data-search="se_b_tooboe_k">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_B_TOOBOE_K.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_B_TOOBOE_K"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_B_TOOBOE_K</span>
-                  <span class="a-sub muted">167.2 KB</span>
                 </div>
               </div>
             </div>
@@ -830,15 +862,6 @@
                 </div>
               </div>
             </div>
-            <div class="audio-cell" data-search="se_doorclese">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_DOORCLESE.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_DOORCLESE"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_DOORCLESE</span>
-                  <span class="a-sub muted">86.9 KB</span>
-                </div>
-              </div>
-            </div>
             <div class="audio-cell" data-search="se_door_h">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_DOOR_H.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_DOOR_H"><span class="play-icon">▶</span></button>
@@ -866,15 +889,6 @@
                 </div>
               </div>
             </div>
-            <div class="audio-cell" data-search="se_door_open">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_DOOR_OPEN.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_DOOR_OPEN"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_DOOR_OPEN</span>
-                  <span class="a-sub muted">56.7 KB</span>
-                </div>
-              </div>
-            </div>
             <div class="audio-cell" data-search="se_door_o_open">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_DOOR_O_OPEN.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_DOOR_O_OPEN"><span class="play-icon">▶</span></button>
@@ -884,12 +898,30 @@
                 </div>
               </div>
             </div>
+            <div class="audio-cell" data-search="se_door_open">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_DOOR_OPEN.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_DOOR_OPEN"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_DOOR_OPEN</span>
+                  <span class="a-sub muted">56.7 KB</span>
+                </div>
+              </div>
+            </div>
             <div class="audio-cell" data-search="se_door_s_open">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_DOOR_S_OPEN.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_DOOR_S_OPEN"><span class="play-icon">▶</span></button>
                 <div class="a-text">
                   <span class="a-name">SE_DOOR_S_OPEN</span>
                   <span class="a-sub muted">65.5 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell" data-search="se_doorclese">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_DOORCLESE.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_DOORCLESE"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_DOORCLESE</span>
+                  <span class="a-sub muted">86.9 KB</span>
                 </div>
               </div>
             </div>
@@ -974,21 +1006,21 @@
                 </div>
               </div>
             </div>
-            <div class="audio-cell" data-search="se_energy">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_ENERGY.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_ENERGY"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_ENERGY</span>
-                  <span class="a-sub muted">133.4 KB</span>
-                </div>
-              </div>
-            </div>
             <div class="audio-cell" data-search="se_ene_hit">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_ENE_HIT.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_ENE_HIT"><span class="play-icon">▶</span></button>
                 <div class="a-text">
                   <span class="a-name">SE_ENE_HIT</span>
                   <span class="a-sub muted">37.2 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell" data-search="se_energy">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_ENERGY.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_ENERGY"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_ENERGY</span>
+                  <span class="a-sub muted">133.4 KB</span>
                 </div>
               </div>
             </div>
@@ -1964,21 +1996,21 @@
                 </div>
               </div>
             </div>
-            <div class="audio-cell" data-search="se_mg_korogaru">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_MG_KOROGARU.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_MG_KOROGARU"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_MG_KOROGARU</span>
-                  <span class="a-sub muted">78.8 KB</span>
-                </div>
-              </div>
-            </div>
             <div class="audio-cell" data-search="se_mg_koroga_b">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_MG_KOROGA_B.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_MG_KOROGA_B"><span class="play-icon">▶</span></button>
                 <div class="a-text">
                   <span class="a-name">SE_MG_KOROGA_B</span>
                   <span class="a-sub muted">74.9 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell" data-search="se_mg_korogaru">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_MG_KOROGARU.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_MG_KOROGARU"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_MG_KOROGARU</span>
+                  <span class="a-sub muted">78.8 KB</span>
                 </div>
               </div>
             </div>
@@ -2162,24 +2194,6 @@
                 </div>
               </div>
             </div>
-            <div class="audio-cell" data-search="se_monster1">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_MONSTER1.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_MONSTER1"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_MONSTER1</span>
-                  <span class="a-sub muted">61.9 KB</span>
-                </div>
-              </div>
-            </div>
-            <div class="audio-cell" data-search="se_monster2">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_MONSTER2.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_MONSTER2"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_MONSTER2</span>
-                  <span class="a-sub muted">76.2 KB</span>
-                </div>
-              </div>
-            </div>
             <div class="audio-cell" data-search="se_mon_fuyu_01">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_MON_FUYU_01.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_MON_FUYU_01"><span class="play-icon">▶</span></button>
@@ -2222,6 +2236,24 @@
                 <div class="a-text">
                   <span class="a-name">SE_MON_FUYU_05</span>
                   <span class="a-sub muted">172.4 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell" data-search="se_monster1">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_MONSTER1.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_MONSTER1"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_MONSTER1</span>
+                  <span class="a-sub muted">61.9 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell" data-search="se_monster2">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_MONSTER2.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_MONSTER2"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_MONSTER2</span>
+                  <span class="a-sub muted">76.2 KB</span>
                 </div>
               </div>
             </div>
@@ -2360,6 +2392,15 @@
                 </div>
               </div>
             </div>
+            <div class="audio-cell" data-search="se_r_r">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_R_R.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_R_R"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_R_R</span>
+                  <span class="a-sub muted">156.0 KB</span>
+                </div>
+              </div>
+            </div>
             <div class="audio-cell" data-search="se_raimei">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_RAIMEI.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_RAIMEI"><span class="play-icon">▶</span></button>
@@ -2477,12 +2518,12 @@
                 </div>
               </div>
             </div>
-            <div class="audio-cell" data-search="se_r_r">
+            <div class="audio-cell" data-search="se_s_hassha">
               <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_R_R.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_R_R"><span class="play-icon">▶</span></button>
+                <audio preload="none" src="../static/audio/se/SE_S_HASSHA.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_S_HASSHA"><span class="play-icon">▶</span></button>
                 <div class="a-text">
-                  <span class="a-name">SE_R_R</span>
-                  <span class="a-sub muted">156.0 KB</span>
+                  <span class="a-name">SE_S_HASSHA</span>
+                  <span class="a-sub muted">12.3 KB</span>
                 </div>
               </div>
             </div>
@@ -2765,6 +2806,15 @@
                 </div>
               </div>
             </div>
+            <div class="audio-cell" data-search="se_syoure_m">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_SYOURE_M.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_SYOURE_M"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_SYOURE_M</span>
+                  <span class="a-sub muted">57.2 KB</span>
+                </div>
+              </div>
+            </div>
             <div class="audio-cell" data-search="se_syourei">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_SYOUREI.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_SYOUREI"><span class="play-icon">▶</span></button>
@@ -2792,15 +2842,6 @@
                 </div>
               </div>
             </div>
-            <div class="audio-cell" data-search="se_syoure_m">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_SYOURE_M.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_SYOURE_M"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_SYOURE_M</span>
-                  <span class="a-sub muted">57.2 KB</span>
-                </div>
-              </div>
-            </div>
             <div class="audio-cell" data-search="se_syu">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_SYU.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_SYU"><span class="play-icon">▶</span></button>
@@ -2825,15 +2866,6 @@
                 <div class="a-text">
                   <span class="a-name">SE_SYUTUGEN</span>
                   <span class="a-sub muted">97.8 KB</span>
-                </div>
-              </div>
-            </div>
-            <div class="audio-cell" data-search="se_s_hassha">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_S_HASSHA.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_S_HASSHA"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_S_HASSHA</span>
-                  <span class="a-sub muted">12.3 KB</span>
                 </div>
               </div>
             </div>
@@ -3116,6 +3148,15 @@
                 </div>
               </div>
             </div>
+            <div class="audio-cell" data-search="se_water_hit">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_WATER_HIT.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_WATER_HIT"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_WATER_HIT</span>
+                  <span class="a-sub muted">59.0 KB</span>
+                </div>
+              </div>
+            </div>
             <div class="audio-cell" data-search="se_watering">
               <div class="a-row">
                 <audio preload="none" src="../static/audio/se/SE_WATERING.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_WATERING"><span class="play-icon">▶</span></button>
@@ -3131,15 +3172,6 @@
                 <div class="a-text">
                   <span class="a-name">SE_WATERMAX</span>
                   <span class="a-sub muted">71.6 KB</span>
-                </div>
-              </div>
-            </div>
-            <div class="audio-cell" data-search="se_water_hit">
-              <div class="a-row">
-                <audio preload="none" src="../static/audio/se/SE_WATER_HIT.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_WATER_HIT"><span class="play-icon">▶</span></button>
-                <div class="a-text">
-                  <span class="a-name">SE_WATER_HIT</span>
-                  <span class="a-sub muted">59.0 KB</span>
                 </div>
               </div>
             </div>
@@ -3616,21 +3648,115 @@ function stopAll() {
 }
 </script>
 
-  <footer class="site">
-    <p>Reverse-engineered asset archive of <em>Tales of Eternia Online</em> (Namco / Sigma, 2003–2007). Static structural data extracted from the original client; no copyrighted asset binaries are redistributed here. Numeric gameplay values (HP, levels, drops, XP) were server-authoritative and lost when Namco's servers shut down — they are not part of this archive.</p>
-    <p class="small muted">Generated by <code>build_wiki.py</code> · 7 container formats decoded: BNKD · IDTB · ICND · TDAB · CRSD · NNTB · ATDT/PKDF/CPDT</p>
-  </footer>
-</main>
+    <footer class="site">
+      <p>Reverse-engineered asset archive of <em>Tales of Eternia Online</em> (Namco / Sigma, 2003-2007). Static structural data extracted from the original client; no copyrighted asset binaries are redistributed here. Numeric gameplay values (HP, levels, drops, XP) were server-authoritative and lost when Namco's servers shut down; they are not part of this archive.</p>
+      <p class="small muted">Generated by <code>build_wiki.py</code> · 7 container formats decoded: BNKD · IDTB · ICND · TDAB · CRSD · NNTB · ATDT/PKDF/CPDT</p>
+    </footer>
+  </main>
+</div>
+<div class="palette-backdrop" id="paletteBackdrop" hidden onclick="closePalette()"></div>
+<section class="command-palette" id="commandPalette" hidden aria-label="Archive search">
+  <div class="palette-panel">
+    <div class="palette-field">
+      <span class="palette-icon">⌕</span>
+      <input id="paletteInput" type="search" placeholder="Search current page and archive sections..." autocomplete="off" oninput="paletteSearch(this.value)">
+      <button type="button" onclick="closePalette()" aria-label="Close search">Esc</button>
+    </div>
+    <div class="palette-results" id="paletteResults"></div>
+  </div>
+</section>
+<div class="image-viewer" id="imageViewer" hidden onclick="closeImageViewer()">
+  <figure class="image-viewer-panel" onclick="event.stopPropagation()">
+    <button class="image-viewer-close" type="button" onclick="closeImageViewer()" aria-label="Close image preview">Esc</button>
+    <img id="imageViewerImg" alt="">
+    <figcaption id="imageViewerCaption"></figcaption>
+  </figure>
+</div>
 <script>
+const archiveLinks = [{"href": "../index.html", "label": "Home"}, {"href": "../equipment/index.html", "label": "Equipment"}, {"href": "../beasts/index.html", "label": "Beasts"}, {"href": "../npcs/index.html", "label": "NPCs"}, {"href": "../actions/index.html", "label": "Battle Actions"}, {"href": "../zones/index.html", "label": "Zones"}, {"href": "../audio/index.html", "label": "Audio"}, {"href": "../bundles/index.html", "label": "Bundles"}, {"href": "../about.html", "label": "About"}];
+
 function globalSearch(q) {
   q = q.trim().toLowerCase();
-  // simple in-page text-content filter: hide cards whose data attributes / text don't match
-  const targets = document.querySelectorAll('[data-search]');
+  const targets = document.querySelectorAll('[data-search], [data-name], [data-id]');
   for (const t of targets) {
-    const haystack = (t.dataset.search || t.textContent || '').toLowerCase();
+    const haystack = (t.dataset.search || t.dataset.name || '' + (t.dataset.id || '') || t.textContent || '').toLowerCase();
     t.style.display = (!q || haystack.includes(q)) ? '' : 'none';
   }
 }
+
+function openPalette() {
+  document.getElementById('paletteBackdrop').hidden = false;
+  document.getElementById('commandPalette').hidden = false;
+  const input = document.getElementById('paletteInput');
+  input.value = '';
+  paletteSearch('');
+  input.focus();
+}
+
+function closePalette() {
+  document.getElementById('paletteBackdrop').hidden = true;
+  document.getElementById('commandPalette').hidden = true;
+}
+
+function paletteSearch(q) {
+  q = q.trim().toLowerCase();
+  globalSearch(q);
+  const pageItems = Array.from(document.querySelectorAll('.cat-card, .npc-card, .icon-cell, .action-card, .zone-card, .audio-cell'))
+    .map((el) => {
+      const title = (el.querySelector('.name, .npc-name, .id, .zone-id, .a-name') || el).textContent.trim();
+      const meta = (el.querySelector('.meta, .npc-id, .zone-group, .a-sub') || { textContent: '' }).textContent.trim();
+      const text = (el.dataset.search || el.dataset.name || el.textContent || '').trim();
+      return { title, meta, text };
+    })
+    .filter((item) => !q || item.text.toLowerCase().includes(q))
+    .slice(0, 6);
+  const linkItems = archiveLinks
+    .filter((item) => !q || item.label.toLowerCase().includes(q))
+    .map((item) => `<a class="palette-result" href="${item.href}"><span>${item.label}</span><small>Archive section</small></a>`);
+  const localItems = pageItems
+    .map((item) => `<button class="palette-result" type="button" onclick="closePalette()"><span>${item.title}</span><small>${item.meta || 'Current page match'}</small></button>`);
+  document.getElementById('paletteResults').innerHTML = [...linkItems, ...localItems].join('') || '<div class="palette-empty">No matches in this page.</div>';
+}
+
+function openImageViewer(img) {
+  const viewer = document.getElementById('imageViewer');
+  const viewerImg = document.getElementById('imageViewerImg');
+  const caption = document.getElementById('imageViewerCaption');
+  const cell = img.closest('.icon-cell, .npc-card');
+  const label = cell ? (cell.querySelector('.name, .npc-name, .id') || cell).textContent.trim() : (img.alt || 'Asset preview');
+  const source = cell ? cell.querySelector('.asset-source')?.textContent.trim() : '';
+  viewerImg.src = img.currentSrc || img.src;
+  viewerImg.alt = img.alt || label;
+  caption.textContent = source ? `${label} · ${source}` : label;
+  viewer.hidden = false;
+  document.body.classList.add('viewer-open');
+}
+
+function closeImageViewer() {
+  const viewer = document.getElementById('imageViewer');
+  const viewerImg = document.getElementById('imageViewerImg');
+  viewer.hidden = true;
+  viewerImg.removeAttribute('src');
+  document.body.classList.remove('viewer-open');
+}
+
+document.addEventListener('click', (ev) => {
+  const img = ev.target.closest('.icon-cell img, .npc-card img');
+  if (!img || !img.getAttribute('src')) return;
+  ev.preventDefault();
+  openImageViewer(img);
+});
+
+document.addEventListener('keydown', (ev) => {
+  if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'k') {
+    ev.preventDefault();
+    openPalette();
+  }
+  if (ev.key === 'Escape') {
+    closePalette();
+    closeImageViewer();
+  }
+});
 </script>
 </body>
 </html>
