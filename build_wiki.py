@@ -273,9 +273,11 @@ def category_for_cid1_id(name: str) -> str:
     if name.startswith("ID_BODY_F"): return "Body F-set"
     if name.startswith("ID_BODY_G"): return "Body G-set"
     if name.startswith("ID_BODY_M_U") or name.startswith("ID_BODY_L_U"): return "Body undergarment"
+    if name.startswith("ID_LEATHER_CLOTHES"): return "Clothes"
+    if name.startswith("ID_LEATHER_BOOTS"): return "Boots"
+    if name.startswith("ID_LEATHER_GLOVES"): return "Gloves"
     if name.startswith("ID_GLOVES"): return "Gloves"
     if name.startswith("ID_BOOTS"): return "Boots"
-    if name.startswith("ID_LEATHER"): return "Leather (early game)"
     if name.startswith("ID_CLOTHES"): return "Clothes"
     if name.startswith("ID_ROBE"): return "Robe"
     if name.startswith("ID_FACE"): return "Face"
@@ -465,8 +467,8 @@ def build_equipment(cid1: dict[int, str]):
         "Body A-set": "BODY_A", "Body B-set": "BODY_B", "Body C-set": "BODY_C",
         "Body D-set": "BODY_D", "Body E-set": "BODY_E", "Body F-set": "BODY_F",
         "Body G-set": "BODY_G", "Body undergarment": "Body",
-        "Gloves": "Body", "Boots": "Body",     # ICND does not separate; use Accessory fallback
-        "Leather (early game)": "Body", "Clothes": "Body", "Robe": "Body",
+        "Gloves": "Body", "Boots": "Body",
+        "Clothes": "Body", "Robe": "Body",
         "Face": "Body", "Hair": "Body", "Eye": "Body", "Skin": "Body",
         "Body change": "Body", "Mount": "Accessory", "Meta": "Body", "Other": "other",
     }
