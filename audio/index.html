@@ -65,10 +65,11 @@
     <div class="breadcrumb"><a href="../index.html">Archive</a><span>/</span><span>Audio</span></div>
 
 <h1>Audio</h1>
-<p class="dim">390 audio files shipped on the original disc, stored as <code>resource/*.dat</code> (filename extension is opaque; contents are stock <strong>WAV</strong> for SE/jingles and <strong>WMA / ASF</strong> for music + environmentals). Filenames are descriptive English tokens — Sigma's sound team's internal names — and many double as a place-name index for zones with no other identifying string in the client. Click ▶ to listen; music tracks were transcoded to OGG for browser playback.</p>
+<p class="dim">392 audio files shipped on the original disc, stored as <code>resource/*.dat</code> (filename extension is opaque; contents are stock <strong>WAV</strong> for SE/jingles and <strong>WMA / ASF</strong> for music + environmentals). Filenames are descriptive English tokens — Sigma's sound team's internal names — and many double as a place-name index for zones with no other identifying string in the client. Click ▶ to listen; music tracks were transcoded to OGG for browser playback.</p>
 
 <div class="stat-grid">
   <div class="stat"><span class="num">29</span><span class="label">Music tracks</span></div>
+  <div class="stat"><span class="num">2</span><span class="label">Battle voices</span></div>
   <div class="stat"><span class="num">324</span><span class="label">Sound effects</span></div>
   <div class="stat"><span class="num">27</span><span class="label">Environmental</span></div>
   <div class="stat"><span class="num">10</span><span class="label">Jingles / stingers</span></div>
@@ -82,6 +83,198 @@
   <input type="search" class="search-inline" placeholder="Filter by name…" oninput="audioFilter(this.value)">
   <button class="stop-all" type="button" onclick="stopAll()">⏹ Stop all</button>
 </div>
+
+<h2>Combat voice and weapon audio <span class="muted" style="font-size:.7em">20 curated cues</span></h2>
+<div class="note">
+  <strong>Player combat audio.</strong> Battle-name shouts appear to use the <code>BC*</code> voice table. Swing, thrust, kick, blow, down, and hit cues come from the regular <code>SE_*</code> sound-effect pool.
+</div>
+
+<h3>Battle-name voice callouts <span class="muted" style="font-size:.72em">2 cues</span></h3>
+<p class="dim">Client voice-table entries. These are the player-character shout style clips, stored as WAV data with a .dat extension.</p>
+<div class="audio-grid audio-grid-compact">
+            <div class="audio-cell combat-audio" data-search="bc003_0011 battle-name voice callouts">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/voice/BC003_0011.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play BC003_0011"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">BC003_0011</span>
+                  <span class="a-sub muted">72.7 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="bc003_0111 battle-name voice callouts">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/voice/BC003_0111.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play BC003_0111"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">BC003_0111</span>
+                  <span class="a-sub muted">82.7 KB</span>
+                </div>
+              </div>
+            </div></div>
+<h3>Weapon swings and effort sounds <span class="muted" style="font-size:.72em">18 cues</span></h3>
+<p class="dim">Likely combat effort, swing, strike, down, and impact cues from the regular SE pool.</p>
+<div class="audio-grid audio-grid-compact">
+            <div class="audio-cell combat-audio" data-search="se_slash1 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_SLASH1.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_SLASH1"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_SLASH1</span>
+                  <span class="a-sub muted">7.4 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_slash2 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_SLASH2.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_SLASH2"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_SLASH2</span>
+                  <span class="a-sub muted">21.8 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_slash3 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_SLASH3.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_SLASH3"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_SLASH3</span>
+                  <span class="a-sub muted">29.9 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_swing_wide1 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_SWING_WIDE1.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_SWING_WIDE1"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_SWING_WIDE1</span>
+                  <span class="a-sub muted">11.1 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_swing_wide2 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_SWING_WIDE2.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_SWING_WIDE2"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_SWING_WIDE2</span>
+                  <span class="a-sub muted">8.0 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_thrust1 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_THRUST1.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_THRUST1"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_THRUST1</span>
+                  <span class="a-sub muted">11.4 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_thrust2 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_THRUST2.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_THRUST2"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_THRUST2</span>
+                  <span class="a-sub muted">13.7 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_thrust3 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_THRUST3.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_THRUST3"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_THRUST3</span>
+                  <span class="a-sub muted">49.1 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_kick1 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_KICK1.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_KICK1"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_KICK1</span>
+                  <span class="a-sub muted">10.7 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_kick2 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_KICK2.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_KICK2"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_KICK2</span>
+                  <span class="a-sub muted">22.5 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_kick3 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_KICK3.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_KICK3"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_KICK3</span>
+                  <span class="a-sub muted">21.6 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_blow1 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_BLOW1.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_BLOW1"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_BLOW1</span>
+                  <span class="a-sub muted">11.6 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_blow2 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_BLOW2.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_BLOW2"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_BLOW2</span>
+                  <span class="a-sub muted">14.3 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_blow3 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_BLOW3.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_BLOW3"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_BLOW3</span>
+                  <span class="a-sub muted">20.8 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_unari weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_UNARI.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_UNARI"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_UNARI</span>
+                  <span class="a-sub muted">580.7 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_unari2 weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_UNARI2.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_UNARI2"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_UNARI2</span>
+                  <span class="a-sub muted">89.3 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_down weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_DOWN.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_DOWN"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_DOWN</span>
+                  <span class="a-sub muted">44.6 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell combat-audio" data-search="se_ene_hit weapon swings and effort sounds">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/se/SE_ENE_HIT.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play SE_ENE_HIT"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">SE_ENE_HIT</span>
+                  <span class="a-sub muted">37.2 KB</span>
+                </div>
+              </div>
+            </div></div>
 
 
 <h2>Music (MSC_) <span class="muted" style="font-size:.7em">29 files</span></h2>
@@ -344,6 +537,26 @@
                 <div class="a-text">
                   <span class="a-name">MSC_WATIE_STREAM</span>
                   <span class="a-sub">Watie Stream</span>
+                </div>
+              </div>
+            </div></div>
+<h2>Battle voices (BC_) <span class="muted" style="font-size:.7em">2 files</span></h2>
+<div class="audio-grid">
+            <div class="audio-cell" data-search="bc003_0011">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/voice/BC003_0011.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play BC003_0011"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">BC003_0011</span>
+                  <span class="a-sub muted">72.7 KB</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-cell" data-search="bc003_0111">
+              <div class="a-row">
+                <audio preload="none" src="../static/audio/voice/BC003_0111.wav"></audio><button class="play-btn" type="button" onclick="togglePlay(this)" aria-label="Play BC003_0111"><span class="play-icon">▶</span></button>
+                <div class="a-text">
+                  <span class="a-name">BC003_0111</span>
+                  <span class="a-sub muted">82.7 KB</span>
                 </div>
               </div>
             </div></div>

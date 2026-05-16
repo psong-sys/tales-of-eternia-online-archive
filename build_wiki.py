@@ -1537,6 +1537,26 @@ MSC_GLOSS = {
     "ORGEL_1":              "Music box (orgel)",
 }
 
+BATTLE_AUDIO_GROUPS = [
+    (
+        "Battle-name voice callouts",
+        "Client voice-table entries. These are the player-character shout style clips, stored as WAV data with a .dat extension.",
+        ["BC003_0011", "BC003_0111"],
+    ),
+    (
+        "Weapon swings and effort sounds",
+        "Likely combat effort, swing, strike, down, and impact cues from the regular SE pool.",
+        [
+            "SE_SLASH1", "SE_SLASH2", "SE_SLASH3",
+            "SE_SWING_WIDE1", "SE_SWING_WIDE2",
+            "SE_THRUST1", "SE_THRUST2", "SE_THRUST3",
+            "SE_KICK1", "SE_KICK2", "SE_KICK3",
+            "SE_BLOW1", "SE_BLOW2", "SE_BLOW3",
+            "SE_UNARI", "SE_UNARI2", "SE_DOWN", "SE_ENE_HIT",
+        ],
+    ),
+]
+
 
 def _audio_inventory():
     """Walk toeo/data/resource/ and bucket audio .dat files by filename prefix."""
@@ -1546,6 +1566,7 @@ def _audio_inventory():
     ]
     buckets: dict[str, list[tuple[str, int]]] = {
         "Music (MSC_)":           [],
+        "Battle voices (BC_)":     [],
         "Sound effects (SE_)":    [],
         "Environmental (ENV_)":   [],
         "Jingles":                [],
@@ -1559,6 +1580,8 @@ def _audio_inventory():
         sz = p.stat().st_size
         if n.startswith("MSC_"):
             buckets["Music (MSC_)"].append((n, sz))
+        elif n.startswith("BC"):
+            buckets["Battle voices (BC_)"].append((n, sz))
         elif n.startswith("SE_"):
             buckets["Sound effects (SE_)"].append((n, sz))
         elif n.startswith("ENV_"):
@@ -1573,6 +1596,7 @@ def _audio_inventory_from_static():
     audio_root = ROOT / "static" / "audio"
     buckets: dict[str, list[tuple[str, int]]] = {
         "Music (MSC_)":           [],
+        "Battle voices (BC_)":     [],
         "Sound effects (SE_)":    [],
         "Environmental (ENV_)":   [],
         "Jingles":                [],
@@ -1582,6 +1606,7 @@ def _audio_inventory_from_static():
         return buckets
     static_to_bucket = {
         "music": "Music (MSC_)",
+        "voice": "Battle voices (BC_)",
         "se": "Sound effects (SE_)",
         "env": "Environmental (ENV_)",
         "jingle": "Jingles",
@@ -1609,11 +1634,51 @@ def build_audio_catalog():
     # Map category → (audio subdir, file extension) for the playable links
     cat_to_audio = {
         "Music (MSC_)":           ("music", "ogg"),
+        "Battle voices (BC_)":     ("voice", "wav"),
         "Sound effects (SE_)":    ("se",    "wav"),
         "Environmental (ENV_)":   ("env",   "ogg"),
         "Jingles":                ("jingle","wav"),
     }
     audio_root = ROOT / "static" / "audio"
+
+    size_by_stem = {n[:-4]: sz for files in buckets.values() for n, sz in files}
+
+    def audio_button(stem, subdir, ext):
+        audio_path = audio_root / subdir / f"{stem}.{ext}"
+        if not audio_path.exists():
+            return "", 0
+        src = f"../static/audio/{subdir}/{stem}.{ext}"
+        return (
+            f'<audio preload="none" src="{html.escape(src)}"></audio>'
+            f'<button class="play-btn" type="button" '
+            f'onclick="togglePlay(this)" aria-label="Play {html.escape(stem)}">'
+            f'<span class="play-icon">▶</span></button>'
+        ), 1
+
+    combat_sections = []
+    combat_play_count = 0
+    for title, note, stems in BATTLE_AUDIO_GROUPS:
+        cells = []
+        for stem in stems:
+            subdir, ext = ("voice", "wav") if stem.startswith("BC") else ("se", "wav")
+            btn_html, playable = audio_button(stem, subdir, ext)
+            combat_play_count += playable
+            sz = size_by_stem.get(stem)
+            sub_html = f'<span class="a-sub muted">{fmt_kb(sz) if sz else "referenced cue"}</span>'
+            cells.append(f"""
+            <div class="audio-cell combat-audio" data-search="{html.escape((stem + ' ' + title).lower())}">
+              <div class="a-row">
+                {btn_html}
+                <div class="a-text">
+                  <span class="a-name">{html.escape(stem)}</span>
+                  {sub_html}
+                </div>
+              </div>
+            </div>""")
+        combat_sections.append(f"""
+<h3>{html.escape(title)} <span class="muted" style="font-size:.72em">{len(stems)} cue{'s' if len(stems)!=1 else ''}</span></h3>
+<p class="dim">{html.escape(note)}</p>
+<div class="audio-grid audio-grid-compact">{''.join(cells)}</div>""")
 
     sections = []
     play_count = 0
@@ -1633,16 +1698,8 @@ def build_audio_catalog():
             # Playable link if file exists in static dir
             audio_html = ""
             if subdir:
-                audio_path = audio_root / subdir / f"{stem}.{ext}"
-                if audio_path.exists():
-                    src = f"../static/audio/{subdir}/{stem}.{ext}"
-                    audio_html = (
-                        f'<audio preload="none" src="{html.escape(src)}"></audio>'
-                        f'<button class="play-btn" type="button" '
-                        f'onclick="togglePlay(this)" aria-label="Play {html.escape(stem)}">'
-                        f'<span class="play-icon">▶</span></button>'
-                    )
-                    play_count += 1
+                audio_html, playable = audio_button(stem, subdir, ext)
+                play_count += playable
             cells.append(f"""
             <div class="audio-cell" data-search="{html.escape(stem.lower())}">
               <div class="a-row">
@@ -1663,6 +1720,7 @@ def build_audio_catalog():
 
 <div class="stat-grid">
   <div class="stat"><span class="num">{len(buckets["Music (MSC_)"])}</span><span class="label">Music tracks</span></div>
+  <div class="stat"><span class="num">{len(buckets["Battle voices (BC_)"])}</span><span class="label">Battle voices</span></div>
   <div class="stat"><span class="num">{len(buckets["Sound effects (SE_)"])}</span><span class="label">Sound effects</span></div>
   <div class="stat"><span class="num">{len(buckets["Environmental (ENV_)"])}</span><span class="label">Environmental</span></div>
   <div class="stat"><span class="num">{len(buckets["Jingles"])}</span><span class="label">Jingles / stingers</span></div>
@@ -1676,6 +1734,12 @@ def build_audio_catalog():
   <input type="search" class="search-inline" placeholder="Filter by name…" oninput="audioFilter(this.value)">
   <button class="stop-all" type="button" onclick="stopAll()">⏹ Stop all</button>
 </div>
+
+<h2>Combat voice and weapon audio <span class="muted" style="font-size:.7em">{sum(len(g[2]) for g in BATTLE_AUDIO_GROUPS)} curated cues</span></h2>
+<div class="note">
+  <strong>Player combat audio.</strong> Battle-name shouts appear to use the <code>BC*</code> voice table. Swing, thrust, kick, blow, down, and hit cues come from the regular <code>SE_*</code> sound-effect pool.
+</div>
+{''.join(combat_sections)}
 
 {''.join(sections)}
 
@@ -1727,7 +1791,7 @@ function stopAll() {{
     out = ROOT / "audio" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     write_html(out, page("Audio", body, "/audio/index.html", depth=1))
-    print(f"  audio: {len(buckets['Music (MSC_)'])} music - {len(buckets['Sound effects (SE_)'])} SE - {len(buckets['Environmental (ENV_)'])} env - {len(buckets['Jingles'])} jingles  ({play_count} playable)")
+    print(f"  audio: {len(buckets['Music (MSC_)'])} music - {len(buckets['Battle voices (BC_)'])} voice - {len(buckets['Sound effects (SE_)'])} SE - {len(buckets['Environmental (ENV_)'])} env - {len(buckets['Jingles'])} jingles  ({play_count + combat_play_count} playable including curated)")
 
 
 # ---------- Icon copy --------------------------------------------------------
