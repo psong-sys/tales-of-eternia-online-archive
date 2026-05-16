@@ -1136,7 +1136,7 @@ A static reference for the assets that shipped in <em>Tales of Eternia Online</e
 </ul>
 
 <h2>Method notes</h2>
-<p>Static analysis (Cutter MCP, Ghidra MCP) leveraged the Namco engine's verbose assertion strings — every <code>Source/Sys_*.cpp</code> path leaks a library name. Runtime probing via DLL trampolines and Frida instrumented the protocol where structural inference wasn't enough. Full RE narrative lives in <code>Yu-TOEOE/ASSETS_TRACK.md</code> and <code>Yu-TOEOE/DEVLOG.md</code>.</p>
+<p>Static analysis leveraged the Namco engine's verbose assertion strings: every <code>Source/Sys_*.cpp</code> path leaks a library name. Decompiler output, disassembly, and corpus-wide validation were combined to recover container headers, record layouts, pointer relocation rules, compression paths, and encrypted table structures. Runtime probing was used only where static structure was not enough to explain protocol behavior.</p>
 
 <h2>Legal</h2>
 <p class="muted">Asset binaries (texture data, audio, copyrighted content) are <strong>not redistributed</strong>. This archive consists of:</p>
