@@ -147,6 +147,13 @@ def page(title: str, body: str, active: str = "", *, depth: int = 0) -> str:
     <div class="palette-results" id="paletteResults"></div>
   </div>
 </section>
+<div class="image-viewer" id="imageViewer" hidden onclick="closeImageViewer()">
+  <figure class="image-viewer-panel" onclick="event.stopPropagation()">
+    <button class="image-viewer-close" type="button" onclick="closeImageViewer()" aria-label="Close image preview">Esc</button>
+    <img id="imageViewerImg" alt="">
+    <figcaption id="imageViewerCaption"></figcaption>
+  </figure>
+</div>
 <script>
 const archiveLinks = {json.dumps([{"href": (rel.rstrip("/") + href if rel else "." + href), "label": label} for href, label in NAV_LINKS])};
 
@@ -193,12 +200,44 @@ function paletteSearch(q) {{
   document.getElementById('paletteResults').innerHTML = [...linkItems, ...localItems].join('') || '<div class="palette-empty">No matches in this page.</div>';
 }}
 
+function openImageViewer(img) {{
+  const viewer = document.getElementById('imageViewer');
+  const viewerImg = document.getElementById('imageViewerImg');
+  const caption = document.getElementById('imageViewerCaption');
+  const cell = img.closest('.icon-cell, .npc-card');
+  const label = cell ? (cell.querySelector('.name, .npc-name, .id') || cell).textContent.trim() : (img.alt || 'Asset preview');
+  const source = cell ? cell.querySelector('.asset-source')?.textContent.trim() : '';
+  viewerImg.src = img.currentSrc || img.src;
+  viewerImg.alt = img.alt || label;
+  caption.textContent = source ? `${{label}} · ${{source}}` : label;
+  viewer.hidden = false;
+  document.body.classList.add('viewer-open');
+}}
+
+function closeImageViewer() {{
+  const viewer = document.getElementById('imageViewer');
+  const viewerImg = document.getElementById('imageViewerImg');
+  viewer.hidden = true;
+  viewerImg.removeAttribute('src');
+  document.body.classList.remove('viewer-open');
+}}
+
+document.addEventListener('click', (ev) => {{
+  const img = ev.target.closest('.icon-cell img, .npc-card img');
+  if (!img || !img.getAttribute('src')) return;
+  ev.preventDefault();
+  openImageViewer(img);
+}});
+
 document.addEventListener('keydown', (ev) => {{
   if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'k') {{
     ev.preventDefault();
     openPalette();
   }}
-  if (ev.key === 'Escape') closePalette();
+  if (ev.key === 'Escape') {{
+    closePalette();
+    closeImageViewer();
+  }}
 }});
 </script>
 </body>

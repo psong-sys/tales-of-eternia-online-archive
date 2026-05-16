@@ -623,6 +623,7 @@ kbd {
   border-radius: 6px;
   background: rgba(255, 253, 246, 0.84);
   image-rendering: pixelated;
+  cursor: zoom-in;
 }
 
 .icon-cell img.asset-thumb {
@@ -683,6 +684,7 @@ kbd {
   border-radius: 6px;
   background: rgba(255, 253, 246, 0.76);
   image-rendering: pixelated;
+  cursor: zoom-in;
 }
 
 .npc-card .no-sprite {
@@ -931,6 +933,73 @@ table.data tr:hover td { background: rgba(255, 178, 26, 0.10); }
 .palette-result span { font-weight: 750; color: var(--parchment); }
 .palette-result small { color: var(--text-muted); font-size: 0.76rem; }
 .palette-empty { padding: 1rem; color: var(--text-muted); }
+
+/* Image viewer */
+
+body.viewer-open {
+  overflow: hidden;
+}
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 160;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 239, 191, 0.18), transparent 42%),
+    rgba(20, 16, 10, 0.74);
+  backdrop-filter: blur(7px);
+}
+
+.image-viewer-panel {
+  width: min(980px, 100%);
+  max-height: min(860px, 92vh);
+  margin: 0;
+  padding: clamp(0.85rem, 2vw, 1.2rem);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  border: 1px solid rgba(204, 153, 61, 0.5);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 249, 235, 0.98), rgba(242, 229, 199, 0.98));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.48);
+}
+
+.image-viewer-close {
+  justify-self: end;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--text-muted);
+  font: 0.72rem var(--font-mono);
+  cursor: pointer;
+}
+
+.image-viewer img {
+  width: 100%;
+  height: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  image-rendering: pixelated;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(45deg, rgba(210, 190, 150, 0.24) 25%, transparent 25% 75%, rgba(210, 190, 150, 0.24) 75%),
+    linear-gradient(45deg, rgba(210, 190, 150, 0.24) 25%, transparent 25% 75%, rgba(210, 190, 150, 0.24) 75%),
+    #fffdf6;
+  background-position: 0 0, 10px 10px;
+  background-size: 20px 20px;
+}
+
+.image-viewer figcaption {
+  color: var(--text-dim);
+  font: 0.78rem var(--font-mono);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
 
 /* Action cards and timelines */
 
