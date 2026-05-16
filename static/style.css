@@ -159,12 +159,15 @@ strong { color: var(--parchment); font-weight: 700; }
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  overflow: hidden;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  min-width: 216px;
+  flex: 0 0 216px;
+  min-width: 0;
+  overflow: hidden;
   color: var(--text);
 }
 
@@ -173,28 +176,11 @@ strong { color: var(--parchment); font-weight: 700; }
 .brand-logo {
   width: 178px;
   height: 50px;
+  max-width: 100%;
   object-fit: contain;
   object-position: left center;
   display: block;
   filter: drop-shadow(0 3px 10px rgba(111, 65, 16, 0.18));
-}
-
-.brand-text {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
-.tagline {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
 }
 
 .nav-links {
@@ -265,10 +251,10 @@ kbd {
 .site-shell {
   display: grid;
   grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
-  gap: 1.6rem;
-  width: min(1760px, 100%);
-  margin: 0 auto;
-  padding: 1.45rem 1.5rem 4rem;
+  gap: 1.25rem;
+  width: 100%;
+  margin: 0;
+  padding: 1.1rem 1rem 4rem 0;
 }
 
 .sidebar {
@@ -343,6 +329,7 @@ kbd {
 .main {
   min-width: 0;
   padding-bottom: 1rem;
+  max-width: none;
 }
 
 .breadcrumb {
@@ -1230,7 +1217,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
   }
 
   .brand {
-    min-width: 132px;
+    flex-basis: 132px;
   }
 
   .brand-logo {

@@ -106,10 +106,8 @@ def page(title: str, body: str, active: str = "", *, depth: int = 0) -> str:
 </head>
 <body>
 <header class="top-nav">
-  <a class="brand" href="{rel}index.html">
-    <img class="brand-logo" src="{rel}static/toeo-logo.webp" alt="Tales of Eternia Online">
-    <span class="brand-text">Tales of Eternia Online</span>
-    <span class="tagline">Recovered MMO Archive</span>
+  <a class="brand" href="{rel}index.html" aria-label="Tales of Eternia Online archive home">
+    <img class="brand-logo" src="{rel}static/toeo-logo.webp" alt="Tales of Eternia Online" width="178" height="50">
   </a>
   <nav class="nav-links">
       {nav_block}
