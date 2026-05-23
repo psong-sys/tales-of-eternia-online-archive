@@ -4,7 +4,7 @@ A preservation-focused static archive for **Tales of Eternia Online**, Namco's d
 
 View the archive:
 
-https://psong-sys.github.io/toeo-archive/
+https://psong-sys.github.io/tales-of-eternia-online-archive
 
 This site catalogs static client-side data recovered from the original game files: equipment IDs, enemy classes, NPC and monster sprites, battle-action timelines, minimaps, audio references, and decoded asset container formats.
 
